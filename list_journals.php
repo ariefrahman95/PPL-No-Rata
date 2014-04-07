@@ -12,7 +12,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>Free HTML5 Bootstrap Admin Template</title>
+	<title>List Jurnal - SI Jurnal Sosioteknologi</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
 	<meta name="author" content="Muhammad Usman">
@@ -87,11 +87,6 @@
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
 						<h2>List Jurnal Sosioteknologi</h2>
-						<div class="box-icon">
-							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-						</div>
 					</div>
 					<div class="box-content">
 						<table class="table table-bordered table-striped table-condensed">
@@ -104,30 +99,18 @@
 								  </tr>
 							  </thead>   
 							  <tbody>
-								<tr>
-									<td>Jurnal Dummy 1</td>
-									<td class="center">2012/01/01</td>
-									<td class="center">Penulis Dummy 1</td>
-									<td class="center">Kategori Bebas</td>                                       
-								</tr>
-								<tr>
-									<td>Jurnal Dummy 2</td>
-									<td class="center">2013/11/10</td>
-									<td class="center">Penulis Dummy 2</td>
-									<td class="center">Kategori Apa Aja</td>                                       
-								</tr>
-								<tr>
-									<td>Jurnal Dummy 3</td>
-									<td class="center">2013/06/08</td>
-									<td class="center">Penulis Dummy 3</td>
-									<td class="center">Kategori Apa Aja</td>                                       
-								</tr>
-								<tr>
-									<td>Jurnal Dummy 4</td>
-									<td class="center">2014/02/01</td>
-									<td class="center">Penulis Dummy 1</td>
-									<td class="center">Kategori Baru</td>                                       
-								</tr>
+								<?php include "database_connection.php";
+									$query_jurnal = "select * from jurnal";
+									$hasil = mysql_query($query_jurnal,$db);
+									while($row = mysql_fetch_array($hasil)){
+										echo '<tr>';
+										echo '<td><a href="#">'.$row["judul"].'</a></td>';
+										echo '<td class="center">'.$row["tanggal"].'</td>';
+										echo '<td class="center">'.$row["penulis"].'</td>';
+										echo '<td class="center">'.$row["kategori"].'</td>';
+										echo '</tr>';
+									}
+							    ?>
 							  </tbody>
 						 </table>  
 						 <div class="pagination pagination-centered">
