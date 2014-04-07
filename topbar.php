@@ -7,7 +7,8 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"> <img alt="Charisma Logo" src="img/logo20.png" /> <span>Charisma</span></a>
+				<a class="brand" href="index.html"> <!--img alt="Logo" src="img/Logo-ITB.png"/> -->
+				Jurnal Sosioteknologi</a>
 				
 				
 				<!-- user dropdown starts -->
@@ -24,7 +25,7 @@
 					</ul>
 				</div>
 				<!-- user dropdown ends -->
-				
+				<!--
 				<div class="top-nav nav-collapse">
 					<ul class="nav">
 						<li>
