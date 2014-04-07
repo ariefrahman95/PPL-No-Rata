@@ -19,14 +19,14 @@
 			document.getElementById("left1").innerHTML="<a class=\"ajax-link\" href=\"index.php\"><i class=\"icon-home\"></i><span class=\"hidden-tablet\"> Home </span></a>";;
 			document.getElementById("left2").innerHTML="<a class=\"ajax-link\" href=\"ui.php\"><i class=\"icon-eye-open\"></i><span class=\"hidden-tablet\"> Guidelines </span></a>";
 			document.getElementById("left3").innerHTML="<a class=\"ajax-link\" href=\"login.php?submit=true\"><i class=\"icon-edit\"></i><span class=\"hidden-tablet\"> Submit New Journal </span></a>";
-			document.getElementById("left4").innerHTML="<a class=\"ajax-link\" href=\"table.php\"><i class=\"icon-align-justify\"></i><span class=\"hidden-tablet\"> List of Journals </span></a>";
+			document.getElementById("left4").innerHTML="<a class=\"ajax-link\" href=\"list_journals.php\"><i class=\"icon-align-justify\"></i><span class=\"hidden-tablet\"> List of Journals </span></a>";
 			document.getElementById("left5").innerHTML="<a href=\"login.php\"><i class=\"icon-lock\"></i><span class=\"hidden-tablet\"> About Us </span></a>";
 			document.getElementById("left6").innerHTML="<a href=\"login.php\"><i class=\"icon-lock\"></i><span class=\"hidden-tablet\"> My Journals </span></a>";
 		} else {
 			document.getElementById("left1").innerHTML="<a class=\"ajax-link\" href=\"index.php\"><i class=\"icon-home\"></i><span class=\"hidden-tablet\"> Home </span></a>";;
 			document.getElementById("left2").innerHTML="<a class=\"ajax-link\" href=\"ui.php\"><i class=\"icon-eye-open\"></i><span class=\"hidden-tablet\"> Guidelines </span></a>";
 			document.getElementById("left3").innerHTML="<a class=\"ajax-link\" href=\"login.php?submit=true\"><i class=\"icon-edit\"></i><span class=\"hidden-tablet\"> Submit New Journal </span></a>";
-			document.getElementById("left4").innerHTML="<a class=\"ajax-link\" href=\"table.php\"><i class=\"icon-align-justify\"></i><span class=\"hidden-tablet\"> List of Journals </span></a>";
+			document.getElementById("left4").innerHTML="<a class=\"ajax-link\" href=\"list_journals.php\"><i class=\"icon-align-justify\"></i><span class=\"hidden-tablet\"> List of Journals </span></a>";
 			document.getElementById("left5").innerHTML="<a href=\"login.php\"><i class=\"icon-lock\"></i><span class=\"hidden-tablet\"> About Us </span></a>";
 		}
 	</script>
