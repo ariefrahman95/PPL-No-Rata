@@ -69,15 +69,30 @@
 			<div id="content" class="span10">
 			<!-- content starts -->
 			<div class="row-fluid sortable">
-				<div class="box span12">
+				<div class="box span7">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-picture"></i>Journal's Progress</h2>
+						<h3>Editorial Staffs</h3>
+						<div class="box-icon">
+							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+						</div>
 					</div>
 					<div class="box-content">
-						<h3>Journal 1</h3>
-						<div class="progress progress-striped progress-success active">
-							<div class="bar" style="width: 10%;"></div>
-						</div>
+						<dl>
+						  <dt>Bambang Riyanto Trilaksono, Prof.Dr.Ir. [ Chief ]</dt>
+						  <dd>School of Electrical Engineering and Informatics, ITB, Indonesia<br>briyanto@lskk.ee.itb.ac.id</dd>
+						  <div class="page-header">
+							  <h1><small>Redaktur</small></h1>
+						  </div>
+						  <dt>Edy Soewono, Prof.Dr. [ Executive Editor ]</dt>
+						  <dd>Faculty of Mathematics and Natural Sciences, ITB, Indonesia<br>esoewono@lppm.itb.ac.id</dd>
+						  <dt> Ismunandar, Prof.</dt>
+						  <dd> Faculty of Mathematics and Natural Sciences, ITB, Indonesia<br>ismu@chem.itb.ac.id</dd>
+						  <div class="page-header">
+							  <h1><small>Reviewer</small></h1>
+						  </div>
+						  <dt>Tati S. Sjamsudin Subahar, Prof.Dr.,MS.,DEA.</dt>
+						  <dd>School of Life Sciences and Technology, ITB, Indonesia<br>tati@sith.itb.ac.id</dd>
+						</dl>            
 					</div>
 				</div><!--/span-->
 			
