@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 07, 2014 at 03:39 PM
--- Server version: 5.6.16
--- PHP Version: 5.5.9
+-- Host: localhost
+-- Generation Time: Apr 08, 2014 at 06:48 AM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,8 +17,29 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `ppl`
+-- Database: `sijurnal`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `author`
+--
+
+CREATE TABLE IF NOT EXISTS `author` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `username` varchar(16) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `author`
+--
+
+INSERT INTO `author` (`id`, `username`, `password`) VALUES
+(1, 'destraaaa', '12345678'),
+(2, 'arief_rahman', '13511020');
 
 -- --------------------------------------------------------
 
