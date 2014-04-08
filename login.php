@@ -77,7 +77,14 @@
 							Please login with your Username and Password.
 						</div>
 					<?php }?>
-					<form class="form-horizontal" action="checking_center.php" method="post">
+					<?php
+					if (isset($_GET['submit'])){
+						echo '<form class="form-horizontal" action="checking_center.php?submit=true" method="post">';
+					}
+					else{
+						echo '<form class="form-horizontal" action="checking_center.php" method="post">';
+					}
+					?>
 						<fieldset>
 							<div class="input-prepend" title="Username" data-rel="tooltip">
 								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="username2" id="username2" type="text" value="username" />
@@ -96,6 +103,18 @@
 
 							<p class="center span5">
 							<button type="submit" class="btn btn-primary">Login</button>
+							</p>
+							<br>
+							if you don't have account
+							<p class="center span5">
+							<?php
+								if(isset($_GET['submit'])){
+									echo '<a href="register.php?submit=true" class="btn btn-primary">Register</a>';
+								}
+								else{
+									echo '<a href="register.php" class="btn btn-primary">Register</a>';
+								}
+							?>
 							</p>
 						</fieldset>
 					</form>

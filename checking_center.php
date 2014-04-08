@@ -37,9 +37,21 @@
 				d.setDate(d.getDate() + 30);
 				var n = d.getTime();
 				localStorage.expired_time=n; 
-				window.location="index.php";
 			</script>
 			<?php
+				if(isset($_GET['submit'])){
+			?>
+				<script>
+					window.location="submit_form.php";
+				</script>
+			<?php
+				}else{
+			?>
+				<script>
+					window.location="index.php";
+				</script>
+			<?php
+			}
 		}
 	}
 	else if (isset($_POST['username2'])){
@@ -74,9 +86,21 @@
 				d.setDate(d.getDate() + 30);
 				var n = d.getTime();
 				localStorage.expired_time=n; 
-				window.location="index.php";
 			</script>
 			<?php
+				if(isset($_GET['submit'])){
+			?>
+				<script>
+					window.location="submit_form.php";
+				</script>
+			<?php
+				}else{
+			?>
+				<script>
+					window.location="index.php";
+				</script>
+			<?php
+			}
 		}
 	}
 ?>

@@ -74,35 +74,65 @@
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-edit"></i> Submit New Journal </h2>
+						<h2><i class="icon-edit"></i> Profile </h2>
 					</div>
 					<div class="box-content">
 						<form class="form-horizontal" action="upload_file.php" method="post" enctype="multipart/form-data">
 							<fieldset>
 							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Title</label>
+								<label class="control-label" for="prependedInput">Username</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="title" size="16" type="text">
+									<input id="title" size="16" type="text" value="destraaaa">
 								  </div>
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="appendedInput">Description</label>
+								<label class="control-label" for="appendedInput">Password</label>
 								<div class="controls">
 								  <div class="input-append">
-									<textarea class="autogrow"></textarea>
+									<input id="title" size="16" type="password" value="12345678">
 								  </div>
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label">File Upload</label>
+								<label class="control-label">Confirm Password</label>
 								<div class="controls">
-								  <input type="file" name="file" id="file" accept="application/pdf">
+								  <input id="title" size="16" type="password" value="12345678">
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label">Name and Title</label>
+								<div class="controls">
+								  <input id="title" size="30" type="text" value="Dr. Destra Ganteng, S.T., M.T.">
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label">Organization</label>
+								<div class="controls">
+								  <input id="title" size="16" type="text" value="Institut Teknologi Bandung">
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label">Address</label>
+								<div class="controls">
+								  <textarea class="autogrow">Jalan Bootstrap no. 12 Bandung</textarea>
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label">email</label>
+								<div class="controls">
+								  <input id="title" size="16" type="text" value="destra@itb.ac.id">
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label">Phone</label>
+								<div class="controls">
+								  <input id="title" size="16" type="text" value="086568908657">
 								</div>
 							  </div>
 							  <div class="form-actions">
-								<button type="submit" class="btn btn-primary">Submit</button>
+								<button type="submit" class="btn btn-primary">Save Changes</button>
 							  </div>
 							</fieldset>
 						</form>

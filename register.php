@@ -66,7 +66,14 @@
 			
 			<div class="row-fluid">
 				<div class="well span5 center login-box">
-					<form class="form-horizontal" action="checking_center.php" method="post">
+					<?php
+						if(isset($_GET['submit'])){
+							echo '<form class="form-horizontal" action="checking_center.php?submit=true" method="post">';
+						}
+						else{
+							echo '<form class="form-horizontal" action="checking_center.php" method="post">';
+						}
+					?>
 						<fieldset>
 							<div class="input-prepend" title="Username" data-rel="tooltip">
 								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="username" id="username" type="text" value="admin" />
