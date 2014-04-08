@@ -104,7 +104,7 @@
 									$hasil = mysql_query($query_jurnal,$db);
 									while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
-										echo '<td><a href="#">'.$row["judul"].'</a></td>';
+										echo '<td><a href="preview.php?id='.$row["id"].'">'.$row["judul"].'</a></td>';
 										echo '<td class="center">'.$row["tanggal"].'</td>';
 										echo '<td class="center">'.$row["penulis"].'</td>';
 										echo '<td class="center">'.$row["kategori"].'</td>';
