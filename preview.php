@@ -2,15 +2,28 @@
 	include "database_connection.php";
 	if(isset($_GET['id'])) {
 		$id = $_GET['id'];
-		$query_jurnal = "select * from jurnal where id =' $id '";
+		$query_jurnal = "select * from jurnal where id = {$id}";
 		$hasil = mysql_query($query_jurnal,$db);
 		$row = mysql_fetch_array($hasil);
-		//the path to the PDF file
-		$strPDF = $row['path_preview'];
-		exec("convert \"{$strPDF}[0]\" \"{$id}.jpg\"");
-		echo "<img src=\"{$id}.jpg\"/>";
+		if($row == NULL) {
+			echo "<p>No journal chosen!</p>";
+		} else {
+			//the path to the PDF file
+			$pdfPath = $row['path_download'];
+			$imgPath = $row['path_preview'];
+			if($imgPath == NULL) {
+				$imgPath = "img\\\\preview\\\\".$id.".jpg";
+				//echo $imgPath;
+				exec("convert \"{$pdfPath}[0]\" \"{$imgPath}\"");
+				$query_jurnal = "UPDATE jurnal SET path_preview = '{$imgPath}' WHERE jurnal.id = {$id}";
+				//echo $query_jurnal;
+				$hasil = mysql_query($query_jurnal,$db);
+			}
+			echo "<img src=\"{$imgPath}\"/>";
+			echo "<p>Download journal <a href=\"{$pdfPath}\">here</a>.</p>";
+		}
 	} else {
-		echo "<p>No preview available</p>";
+		echo "<p>No journal chosen!</p>";
 	}
 	//phpinfo();
 ?>
