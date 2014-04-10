@@ -12,7 +12,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>List Jurnal - SI Jurnal Sosioteknologi</title>
+	<title>Home - SI Jurnal Sosioteknologi</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
 	<meta name="author" content="Muhammad Usman">
@@ -55,12 +55,10 @@
 </head>
 
 <body>
-	<?php include "topbar.php"?>
+	<?php include "topbar.php" ?>
 		<div class="container-fluid">
 		<div class="row-fluid">
-				
 			<?php include "left_menu.php"?>
-			
 			<noscript>
 				<div class="alert alert-block span10">
 					<h4 class="alert-heading">Warning!</h4>
@@ -70,69 +68,50 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			
-
-			<div>
-				<ul class="breadcrumb">
-					<li>
-						<a href="index.php">Home</a> <span class="divider">/</span>
-					</li>
-					<li>
-						<a href="#">List of Journals</a>
-					</li>
-				</ul>
-			</div>
-			
-			<div class="row-fluid sortable">	
+			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2>List Jurnal Sosioteknologi</h2>
+						<h2>Preview</h2>
 					</div>
 					<div class="box-content">
-						<table class="table table-bordered table-striped table-condensed">
-							  <thead>
-								  <tr>
-									  <th>Judul</th>
-									  <th>Tanggal Terbit</th>
-									  <th>Penulis</th>
-									  <th>Kategori</th>                                          
-								  </tr>
-							  </thead>   
-							  <tbody>
-								<?php include "database_connection.php";
-									$query_jurnal = "select * from jurnal";
+					<?php
+						include "database_connection.php";
+						if(isset($_GET['id'])) {
+							$id = $_GET['id'];
+							$query_jurnal = "select * from jurnal where id = {$id}";
+							$hasil = mysql_query($query_jurnal,$db);
+							$row = mysql_fetch_array($hasil);
+							if($row == NULL) {
+								echo "<p>No journal chosen!</p>";
+							} else {
+								//the path to the PDF file
+								$pdfPath = $row['path_download'];
+								$imgPath = $row['path_preview'];
+								if($imgPath == NULL) {
+									$imgPath = "img\\\\preview\\\\".$id.".jpg";
+									//echo $imgPath;
+									exec("convert \"{$pdfPath}[0]\" \"{$imgPath}\"");
+									$query_jurnal = "UPDATE jurnal SET path_preview = '{$imgPath}' WHERE jurnal.id = {$id}";
+									//echo $query_jurnal;
 									$hasil = mysql_query($query_jurnal,$db);
-									while($row = mysql_fetch_array($hasil)){
-										echo '<tr>';
-										echo '<td><a href="preview.php?id='.$row["id"].'">'.$row["judul"].'</a></td>';
-										echo '<td class="center">'.$row["tanggal"].'</td>';
-										echo '<td class="center">'.$row["penulis"].'</td>';
-										echo '<td class="center">'.$row["kategori"].'</td>';
-										echo '</tr>';
-									}
-							    ?>
-							  </tbody>
-						 </table>  
-						 <div class="pagination pagination-centered">
-						  <ul>
-							<li><a href="#">Prev</a></li>
-							<li class="active">
-							  <a href="#">1</a>
-							</li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">Next</a></li>
-						  </ul>
-						</div>     
+								}
+								echo "<img src=\"{$imgPath}\"/>";
+								echo "<p>Download journal <a href=\"{$pdfPath}\">here</a>.</p>";
+							}
+						} else {
+							echo "<p>No journal chosen!</p>";
+						}
+						//phpinfo();
+					?>
 					</div>
 				</div><!--/span-->
+			
 			</div><!--/row-->
+
     
 					<!-- content ends -->
 			</div><!--/#content.span10-->
 				</div><!--/fluid-row-->
-
 		<?php include "modal_settings.php"?>
 		<?php include "footer.php"?>
 		

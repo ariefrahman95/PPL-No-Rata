@@ -54,6 +54,7 @@ CREATE TABLE IF NOT EXISTS `jurnal` (
   `tanggal` date DEFAULT NULL,
   `status` varchar(50) DEFAULT NULL,
   `kategori` varchar(50) DEFAULT NULL,
+  `path_download` varchar(512) NOT NULL,
   `path_preview` varchar(512) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -62,11 +63,11 @@ CREATE TABLE IF NOT EXISTS `jurnal` (
 -- Dumping data for table `jurnal`
 --
 
-INSERT INTO `jurnal` (`id`, `judul`, `penulis`, `tanggal`, `status`, `kategori`, `path_preview`) VALUES
-(1, 'Perilaku Remaja dalam Menggunakan Media', 'Reni Sureni', '2013-02-14', 'Publish', 'Sosio-komunikasi', NULL),
-(2, 'Makna Ikon Naga, Elemen Utama Arsitektur Tradisional Tionghoa', 'Sugiri Kustedja', '2013-04-25', 'Publish', 'Sosio-kapital', NULL),
-(3, 'Orientasi Pengembangan Ilmu dalam Perspektif Islam', 'Furqon Syarief Hidayatulloh', '2013-10-27', 'Publish', 'Sosio-religi', NULL),
-(4, 'Incorporating And Converting Biogas Technology Into Household Space', 'Meredian Alam', '2014-02-04', 'Publish', 'Sosio-dinamika', NULL);
+INSERT INTO `jurnal` (`id`, `judul`, `penulis`, `tanggal`, `status`, `kategori`, `path_download`, `path_preview`) VALUES
+(1, 'Perilaku Remaja dalam Menggunakan Media', 'Arief Rahman', '2013-02-14', 'Publish', 'Sosio-komunikasi', 'files\\DPPL e-Cow.pdf', 'img\\preview\\1.jpg'),
+(2, 'Makna Ikon Naga, Elemen Utama Arsitektur Tradisional Tionghoa', 'Sugiri Kustedja', '2013-04-25', 'Publish', 'Sosio-kapital', '', NULL),
+(3, 'Orientasi Pengembangan Ilmu dalam Perspektif Islam', 'Furqon Syarief Hidayatulloh', '2013-10-27', 'Publish', 'Sosio-religi', '', NULL),
+(4, 'Incorporating And Converting Biogas Technology Into Household Space', 'Meredian Alam', '2014-02-04', 'Publish', 'Sosio-dinamika', '', NULL);
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
