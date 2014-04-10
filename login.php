@@ -12,7 +12,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>Free HTML5 Bootstrap Admin Template</title>
+	<title>Login - SI Jurnal Sosioteknologi</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
 	<meta name="author" content="Muhammad Usman">
@@ -105,14 +105,14 @@
 							<button type="submit" class="btn btn-primary">Login</button>
 							</p>
 							<br>
-							if you don't have account
+							or if you don't have an account, 
 							<p class="center span5">
 							<?php
 								if(isset($_GET['submit'])){
-									echo '<a href="register.php?submit=true" class="btn btn-primary">Register</a>';
+									echo '<a href="register.php?submit=true">Register</a>';
 								}
 								else{
-									echo '<a href="register.php" class="btn btn-primary">Register</a>';
+									echo '<a href="register.php">Register</a>';
 								}
 							?>
 							</p>

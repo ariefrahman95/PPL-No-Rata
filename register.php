@@ -12,7 +12,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>Free HTML5 Bootstrap Admin Template</title>
+	<title>Register - SI Jurnal Sosioteknologi</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
 	<meta name="author" content="Muhammad Usman">
@@ -51,7 +51,66 @@
 
 	<!-- The fav icon -->
 	<link rel="shortcut icon" href="img/favicon.ico">
-		
+	<script type="text/javascript">
+		var xmlhttp;
+		if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp=new XMLHttpRequest();
+		}
+		else{// code for IE6, IE5
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	   }
+	   var valid = false;
+	   function username_check () {
+			var username = document.getElementById('username').value;
+			if(username.length > 4){//if the lenght greater than 3 characters
+				xmlhttp.open("POST","checking_center.php",true);
+				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xmlhttp.send("username="+username);
+				xmlhttp.onreadystatechange = function () {
+					if (xmlhttp.readyState==4 && xmlhttp.status==200){
+						if (xmlhttp.responseText == '0') {
+							valid = true;
+							document.getElementById("status").innerHTML='<font color="Green"> Username available </font>';
+						} else {
+							document.getElementById("status").innerHTML='<font color="red">Username unavailable </font>';
+						}
+					}
+				}
+			}
+			else{
+				document.getElementById("status").innerHTML='<font color="#cc0000">Username must contain more than 4 characters</font>';
+			}
+			this.validasi();
+		}
+		function password_check () {
+			var password = document.getElementById('password').value;
+			//var email = document.getElementById('email').value;
+			//var username = document.getElementById('username').value;
+			//if(password == email || password == username) {
+			//	document.getElementById("status2").innerHTML='<font color="#cc0000">Password tidak boleh sama dengan email maupun username</font>';
+			//}
+			if(password.length > 7){//if the lenght greater than 3 characters
+				valid = true;
+				document.getElementById("status2").innerHTML='<font color="Green"></font>';
+			}
+			else{
+				document.getElementById("status2").innerHTML='<font color="#cc0000">Password must contains more than 7 characters</font>';
+			}
+			this.validasi();
+		}
+		function password2_check() {
+			var password = document.getElementById('password').value;
+			var password2 = document.getElementById('password2').value;
+			if(password == password2) {
+				valid = true;
+				document.getElementById("status3").innerHTML='<font color="Green"></font>';
+			}
+			else{
+				document.getElementById("status3").innerHTML='<font color="#cc0000">Enter the same password as above</font>';
+			}
+			this.validasi();
+		}
+	</script>		
 </head>
 
 <body>
@@ -68,23 +127,29 @@
 				<div class="well span5 center login-box">
 					<?php
 						if(isset($_GET['submit'])){
-							echo '<form class="form-horizontal" action="checking_center.php?submit=true" method="post">';
+							echo '<form class="form-horizontal" action="check_login.php?submit=true" method="post">';
 						}
 						else{
-							echo '<form class="form-horizontal" action="checking_center.php" method="post">';
+							echo '<form class="form-horizontal" action="check_login.php" method="post">';
 						}
 					?>
 						<fieldset>
 							<div class="input-prepend" title="Username" data-rel="tooltip">
-								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="username" id="username" type="text" value="admin" />
+								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="username" id="username" type="text" value="admin" onkeyup="username_check()" />
+								<div id="status"></div>
 							</div>
 							<div class="clearfix"></div>
 
 							<div class="input-prepend" title="Password" data-rel="tooltip">
-								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" name="password" id="password" type="password" value="admin123456" />
+								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" name="password" id="password" type="password" value="admin123456" onkeyup="password_check()" />
+								<div id="status2"></div>
 							</div>
 							<div class="clearfix"></div>
-
+							<div class="input-prepend" title="Confirm Password" data-rel="tooltip">
+								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" name="password2" id="password2" type="password" value="admin123456" onkeyup="password2_check()"/>
+								<div id="status3"></div>
+							</div>
+							<div class="clearfix"></div>
 							<p class="center span5">
 							<button type="submit" class="btn btn-primary">Register</button>
 							</p>

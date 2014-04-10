@@ -1,5 +1,5 @@
 <?php
-$allowedExts = array(/*"gif", "jpeg", "jpg", "png"*/"pdf");
+$allowedExts = array(/*"gif", "jpeg", "jpg", "png"*/"pdf", "doc", "docx");
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
 if (in_array($extension, $allowedExts))
