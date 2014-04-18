@@ -5,7 +5,7 @@
 		$myusername = stripslashes($myusername);
 		$myusername = mysql_real_escape_string($myusername);
 		//cek udah ada username apa belum
-		$sql_check="SELECT * FROM author WHERE username='$myusername'";
+		$sql_check="SELECT * FROM penulis WHERE username='$myusername'";
 		$result=mysql_query($sql_check);
 		// Mysql_num_row is counting table row
 		$count=mysql_num_rows($result);
