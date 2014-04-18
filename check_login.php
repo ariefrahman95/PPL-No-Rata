@@ -10,7 +10,7 @@
 		$myusername = mysql_real_escape_string($myusername);
 		$mypassword = mysql_real_escape_string($mypassword);
 		//cek udah ada username apa belum
-		$sql_check="SELECT * FROM author WHERE username='$myusername'";
+		$sql_check="SELECT * FROM penulis WHERE username='$myusername'";
 		$result=mysql_query($sql_check);
 		//if(!($result)) echo mysql_error();
 		// Mysql_num_row is counting table row
@@ -25,7 +25,7 @@
 			<?php
 		}
 		else {
-			$sql_add="INSERT INTO author (username, password) values ('$myusername', '$mypassword')";
+			$sql_add="INSERT INTO penulis (username, password) values ('$myusername', '$mypassword')";
 			$result=mysql_query($sql_add);
 			/*if (!mysqli_query($db,$sql_add))
 			{
