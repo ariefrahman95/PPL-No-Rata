@@ -100,12 +100,12 @@
 							  </thead>   
 							  <tbody>
 								<?php include "database_connection.php";
-									$query_jurnal = "select * from jurnal where penulis = 'Arief Rahman' and status='Publish'";
+									$query_jurnal = "select * from jurnal_terpublish inner join penulis where penulis.nama_lengkap = jurnal_terpublish.penulis";
 									$hasil = mysql_query($query_jurnal,$db);
 									while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
 										echo '<td><a href="preview.php?id='.$row["id"].'">'.$row["judul"].'</a></td>';
-										echo '<td class="center">'.$row["tanggal"].'</td>';
+										echo '<td class="center">'.$row["tanggal_terbit"].'</td>';
 										echo '<td class="center">'.$row["penulis"].'</td>';
 										echo '<td class="center">'.$row["kategori"].'</td>';
 										echo '</tr>';

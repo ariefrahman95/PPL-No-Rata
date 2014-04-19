@@ -78,7 +78,7 @@
 						include "database_connection.php";
 						if(isset($_GET['id'])) {
 							$id = $_GET['id'];
-							$query_jurnal = "select * from jurnal where id = {$id}";
+							$query_jurnal = "select * from jurnal_terpublish where id = {$id}";
 							$hasil = mysql_query($query_jurnal,$db);
 							$row = mysql_fetch_array($hasil);
 							if($row == NULL) {
@@ -91,7 +91,7 @@
 									$imgPath = "img\\\\preview\\\\".$id.".jpg";
 									//echo $imgPath;
 									exec("convert \"{$pdfPath}[0]\" \"{$imgPath}\"");
-									$query_jurnal = "UPDATE jurnal SET path_preview = '{$imgPath}' WHERE jurnal.id = {$id}";
+									$query_jurnal = "UPDATE jurnal_terpublish SET path_preview = '{$imgPath}' WHERE jurnal_terpublish.id = {$id}";
 									//echo $query_jurnal;
 									$hasil = mysql_query($query_jurnal,$db);
 								}
