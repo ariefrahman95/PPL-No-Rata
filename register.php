@@ -110,6 +110,11 @@
 			}
 			this.validasi();
 		}
+		function validasi () {
+			if (valid) {
+				document.getElementById("reg_btn").disabled = false;
+			}
+		}
 	</script>		
 </head>
 
@@ -134,24 +139,80 @@
 						}
 					?>
 						<fieldset>
-							<div class="input-prepend" title="Username" data-rel="tooltip">
+							<!-- <div class="input-prepend" title="Username" data-rel="tooltip">
 								<span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="username" id="username" type="text" value="admin" onkeyup="username_check()" />
-								<div id="status"></div>
-							</div>
+							</div> -->
 							<div class="clearfix"></div>
-
-							<div class="input-prepend" title="Password" data-rel="tooltip">
+							<div class="control-group">
+								<label class="control-label" for="username">Username</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" name="username" id="username" type="text" value="admin" onkeyup="username_check()">
+								</div>
+								<span id="status"></span>
+							</div>
+							<!--<div class="input-prepend" title="Password" data-rel="tooltip">
 								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" name="password" id="password" type="password" value="admin123456" onkeyup="password_check()" />
 								<div id="status2"></div>
-							</div>
+							</div> -->
 							<div class="clearfix"></div>
+							<div class="control-group">
+								<label class="control-label" for="password">Password</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" name="password" id="password" type="password" value="admin123456" onkeyup="password_check()">
+								</div>
+								<span id="status2"></span>
+							</div>
+							<!--<div class="clearfix"></div>
 							<div class="input-prepend" title="Confirm Password" data-rel="tooltip">
 								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" name="password2" id="password2" type="password" value="admin123456" onkeyup="password2_check()"/>
 								<div id="status3"></div>
+							</div>-->
+							<div class="clearfix"></div>
+							<div class="control-group">
+								<label class="control-label" for="password">Confirm Password</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" name="password2" id="password2" type="password" value="admin123456" onkeyup="password2_check()">
+								</div>
+								<span id="status3"></span>
+							</div>
+							<div class="clearfix"></div>
+							<div class="control-group">
+								<label class="control-label" for="nama">Full Name</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" name="nama" id="nama" type="text">
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="control-group">
+								<label class="control-label" for="organisasi">Organization</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" name="organisasi" id="organisasi" type="text">
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="control-group">
+								<label class="control-label" for="email">E-mail</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" name="email" id="email" type="text">
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="control-group">
+								<label class="control-label" for="phone">Phone Number</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" name="phone" id="phone" type="text">
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="control-group">
+								<label class="control-label" for="alamat">Address</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" name="alamat" id="alamat" type="text">
+								</div>
 							</div>
 							<div class="clearfix"></div>
 							<p class="center span5">
-							<button type="submit" class="btn btn-primary">Register</button>
+							<button id="reg_btn" type="submit" class="btn btn-primary" disabled>Register</button>
 							</p>
 						</fieldset>
 					</form>
@@ -160,81 +221,6 @@
 				</div><!--/fluid-row-->
 		
 	</div><!--/.fluid-container-->
-
-	<!-- external javascript
-	================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-
-	<!-- jQuery -->
-	<script src="js/jquery-1.7.2.min.js"></script>
-	<!-- jQuery UI -->
-	<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
-	<!-- transition / effect library -->
-	<script src="js/bootstrap-transition.js"></script>
-	<!-- alert enhancer library -->
-	<script src="js/bootstrap-alert.js"></script>
-	<!-- modal / dialog library -->
-	<script src="js/bootstrap-modal.js"></script>
-	<!-- custom dropdown library -->
-	<script src="js/bootstrap-dropdown.js"></script>
-	<!-- scrolspy library -->
-	<script src="js/bootstrap-scrollspy.js"></script>
-	<!-- library for creating tabs -->
-	<script src="js/bootstrap-tab.js"></script>
-	<!-- library for advanced tooltip -->
-	<script src="js/bootstrap-tooltip.js"></script>
-	<!-- popover effect library -->
-	<script src="js/bootstrap-popover.js"></script>
-	<!-- button enhancer library -->
-	<script src="js/bootstrap-button.js"></script>
-	<!-- accordion library (optional, not used in demo) -->
-	<script src="js/bootstrap-collapse.js"></script>
-	<!-- carousel slideshow library (optional, not used in demo) -->
-	<script src="js/bootstrap-carousel.js"></script>
-	<!-- autocomplete library -->
-	<script src="js/bootstrap-typeahead.js"></script>
-	<!-- tour library -->
-	<script src="js/bootstrap-tour.js"></script>
-	<!-- library for cookie management -->
-	<script src="js/jquery.cookie.js"></script>
-	<!-- calander plugin -->
-	<script src='js/fullcalendar.min.js'></script>
-	<!-- data table plugin -->
-	<script src='js/jquery.dataTables.min.js'></script>
-
-	<!-- chart libraries start -->
-	<script src="js/excanvas.js"></script>
-	<script src="js/jquery.flot.min.js"></script>
-	<script src="js/jquery.flot.pie.min.js"></script>
-	<script src="js/jquery.flot.stack.js"></script>
-	<script src="js/jquery.flot.resize.min.js"></script>
-	<!-- chart libraries end -->
-
-	<!-- select or dropdown enhancer -->
-	<script src="js/jquery.chosen.min.js"></script>
-	<!-- checkbox, radio, and file input styler -->
-	<script src="js/jquery.uniform.min.js"></script>
-	<!-- plugin for gallery image view -->
-	<script src="js/jquery.colorbox.min.js"></script>
-	<!-- rich text editor library -->
-	<script src="js/jquery.cleditor.min.js"></script>
-	<!-- notification plugin -->
-	<script src="js/jquery.noty.js"></script>
-	<!-- file manager library -->
-	<script src="js/jquery.elfinder.min.js"></script>
-	<!-- star rating plugin -->
-	<script src="js/jquery.raty.min.js"></script>
-	<!-- for iOS style toggle switch -->
-	<script src="js/jquery.iphone.toggle.js"></script>
-	<!-- autogrowing textarea plugin -->
-	<script src="js/jquery.autogrow-textarea.js"></script>
-	<!-- multiple file upload plugin -->
-	<script src="js/jquery.uploadify-3.1.min.js"></script>
-	<!-- history.js for cross-browser state change on ajax -->
-	<script src="js/jquery.history.js"></script>
-	<!-- application script for Charisma demo -->
-	<script src="js/charisma.js"></script>
-	
-		
+	<?php include "script_dependencies.php"?>
 </body>
 </html>
