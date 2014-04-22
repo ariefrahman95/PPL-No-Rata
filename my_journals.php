@@ -55,6 +55,11 @@
 </head>
 
 <body>
+	<script>
+		if(!localStorage.username){
+			window.location = "index.php";
+		}
+	</script>
 	<?php include "topbar.php"?>
 		<div class="container-fluid">
 		<div class="row-fluid">
@@ -100,8 +105,13 @@
 							  </thead>   
 							  <tbody>
 								<?php include "database_connection.php";
-									$query_jurnal = "select * from jurnal_terpublish inner join penulis where penulis.nama_lengkap = jurnal_terpublish.penulis";
+									$myusername = $_GET['user'];
+									$query_jurnal = "select jurnal_terpublish.id, jurnal_terpublish.judul, jurnal_terpublish.tanggal_terbit,
+										jurnal_terpublish.penulis, jurnal_terpublish.kategori, penulis.username
+										from jurnal_terpublish inner join penulis 
+										where penulis.nama_lengkap = jurnal_terpublish.penulis and penulis.username = '{$myusername}'";
 									$hasil = mysql_query($query_jurnal,$db);
+									$count = 0;
 									while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
 										echo '<td><a href="preview.php?id='.$row["id"].'">'.$row["judul"].'</a></td>';
@@ -109,6 +119,11 @@
 										echo '<td class="center">'.$row["penulis"].'</td>';
 										echo '<td class="center">'.$row["kategori"].'</td>';
 										echo '</tr>';
+										$count++;
+									}
+									
+									if ($count == 0) {
+										echo '<p>Belum ada jurnal yang dipublish.</p>';
 									}
 							    ?>
 							  </tbody>
