@@ -7,8 +7,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"> <!--img alt="Logo" src="img/Logo-ITB.png"/> -->
-				Jurnal Sosioteknologi</a>
+				<a href="index.php"> <img alt="Logo" src="img/logo_baru.png" height="100px"/></a>
 				
 				
 				<!-- user dropdown starts -->
