@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 18, 2014 at 05:31 AM
+-- Generation Time: Apr 27, 2014 at 05:28 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -27,13 +27,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `editor` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `nama_lengkap` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `editor` (
 --
 
 CREATE TABLE IF NOT EXISTS `jurnal` (
-  `id` int(11) NOT NULL DEFAULT '0',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `judul` varchar(200) DEFAULT NULL,
   `penulis` varchar(100) DEFAULT NULL,
   `status` varchar(50) DEFAULT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `jurnal` (
   `diupload_oleh` varchar(255) NOT NULL,
   `path_form_penilaian` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `jurnal`
@@ -71,7 +71,7 @@ INSERT INTO `jurnal` (`id`, `judul`, `penulis`, `status`, `kategori`, `path_down
 --
 
 CREATE TABLE IF NOT EXISTS `jurnal_terpublish` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `judul` varchar(255) NOT NULL,
   `penulis` varchar(255) NOT NULL,
   `tanggal_terbit` date NOT NULL,
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `jurnal_terpublish` (
   `path_download` varchar(255) NOT NULL,
   `path_preview` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -88,12 +88,12 @@ CREATE TABLE IF NOT EXISTS `jurnal_terpublish` (
 --
 
 CREATE TABLE IF NOT EXISTS `mitra_bestari` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -102,23 +102,40 @@ CREATE TABLE IF NOT EXISTS `mitra_bestari` (
 --
 
 CREATE TABLE IF NOT EXISTS `penulis` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `username` varchar(16) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `organisasi` varchar(255) NOT NULL,
   `nama_lengkap` varchar(255) NOT NULL,
   `no_hp` varchar(20) NOT NULL,
+  `token_verifikasi` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `penulis`
 --
 
-INSERT INTO `penulis` (`id`, `username`, `password`, `email`, `organisasi`, `nama_lengkap`, `no_hp`) VALUES
-(1, 'destraaaa', '12345678', '', '', '', ''),
-(2, 'arief_rahman', '13511020', '', '', '', '');
+INSERT INTO `penulis` (`id`, `username`, `password`, `email`, `organisasi`, `nama_lengkap`, `no_hp`, `token_verifikasi`) VALUES
+(2, 'arief_rahman', '13511020', '', '', '', '', ''),
+(3, 'destraaaa', '12345678', 'destra.b.p@gmail.com', 'HMIF', '12345678', '85715516893', ''),
+(6, 'fastfurious', 'admin123456', 'destra.bintang.perkasa@gmail.com', 'HMIF', 'admin123456', '85715516893', ''),
+(7, 'testest', 'admin123456', 'destra.bintang.perkasa@gmail.com', 'HMIF', 'admin123456', '85715516893', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post`
+--
+
+CREATE TABLE IF NOT EXISTS `post` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `judul` int(255) NOT NULL,
+  `content` text NOT NULL,
+  `lokasi` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -127,12 +144,12 @@ INSERT INTO `penulis` (`id`, `username`, `password`, `email`, `organisasi`, `nam
 --
 
 CREATE TABLE IF NOT EXISTS `redaktur` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` int(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
