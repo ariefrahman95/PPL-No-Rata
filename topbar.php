@@ -24,8 +24,8 @@
 					</ul>
 				</div>
 				<!-- user dropdown ends -->
-				<!--
-				<div class="top-nav nav-collapse">
+				
+				<div class="btn-group pull-right">
 					<ul class="nav">
 						<li>
 							<form class="navbar-search pull-left">
