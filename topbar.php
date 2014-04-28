@@ -28,7 +28,8 @@
 				<div class="btn-group pull-right">
 					<ul class="nav">
 						<li>
-							<form class="navbar-search">
+
+							<form class="navbar-search pull-left" action="search.php" method="get">
 								<input placeholder="Search" class="search-query span2" name="query" type="text">
 							</form>
 						</li>
