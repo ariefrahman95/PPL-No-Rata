@@ -44,27 +44,20 @@ $start = ($page-1) * NUMBER_PER_PAGE;
 * if we used the search form use those variables, otherwise look for
 * variables passed in the URL because someone clicked on a page number
 **/
-$judul = "";
-$penulis = "";
-if(isset($_POST['judul'])) {
-	$judul = $_POST['judul'];
-} else if(isset($_GET['judul'])) {
-	$judul = $_GET['judul'];
-}
-if(isset($_POST['penulis'])) {
-	$penulis = $_POST['penulis'];
-} else if(isset($_GET['penulis'])) {
-	$penulis = $_GET['penulis'];
+$query = "";
+if(isset($_GET['query'])) {
+	$query = $_GET['query'];
 }
 //$kategori = ($_POST['kategori']) ? $_POST['kategori'] : $_GET['kategori'];
 //$bulan_terbit = ($_POST['bulan_terbit']) ? $_POST['bulan_terbit'] : $_GET['bulan_terbit']
 
 $sql = "SELECT * FROM jurnal_terpublish WHERE 1=1";
 
-if($judul)
-    $sql .= " AND judul LIKE'%". mysql_real_escape_string($judul) ."%'";
-if($penulis)
-    $sql .= " AND penulis LIKE'%". mysql_real_escape_string($penulis). "%'";
+if($query) {
+    $sql .= " OR judul LIKE'%". mysql_real_escape_string($query) ."%'";
+    $sql .= " OR penulis LIKE'%". mysql_real_escape_string($query). "%'";
+	$sql .= " OR kategori LIKE'%". mysql_real_escape_string($query). "%'";
+}
 
 //this return the total number of records returned by our query
 $total_records = mysql_num_rows(mysql_query($sql));
@@ -78,7 +71,7 @@ $sql .= " LIMIT $start, " . NUMBER_PER_PAGE;
 * this information to the page numbers. That way as they click from page
 * to page the query will pull up the correct results
 **/
-pagination($page, $total_records, "judul=$judul&penulis=$penulis");
+pagination($page, $total_records, "query=$query");
 $loop = mysql_query($sql)
 	or die ('cannot run the query because: ' . mysql_error());
 while ($record = mysql_fetch_assoc($loop))
@@ -86,5 +79,5 @@ while ($record = mysql_fetch_assoc($loop))
 
 echo "<center>" . number_format($total_records) . " search results found</center>";
 
-pagination($page, $total_records, "judul=$judul&penulis=$penulis");
+pagination($page, $total_records, "query=$query");
 ?>
