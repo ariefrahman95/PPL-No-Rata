@@ -88,6 +88,14 @@
 								</div>
 							  </div>
 							  <div class="control-group">
+								<label class="control-label" for="prependedInput">Authors</label>
+								<div class="controls">
+								  <div class="input-prepend">
+									<input id="author" size="16" type="text">
+								  </div>
+								</div>
+							  </div>
+							  <div class="control-group">
 								<label class="control-label" for="appendedInput">Description</label>
 								<div class="controls">
 								  <div class="input-append">
