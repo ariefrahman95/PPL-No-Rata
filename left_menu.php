@@ -27,7 +27,7 @@
 			} else {
 				document.getElementById("left1").innerHTML="<a class=\"ajax-link\" href=\"index.php\"><i class=\"icon-home\"></i><span class=\"hidden-tablet\"> Home </span></a>";;
 				document.getElementById("left2").innerHTML="<a class=\"ajax-link\" href=\"editor.php\"><i class=\"icon-edit\"></i><span class=\"hidden-tablet\"> Edit Journal </span></a>";
-				document.getElementById("left3").innerHTML="<a class=\"ajax-link\" href=#><i class=\"icon-upload\"></i><span class=\"hidden-tablet\"> Publish Journal </span></a>";
+				document.getElementById("left3").innerHTML="<a class=\"ajax-link\" href=\"editor_form.php\"><i class=\"icon-upload\"></i><span class=\"hidden-tablet\"> Publish Journal </span></a>";
 				document.getElementById("left4").innerHTML="<a href=\"about.php\"><i class=\"icon-lock\"></i><span class=\"hidden-tablet\"> About Us </span></a>";
 			}
 		} else {
