@@ -12,7 +12,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>About - SI Jurnal Sosioteknologi</title>
+	<title>Submit - SI Jurnal Sosioteknologi</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
 	<meta name="author" content="Muhammad Usman">
@@ -55,10 +55,12 @@
 </head>
 
 <body>
-	<?php include "topbar.php" ?>
-		<div class="container-fluid">
+	<?php include "topbar.php"?>
+	<div class="container-fluid">
 		<div class="row-fluid">
-			<?php include "left_menu.php"?>
+				
+			<?php include "left_menu.php" ?>
+			
 			<noscript>
 				<div class="alert alert-block span10">
 					<h4 class="alert-heading">Warning!</h4>
@@ -68,55 +70,74 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
+			
 			<div class="row-fluid sortable">
-				<div class="box span7">
+				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h3>Editorial Staffs</h3>
+						<h2><i class="icon-edit"></i> Publish Journal </h2>
 					</div>
 					<div class="box-content">
-						<dl>
-						  <dt>Bambang Riyanto Trilaksono, Prof.Dr.Ir. [ Chief ]</dt>
-						  <dd>School of Electrical Engineering and Informatics, ITB, Indonesia<br>briyanto@lskk.ee.itb.ac.id</dd>
-						  <div class="page-header">
-							  <h1><small>Redaktur</small></h1>
-						  </div>
-						  <dt>Edy Soewono, Prof.Dr. [ Executive Editor ]</dt>
-						  <dd>Faculty of Mathematics and Natural Sciences, ITB, Indonesia<br>esoewono@lppm.itb.ac.id</dd>
-						  <dt> Ismunandar, Prof.</dt>
-						  <dd> Faculty of Mathematics and Natural Sciences, ITB, Indonesia<br>ismu@chem.itb.ac.id</dd>
-						  <div class="page-header">
-							  <h1><small>Reviewer</small></h1>
-						  </div>
-						  <dt>Tati S. Sjamsudin Subahar, Prof.Dr.,MS.,DEA.</dt>
-						  <dd>School of Life Sciences and Technology, ITB, Indonesia<br>tati@sith.itb.ac.id</dd>
-						</dl>            
+						<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+							<fieldset>
+							  <div class="control-group">
+								<label class="control-label" for="prependedInput">Judul</label>
+								<div class="controls">
+								  <div class="input-prepend">
+									<input id="title" size="16" type="text">
+								  </div>
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="prependedInput">Tanggal terbit</label>
+								<div class="controls">
+								  <div class="input-prepend">
+									<input id="author" size="16" type="text">
+								  </div>
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="prependedInput">Penulis</label>
+								<div class="controls">
+								  <div class="input-prepend">
+									<input id="author" size="16" type="text">
+								  </div>
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="prependedInput">Kategori</label>
+								<div class="controls">
+								  <div class="input-prepend">
+									<input id="author" size="16" type="text">
+								  </div>
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label">File Upload</label>
+								<div class="controls">
+								  <p><input type="file" name="file" id="file" accept="application/pdf"> .pdf, .docx, .doc</p>
+								</div>
+							  </div>
+							  <div class="form-actions">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							  </div>
+							</fieldset>
+						</form>
 					</div>
 				</div><!--/span-->
-				<div class="box span5">
-					<div class="box-header well" data-original-title>
-						<h3>Contact Information</h3>
-					</div>
-					<div class="box-content">
-						<dl>
-						  <dt> Sekretariat Jurnal Sosioteknologi</dt>
-						  <dd>Jl. Tamansari 64, Bandung 40116, Indonesia<br>
-								Tel : +62-22-250 1759<br>    	 
-								Fax : +62-22-250 4010, +62-22-251 1215<br>
-								E-mail : proceedings@lppm.itb.ac.id</dd>
-						</dl>            
-					</div>
-				</div><!--/span-->
-			</div><!--/row-->
 
+			</div><!--/row-->
     
 					<!-- content ends -->
 			</div><!--/#content.span10-->
 				</div><!--/fluid-row-->
-		<?php include "modal_settings.php"?>
-		<?php include "footer.php"?>
+				
+		<?php include "modal_settings.php" ?>
+		<?php include "footer.php" ?>
 		
 	</div><!--/.fluid-container-->
 
 	<?php include "script_dependencies.php"?>
+	
+		
 </body>
 </html>

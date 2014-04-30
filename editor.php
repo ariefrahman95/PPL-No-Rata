@@ -12,7 +12,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>About - SI Jurnal Sosioteknologi</title>
+	<title>List Jurnal - SI Jurnal Sosioteknologi</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
 	<meta name="author" content="Muhammad Usman">
@@ -55,10 +55,12 @@
 </head>
 
 <body>
-	<?php include "topbar.php" ?>
+	<?php include "topbar.php"?>
 		<div class="container-fluid">
 		<div class="row-fluid">
+				
 			<?php include "left_menu.php"?>
+			
 			<noscript>
 				<div class="alert alert-block span10">
 					<h4 class="alert-heading">Warning!</h4>
@@ -68,50 +70,72 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			<div class="row-fluid sortable">
-				<div class="box span7">
+			
+
+			<!--<div>
+				<ul class="breadcrumb">
+					<li>
+						<a href="index.php">Home</a> <span class="divider">/</span>
+					</li>
+					<li>
+						<a href="#">List of Journals</a>
+					</li>
+				</ul>
+			</div>-->
+			
+			<div class="row-fluid sortable">	
+				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h3>Editorial Staffs</h3>
+						<h2>List Jurnal yang Belum Di-publish</h2>
 					</div>
 					<div class="box-content">
-						<dl>
-						  <dt>Bambang Riyanto Trilaksono, Prof.Dr.Ir. [ Chief ]</dt>
-						  <dd>School of Electrical Engineering and Informatics, ITB, Indonesia<br>briyanto@lskk.ee.itb.ac.id</dd>
-						  <div class="page-header">
-							  <h1><small>Redaktur</small></h1>
-						  </div>
-						  <dt>Edy Soewono, Prof.Dr. [ Executive Editor ]</dt>
-						  <dd>Faculty of Mathematics and Natural Sciences, ITB, Indonesia<br>esoewono@lppm.itb.ac.id</dd>
-						  <dt> Ismunandar, Prof.</dt>
-						  <dd> Faculty of Mathematics and Natural Sciences, ITB, Indonesia<br>ismu@chem.itb.ac.id</dd>
-						  <div class="page-header">
-							  <h1><small>Reviewer</small></h1>
-						  </div>
-						  <dt>Tati S. Sjamsudin Subahar, Prof.Dr.,MS.,DEA.</dt>
-						  <dd>School of Life Sciences and Technology, ITB, Indonesia<br>tati@sith.itb.ac.id</dd>
-						</dl>            
-					</div>
-				</div><!--/span-->
-				<div class="box span5">
-					<div class="box-header well" data-original-title>
-						<h3>Contact Information</h3>
-					</div>
-					<div class="box-content">
-						<dl>
-						  <dt> Sekretariat Jurnal Sosioteknologi</dt>
-						  <dd>Jl. Tamansari 64, Bandung 40116, Indonesia<br>
-								Tel : +62-22-250 1759<br>    	 
-								Fax : +62-22-250 4010, +62-22-251 1215<br>
-								E-mail : proceedings@lppm.itb.ac.id</dd>
-						</dl>            
+						<table class="table table-bordered table-striped table-condensed">
+							  <thead>
+								  <tr>
+									  <th>Judul</th>
+									  <th>Penulis</th>
+									  <th>Kategori</th>
+									  <th>Status</th>
+									  <th>Unduh</th>
+								  </tr>
+							  </thead>   
+							  <tbody>
+								<?php include "database_connection.php";
+									$query_jurnal = "select * from jurnal";
+									$hasil = mysql_query($query_jurnal,$db);
+									while($row = mysql_fetch_array($hasil)){
+										$pdfPath = $row['path_download'];
+										echo '<tr>';
+										echo '<td><a href="preview.php?id='.$row["id"].'">'.$row["judul"].'</a></td>';
+										echo '<td class="center">'.$row["penulis"].'</td>';
+										echo '<td class="center">'.$row["kategori"].'</td>';
+										echo '<td class="center">'.$row["status"].'</td>';
+										echo '<td class="center"><a href="'.$pdfPath.'">Klik untuk Mengunduh</a></td>';
+										echo '</tr>';
+									}
+							    ?>
+							  </tbody>
+						 </table>  
+						 <div class="pagination pagination-centered">
+						  <ul>
+							<li><a href="#">Prev</a></li>
+							<li class="active">
+							  <a href="#">1</a>
+							</li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">Next</a></li>
+						  </ul>
+						</div>     
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->
-
     
 					<!-- content ends -->
 			</div><!--/#content.span10-->
 				</div><!--/fluid-row-->
+
 		<?php include "modal_settings.php"?>
 		<?php include "footer.php"?>
 		

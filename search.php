@@ -145,9 +145,9 @@
 						$sql = "SELECT * FROM jurnal_terpublish WHERE 1=1";
 
 						if($query) {
-							$sql .= " OR judul LIKE'%". mysql_real_escape_string($query) ."%'";
+							$sql .= " AND (judul LIKE'%". mysql_real_escape_string($query) ."%'";
 							$sql .= " OR penulis LIKE'%". mysql_real_escape_string($query). "%'";
-							$sql .= " OR kategori LIKE'%". mysql_real_escape_string($query). "%'";
+							$sql .= " OR kategori LIKE'%". mysql_real_escape_string($query). "%')";
 						}
 
 						//this return the total number of records returned by our query
@@ -165,8 +165,11 @@
 						pagination($page, $total_records, "query=$query");
 						$loop = mysql_query($sql)
 							or die ('cannot run the query because: ' . mysql_error());
-						while ($record = mysql_fetch_assoc($loop))
-							echo "<br/>{$record['id']}) " . stripslashes($record['judul']) . " - {$record['kategori']}";
+						$it = 1;
+						while ($record = mysql_fetch_assoc($loop)) {
+							echo "<br/>{$it} - <a href='preview.php?id=".$record["id"]."'>" . stripslashes($record['judul']) . "</a> - {$record['kategori']} - {$record['penulis']}";
+							$it++;
+						}
 
 						echo "<center>" . number_format($total_records) . " search results found</center>";
 
