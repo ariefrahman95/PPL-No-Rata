@@ -68,48 +68,28 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			<div class="row-fluid sortable">
-				<div class="box span7">
-					<div class="box-header well" data-original-title>
-						<h3>Procedures</h3>
-					</div>
-					<div class="box-content">
-						<dl>
-						  <dt>Submit</dt>
-						  <dd>Submit your journal with the template in the right dialog box</dd>
-						  <dt>Selection Process</dt>
-						  <dd>Your journal will be judged whether it is selected or not</dd>
-						  <dt>Review Process</dt>
-						  <dd>Reviewer will review your journal and propose revision for your journal</dd>
-						  <dt>Revision</dt>
-						  <dd>Revise your journal and resubmit it</dd>
-						  <dt>Editting & Layouting</dt>
-						  <dd>If there is no need for further revision, your journal will be editted by our editor</dd>
-						  <dt>Publish</dt>
-						  <dd>Your journal will be published in our website</dd>
-						</dl>            
-					</div>
-				</div><!--/span-->
-				<div class="box span5">
-					<div class="box-header well" data-original-title>
-						<h3>Journal Template</h3>
-					</div>
-					<div class="box-content">
-						<dl>
-						  <dd>To ease the process of review and submit, we use a standard template that can be downloaded <a href="index.php">here</a><br></dd>
-						</dl>            
-					</div>
-				</div><!--/span-->
-			</div><!--/row-->
-
-    
-					<!-- content ends -->
-			</div><!--/#content.span10-->
-				</div><!--/fluid-row-->
+			<?php 
+				include "database_connection.php";
+				$query_post = "select * from post where lokasi='guidelines'";
+				$hasil = mysql_query($query_post,$db);
+				while($row = mysql_fetch_array($hasil)){
+					echo '<div class="row-fluid sortable">
+							<div class="box span7">
+								<div class="box-header well" data-original-title>
+									<h3>'.$row['judul'].'</h3>
+								</div>
+								<div class="box-content">'.$row['content'].'</div>
+							</div>
+						</div>
+					';
+				}
+			?>	
+			</div>
+		</div>
 		<?php include "modal_settings.php"?>
 		<?php include "footer.php"?>
 		
-	</div><!--/.fluid-container-->
+		</div><!--/.fluid-container-->
 
 	<?php include "script_dependencies.php"?>
 </body>

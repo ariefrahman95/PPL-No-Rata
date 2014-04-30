@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,32 +72,54 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			<div class="row-fluid sortable" id="div1">
-			</div><!--/row-->
-			<div class="row-fluid sortable">
-				<div class="box span12">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-picture"></i>Announcements</h2>
-					</div>
-					<div class="box-content">
-					</div>
-				</div><!--/span-->
-			
-			</div><!--/row-->
+			<?
+				if($_SESSION['logged_in']!=null){
+					$user = $_SESSION['logged_in'];
+					echo '<div class="row-fluid sortable">';
+					echo '<div class="box span12">';
+					echo '<div class="box-header well" data-original-title>';
+					echo '<h2><i class="icon-picture"></i>Journal\'s Progress</h2>';
+					echo'</div>';
+					echo '<div class="box-content">';
+					include "database_connection.php";
+					$query_post = "select * from jurnal where diupload_oleh='$user'";
+					$hasil = mysql_query($query_post,$db);
+					while($row = mysql_fetch_array($hasil)){
+							echo '<h3>'.$row['judul'].'</h3>
+								<div class="progress progress-striped progress-success active">
+									<div class="bar" style="width: '.($row['status']*20).'%;">
+									</div>
+								</div>
+						';
+					}
+					echo '</div></div></div>';
+				}
+			?>
+			<?php 
+				include "database_connection.php";
+				$query_post = "select * from post where lokasi='announcements'";
+				$hasil = mysql_query($query_post,$db);
+				while($row = mysql_fetch_array($hasil)){
+					echo '<div class="row-fluid sortable">
+							<div class="box span7">
+								<div class="box-header well" data-original-title>
+									<h3>'.$row['judul'].'</h3>
+								</div>
+								<div class="box-content">'.$row['content'].'</div>
+							</div>
+						</div>
+					';
+				}
+			?>
 					<!-- content ends -->
 			</div><!--/#content.span10-->
-				</div><!--/fluid-row-->
+		</div><!--/fluid-row-->
 		<?php include "modal_settings.php"?>
 		<?php include "footer.php"?>
 		
 	</div><!--/.fluid-container-->
 
 	<?php include "script_dependencies.php"?>
-	<script>
-		if(localStorage.username){
-			var username = localStorage.username;
-			document.getElementById("div1").innerHTML='<div class="box span12"><div class="box-header well" data-original-title><h2><i class="icon-picture"></i>Journal\'s Progress</h2></div><div class="box-content"><h3>Journal 1</h3><div class="progress progress-striped progress-success active"><div class="bar" style="width: 10%;"></div></div></div></div>';
-		}
-	</script>
+	
 </body>
 </html>

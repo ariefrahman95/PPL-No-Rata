@@ -15,7 +15,7 @@ if (in_array($extension, $allowedExts))
     echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
     echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
 	*/
-    if (file_exists("upload/" . $_FILES["file"]["name"]))
+    if (file_exists("files/" . $_FILES["file"]["name"]))
       {
 		?>
 			<script>
@@ -27,13 +27,8 @@ if (in_array($extension, $allowedExts))
     else
       {
       move_uploaded_file($_FILES["file"]["tmp_name"],
-      "upload/" . $_FILES["file"]["name"]);
+      "files/" . $_FILES["file"]["name"]);
       //echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
-		?>
-			<script>
-				window.location="index.php";
-			</script>
-		<?php
       }
     }
   }

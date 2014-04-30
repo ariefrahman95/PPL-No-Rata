@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+	session_start();
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<!--
@@ -77,13 +79,13 @@
 						<h2><i class="icon-edit"></i> Submit New Journal </h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="upload_file.php" method="post" enctype="multipart/form-data">
+						<form class="form-horizontal" action="add_jurnal.php" method="post" enctype="multipart/form-data">
 							<fieldset>
 							  <div class="control-group">
 								<label class="control-label" for="prependedInput">Title</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="title" size="16" type="text">
+									<input id="title" name="title" size="16" type="text">
 								  </div>
 								</div>
 							  </div>
@@ -91,16 +93,20 @@
 								<label class="control-label" for="prependedInput">Authors</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="author" size="16" type="text">
+									<input id="authors" name="authors" size="16" type="text">
 								  </div>
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="appendedInput">Description</label>
+								<label class="control-label" for="kategori">Category</label>
 								<div class="controls">
-								  <div class="input-append">
-									<textarea class="autogrow"></textarea>
-								  </div>
+								  <select id="kategori" name="kategori" data-rel="chosen">
+									<option>Option 1</option>
+									<option>Option 2</option>
+									<option>Option 3</option>
+									<option>Option 4</option>
+									<option>Option 5</option>
+								  </select>
 								</div>
 							  </div>
 							  <div class="control-group">

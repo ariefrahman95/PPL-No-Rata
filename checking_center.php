@@ -51,19 +51,15 @@
 				localStorage.expired_time=n; 
 			</script>
 			<?php
+				session_start();
+				$_SESSION['logged_in']=$myusername;
 				if(isset($_GET['submit'])){
-			?>
-				<script>
-					window.location="submit_form.php";
-				</script>
-			<?php
-				}else{
-			?>
-				<script>
-					window.location="index.php";
-				</script>
-			<?php
+					header('Location: submit_form.php');
+				}
+			else{
+				header('Location: index.php');
 			}
+			
 		}
 	}
 ?>

@@ -88,7 +88,7 @@
 				if(isset($_GET['submit'])){
 			?>
 				<script>
-					window.location="submit_form.php";
+					window.location="submit_form.php"+localStorage.username;
 				</script>
 			<?php
 				}else{

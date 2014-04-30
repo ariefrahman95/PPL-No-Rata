@@ -85,20 +85,20 @@
 						
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="upload_file.php" method="post" enctype="multipart/form-data">
+						<form class="form-horizontal" action="add_post.php?location=<?php echo $_GET['location']?>" method="post" enctype="multipart/form-data">
 							<fieldset>
 							  <div class="control-group">
 								<label class="control-label" for="prependedInput">Post Title</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="post_title" size="16" type="text">
+									<input id="post_title" name="post_title" size="16" type="text">
 								  </div>
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="textarea2">Textarea WYSIWYG</label>
+								<label class="control-label" for="post_content">Textarea WYSIWYG</label>
 								<div class="controls">
-									<textarea class="cleditor" id="textarea2" rows="3"></textarea>
+									<textarea class="cleditor" id="post_content" name="post_content" rows="3"></textarea>
 								</div>
 							  </div>
 							  <div class="form-actions">

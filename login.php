@@ -1,3 +1,6 @@
+<?php
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,11 +58,6 @@
 </head>
 
 <body>
-	<script>
-		if (localStorage.username){
-			window.location="index.php";
-		}
-	</script>
 		<div class="container-fluid">
 		<div class="row-fluid">
 		
