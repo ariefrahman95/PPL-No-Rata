@@ -8,7 +8,7 @@
 					<span class="icon-bar"></span>
 				</a>
 				<a href="index.php"> <img alt="Logo" src="img/logo_baru.png" height="100px"/></a>
-				
+				Jurnal Sosioteknologi</a>
 				
 				<!-- user dropdown starts -->
 				<div class="btn-group pull-right" >

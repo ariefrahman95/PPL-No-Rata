@@ -4,11 +4,11 @@
 			<ul class="nav nav-tabs nav-stacked main-menu">
 				<li class="nav-header hidden-tablet">APPS</li>
 				<li id="left1"><a class="ajax-link" href="index.php"><i class="icon-home"></i><span class="hidden-tablet"> Home </span></a></li>
-				<li id="left2"><a class="ajax-link" href="list_of_journals.php"><i class="icon-home"></i><span class="hidden-tablet"> List Of Journals </span></a></li>
-				<li id="left3"><a class="ajax-link" href="journal_selection.php"><i class="icon-home"></i><span class="hidden-tablet"> Journal Selection </span></a></li>
-				<li id="left4"><a class="ajax-link" href="form_edit_post.php?location=guidelines"><i class="icon-home"></i><span class="hidden-tablet"> Manage Guidelines </span></a></li>
-				<li id="left5"><a class="ajax-link" href="form_edit_post.php?location=aboutus"><i class="icon-home"></i><span class="hidden-tablet"> Manage About Us </span></a></li>
-				<li id="left6"><a class="ajax-link" href="form_edit_post.php?location=announcements"><i class="icon-home"></i><span class="hidden-tablet"> Manage Notifications </span></a></li>
+				<li id="left2"><a class="ajax-link" href="list_of_journals.php"><i class="icon-list"></i><span class="hidden-tablet"> List Of Journals </span></a></li>
+				<li id="left3"><a class="ajax-link" href="journal_selection.php"><i class="icon-filter"></i><span class="hidden-tablet"> Journal Selection </span></a></li>
+				<li id="left4"><a class="ajax-link" href="form_edit_post.php?location=guidelines"><i class="icon-road"></i><span class="hidden-tablet"> Edit Guidelines </span></a></li>
+				<li id="left5"><a class="ajax-link" href="form_edit_post.php?location=aboutus"><i class="icon-briefcase"></i><span class="hidden-tablet"> Edit About Us </span></a></li>
+				<li id="left6"><a class="ajax-link" href="form_edit_post.php?location=announcements"><i class="icon-bullhorn"></i><span class="hidden-tablet"> Edit Notifications </span></a></li>
 			</ul>
 		</div><!--/.well -->
 	</div><!--/span-->

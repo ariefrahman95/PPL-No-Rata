@@ -12,7 +12,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>Home - SI Jurnal Sosioteknologi</title>
+	<title>Home | Website Jurnal Sosioteknologi</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
 	<meta name="author" content="Muhammad Usman">
@@ -58,7 +58,7 @@
 	<?php include "topbar.php" ?>
 		<div class="container-fluid">
 		<div class="row-fluid">
-			<?php include "left_menu.php"?>
+			<?php include "left_menu.php" ?>
 			<noscript>
 				<div class="alert alert-block span10">
 					<h4 class="alert-heading">Warning!</h4>
@@ -73,9 +73,23 @@
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-picture"></i>Announcements</h2>
+						<h2><i class="icon-book"></i> Journal Statistics</h2>
 					</div>
 					<div class="box-content">
+						<div id="donutchart">
+							<canvas class="base"></canvas>
+    						<canvas class="overlay"></canvas>
+    							<span id="pieLabel0" class="pieLabel" style="position: relative;">
+        							<div style="font-size:x-small;text-align:center;padding:2px;color:rgb(237,194,64);">
+        								Journal Published<br></br>50%
+        							</div>
+    							</span>
+    							<span id="pieLabel1" class="pieLabel" style="position: relative; top: 32px; left: 144.5px;">
+        							<div style="font-size:x-small;text-align:center;padding:2px;color:rgb(175,216,248);">
+							            Journal Rejected<br></br>40%
+							        </div>
+    							</span>
+            			</div>
 					</div>
 				</div><!--/span-->
 			
@@ -83,12 +97,12 @@
 					<!-- content ends -->
 			</div><!--/#content.span10-->
 				</div><!--/fluid-row-->
-		<?php include "modal_settings.php"?>
-		<?php include "footer.php"?>
+		<?php include "modal_settings.php" ?>
+		<?php include "footer.php" ?>
 		
 	</div><!--/.fluid-container-->
 
-	<?php include "script_dependencies.php"?>
+	<?php include "script_dependencies.php" ?>
 	<script>
 		if(localStorage.username){
 			var username = localStorage.username;
