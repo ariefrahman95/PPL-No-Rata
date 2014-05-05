@@ -83,7 +83,7 @@
 											$hasil = mysql_query($query_jurnal,$db);
 											while($row = mysql_fetch_array($hasil)){
 												echo'<label class="checkbox">';
-												echo'<input type="checkbox" id="Checkbox1" value="option1"> <a href="download_jurnal.php?id='.$row["id"].'">'.$row["judul"].'</a>';
+												echo'<input type="checkbox" id="Checkbox'.$row['id'].'" value="option1"> <a href="download_jurnal.php?id='.$row["id"].'">'.$row["judul"].'</a>';
 								  				echo'</label>';
 											}
 									?>
@@ -108,7 +108,7 @@
 											$hasil = mysql_query($query_jurnal,$db);
 											while($row = mysql_fetch_array($hasil)){
 												echo'<label class="checkbox">';
-												echo'<input type="checkbox" id="Checkbox1" value="option1"> <a href="download_jurnal.php?id='.$row["id"].'">'.$row["judul"].'</a>';
+												echo'<input type="checkbox" id="Checkbox'.$row['id'].'" value="option1"> <a href="download_jurnal.php?id='.$row["id"].'">'.$row["judul"].'</a>';
 								  				echo'</label>';
 											}
 									?>
@@ -134,7 +134,7 @@
 											$hasil = mysql_query($query_jurnal,$db);
 											while($row = mysql_fetch_array($hasil)){
 												echo'<label class="checkbox">';
-												echo'<input type="checkbox" id="Checkbox1" value="option1"> <a href="download_jurnal.php?id='.$row["id"].'">'.$row["judul"].'</a>';
+												echo'<input type="checkbox" id="Checkbox'.$row['id'].'" value="option1"> <a href="download_jurnal.php?id='.$row["id"].'">'.$row["judul"].'</a>';
 								  				echo'</label>';
 											}
 									?>

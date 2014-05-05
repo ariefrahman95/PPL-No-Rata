@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['redaktur'])){
+		header('Location: login.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,9 +100,9 @@
 	<?php include "script_dependencies.php" ?>
 	<script>
 	var data = [
+	{ label: "Waiting Journal",  data: 25},
 	{ label: "Published Journal",  data: 50},
-	{ label: "Rejected Journal",  data: 25},
-	{ label: "Waiting Journal",  data: 25}
+	{ label: "Rejected Journal",  data: 25}
 	];
 	if($("#donutchart").length)
 	{

@@ -5,7 +5,7 @@
 		$myusername = stripslashes($myusername);
 		$myusername = mysql_real_escape_string($myusername);
 		//cek udah ada username apa belum
-		$sql_check="SELECT * FROM penulis WHERE username='$myusername'";
+		$sql_check="SELECT * FROM redaktur WHERE username='$myusername'";
 		$result=mysql_query($sql_check);
 		// Mysql_num_row is counting table row
 		$count=mysql_num_rows($result);
@@ -27,7 +27,7 @@
 		$myusername = mysql_real_escape_string($myusername);
 		$mypassword = mysql_real_escape_string($mypassword);
 		//cek udah ada username apa belum
-		$sql_check="SELECT * FROM penulis WHERE username='$myusername' and password='$mypassword'";
+		$sql_check="SELECT * FROM redaktur WHERE username='$myusername' and password='$mypassword'";
 		$result=mysql_query($sql_check);
 		// Mysql_num_row is counting table row
 		$count=mysql_num_rows($result);
@@ -42,28 +42,13 @@
 			<?php
 		}
 		else {
-			?>
-			<script type="text/javascript">
-				localStorage.username='<?php echo $myusername;?>';
-				var d = new Date();
-				d.setDate(d.getDate() + 30);
-				var n = d.getTime();
-				localStorage.expired_time=n; 
-			</script>
-			<?php
-				if(isset($_GET['submit'])){
-			?>
-				<script>
-					window.location="submit_form.php";
-				</script>
-			<?php
-				}else{
+				session_start();
+				$_SESSION['redaktur'] = $myusername;
 			?>
 				<script>
 					window.location="index.php";
 				</script>
 			<?php
-			}
 		}
 	}
 ?>
