@@ -76,19 +76,8 @@
 						<h2><i class="icon-book"></i> Journal Statistics</h2>
 					</div>
 					<div class="box-content">
-						<div id="donutchart">
-							<canvas class="base"></canvas>
-    						<canvas class="overlay"></canvas>
-    							<span id="pieLabel0" class="pieLabel" style="position: relative;">
-        							<div style="font-size:x-small;text-align:center;padding:2px;color:rgb(237,194,64);">
-        								Journal Published<br></br>50%
-        							</div>
-    							</span>
-    							<span id="pieLabel1" class="pieLabel" style="position: relative; top: 32px; left: 144.5px;">
-        							<div style="font-size:x-small;text-align:center;padding:2px;color:rgb(175,216,248);">
-							            Journal Rejected<br></br>40%
-							        </div>
-    							</span>
+						<div id="donutchart" style="height: 300px;">
+							
             			</div>
 					</div>
 				</div><!--/span-->
@@ -103,6 +92,29 @@
 	</div><!--/.fluid-container-->
 
 	<?php include "script_dependencies.php" ?>
+	<script>
+	var data = [
+	{ label: "Published Journal",  data: 50},
+	{ label: "Rejected Journal",  data: 25},
+	{ label: "Waiting Journal",  data: 25}
+	];
+	if($("#donutchart").length)
+	{
+		$.plot($("#donutchart"), data,
+		{
+				series: {
+						pie: {
+								innerRadius: 0.5,
+								show: true
+						}
+				},
+				legend: {
+					show: false
+				}
+		});
+	}
+	
+	</script>
 	<script>
 		if(localStorage.username){
 			var username = localStorage.username;
