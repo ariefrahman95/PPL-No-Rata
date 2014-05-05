@@ -8,7 +8,6 @@
 					<span class="icon-bar"></span>
 				</a>
 				<a href="index.php"> <img alt="Logo" src="img/logo_baru.png" height="100px"/></a>
-				Jurnal Sosioteknologi</a>
 				
 				<!-- user dropdown starts -->
 				<div class="btn-group pull-right" >
@@ -32,11 +31,11 @@
 							<?php 
 							if(isset($_SESSION['logged_in'])){
 								if($_SESSION['logged_in']!=null){
-									echo '<a href=\"profile.php\">Profile</a>';
+									echo '<a href="profile.php">Profile</a>';
 								}
 							}
 							else{
-								echo '<a href=\"login.php\"> Login </a>';
+								echo '<a href="login.php"> Login </a>';
 							}
 							?>
 						</li>
@@ -45,11 +44,11 @@
 							<?php 
 							if(isset($_SESSION['logged_in'])){
 								if($_SESSION['logged_in']!=null){
-									echo '<a href=\"logout.php\">Logout</a>';
+									echo '<a href="logout.php">Logout</a>';
 								}
 							}
 							else{
-								echo '<a href=\"register.php\"> Register </a>';
+								echo '<a href="register.php"> Register </a>';
 							}
 							?>
 						</li>

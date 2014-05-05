@@ -73,6 +73,7 @@ session_start();
 			<div id="content" class="span10">
 			<!-- content starts -->
 			<?
+				if(isset($_SESSION['logged_in'])){
 				if($_SESSION['logged_in']!=null){
 					$user = $_SESSION['logged_in'];
 					echo '<div class="row-fluid sortable">';
@@ -93,6 +94,7 @@ session_start();
 						';
 					}
 					echo '</div></div></div>';
+				}
 				}
 			?>
 			<?php 
