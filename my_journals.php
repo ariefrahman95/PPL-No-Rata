@@ -1,3 +1,10 @@
+<?php session_start(); ?>
+<?php
+		if(!isset($_SESSION['logged_in'])){?>
+			<script>
+				window.location = "index.php";
+			</script>
+	<?php } ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,11 +62,6 @@
 </head>
 
 <body>
-	<script>
-		if(!localStorage.username){
-			window.location = "index.php";
-		}
-	</script>
 	<?php include "topbar.php"?>
 		<div class="container-fluid">
 		<div class="row-fluid">
@@ -75,19 +77,6 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			
-
-			<div>
-				<ul class="breadcrumb">
-					<li>
-						<a href="index.php">Home</a> <span class="divider">/</span>
-					</li>
-					<li>
-						<a href="#">List of Journals</a>
-					</li>
-				</ul>
-			</div>
-			
 			<div class="row-fluid sortable">	
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
@@ -105,11 +94,11 @@
 							  </thead>   
 							  <tbody>
 								<?php include "database_connection.php";
-									$myusername = $_GET['user'];
+									$myusername = $_SESSION['logged_in'];
 									$query_jurnal = "select jurnal_terpublish.id, jurnal_terpublish.judul, jurnal_terpublish.tanggal_terbit,
 										jurnal_terpublish.penulis, jurnal_terpublish.kategori, penulis.username
 										from jurnal_terpublish inner join penulis 
-										where penulis.nama_lengkap = jurnal_terpublish.penulis and penulis.username = '{$myusername}'";
+										where penulis.nama_lengkap = jurnal_terpublish.penulis and penulis.username = '$myusername'";
 									$hasil = mysql_query($query_jurnal,$db);
 									$count = 0;
 									while($row = mysql_fetch_array($hasil)){
@@ -120,8 +109,7 @@
 										echo '<td class="center">'.$row["kategori"].'</td>';
 										echo '</tr>';
 										$count++;
-									}
-									
+									}	
 									if ($count == 0) {
 										echo '<p>Belum ada jurnal yang dipublish.</p>';
 									}

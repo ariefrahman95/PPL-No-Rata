@@ -42,24 +42,20 @@
 			<?php
 		}
 		else {
-			?>
-			<script type="text/javascript">
-				localStorage.username='<?php echo $myusername;?>';
-				var d = new Date();
-				d.setDate(d.getDate() + 30);
-				var n = d.getTime();
-				localStorage.expired_time=n; 
-			</script>
-			<?php
+			$row = mysql_fetch_array($result);
+			if($row['token_verifikasi']!="true"){
+				header('Location: verify.php');
+			}
+			else{
 				session_start();
 				$_SESSION['logged_in']=$myusername;
 				if(isset($_GET['submit'])){
 					header('Location: submit_form.php');
 				}
-			else{
-				header('Location: index.php');
+				else{
+					header('Location: index.php');
+				}
 			}
-			
 		}
 	}
 ?>

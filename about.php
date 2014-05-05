@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +52,6 @@
 
 	<!-- The fav icon -->
 	<link rel="shortcut icon" href="img/favicon.ico">
-		
 </head>
 
 <body>
@@ -68,48 +68,23 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			<div class="row-fluid sortable">
-				<div class="box span7">
-					<div class="box-header well" data-original-title>
-						<h3>Editorial Staffs</h3>
-					</div>
-					<div class="box-content">
-						<dl>
-						  <dt>Bambang Riyanto Trilaksono, Prof.Dr.Ir. [ Chief ]</dt>
-						  <dd>School of Electrical Engineering and Informatics, ITB, Indonesia<br>briyanto@lskk.ee.itb.ac.id</dd>
-						  <div class="page-header">
-							  <h1><small>Redaktur</small></h1>
-						  </div>
-						  <dt>Edy Soewono, Prof.Dr. [ Executive Editor ]</dt>
-						  <dd>Faculty of Mathematics and Natural Sciences, ITB, Indonesia<br>esoewono@lppm.itb.ac.id</dd>
-						  <dt> Ismunandar, Prof.</dt>
-						  <dd> Faculty of Mathematics and Natural Sciences, ITB, Indonesia<br>ismu@chem.itb.ac.id</dd>
-						  <div class="page-header">
-							  <h1><small>Reviewer</small></h1>
-						  </div>
-						  <dt>Tati S. Sjamsudin Subahar, Prof.Dr.,MS.,DEA.</dt>
-						  <dd>School of Life Sciences and Technology, ITB, Indonesia<br>tati@sith.itb.ac.id</dd>
-						</dl>            
-					</div>
-				</div><!--/span-->
-				<div class="box span5">
-					<div class="box-header well" data-original-title>
-						<h3>Contact Information</h3>
-					</div>
-					<div class="box-content">
-						<dl>
-						  <dt> Sekretariat Jurnal Sosioteknologi</dt>
-						  <dd>Jl. Tamansari 64, Bandung 40116, Indonesia<br>
-								Tel : +62-22-250 1759<br>    	 
-								Fax : +62-22-250 4010, +62-22-251 1215<br>
-								E-mail : proceedings@lppm.itb.ac.id</dd>
-						</dl>            
-					</div>
-				</div><!--/span-->
-			</div><!--/row-->
-
-    
-					<!-- content ends -->
+			<?php 
+				include "database_connection.php";
+				$query_post = "select * from post where lokasi='aboutus'";
+				$hasil = mysql_query($query_post,$db);
+				while($row = mysql_fetch_array($hasil)){
+					echo '<div class="row-fluid sortable">
+							<div class="box span7">
+								<div class="box-header well" data-original-title>
+									<h3>'.$row['judul'].'</h3>
+								</div>
+								<div class="box-content">'.$row['content'].'</div>
+							</div>
+						</div>
+					';
+				}
+			?>	
+			</div>
 			</div><!--/#content.span10-->
 				</div><!--/fluid-row-->
 		<?php include "modal_settings.php"?>

@@ -162,11 +162,6 @@
 								</div>
 								<span id="status2"></span>
 							</div>
-							<!--<div class="clearfix"></div>
-							<div class="input-prepend" title="Confirm Password" data-rel="tooltip">
-								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" name="password2" id="password2" type="password" value="admin123456" onkeyup="password2_check()"/>
-								<div id="status3"></div>
-							</div>-->
 							<div class="clearfix"></div>
 							<div class="control-group">
 								<label class="control-label" for="password">Confirm Password</label>

@@ -1,10 +1,12 @@
 <?php 
+	if ((isset($_POST['username']))&&(isset($_POST['password']))&&(isset($_POST['email']))){
 	//require_once '/Swift-5.1.0/lib/swift_init.php';
 	require_once '/Swift-5.1.0/lib/swift_required.php';
 	// Create the Transport
 	$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl");
 	$transport->setUsername('destra.bintang.perkasa');
 	$transport->setPassword('22.7cil337872');
+	$token = $_POST['phone'].$_POST['username'];
 
 	/*
 	You could alternatively use a different transport such as Sendmail or Mail:
@@ -21,15 +23,16 @@
 	$message = Swift_Message::newInstance();
 	$message->setSubject('[No Reply] Journal Sosioteknologi Member Verification');
 	$message->setFrom(array('journal@sostek.itb.ac.id' => 'Journal Sosioteknologi'));
-	$message->setTo(array('t.kesgar@live.com' => 'Ted Kesgar'));
+	$message->setTo(array($_POST['email'] => $_POST['nama']));
 	$message->setBody('
+	Hi, '.$_POST['username'].'.
 	This is an automatic response sent to those who wish to register
 	as a member in Journal Sosioteknologi Official Website.
 	
-	To register the following email address(t.kesgar@live.com),
+	To register the following email address('.$_POST['email'].'),
 	please tap the following link to complete the email registration process.
 	
-	http://localhost/ppl-no-rata/index.php
+	http://localhost/ppl-no-rata/verify.php?user='.$_POST['username'].'&verify='.$token.'
 	
 	Received this message by mistake?
 	This message is sent when an email address is registered to a member account.
@@ -42,10 +45,9 @@
 	$result = $mailer->send($message);
 	echo $result;
 	include "database_connection.php";
-	if ((isset($_POST['username']))&&(isset($_POST['password']))){
 		$myusername=$_POST['username'];
 		$mypassword=$_POST['password'];
-		$mynama = $_POST['password'];
+		$mynama = $_POST['nama'];
 		$myorganisasi = $_POST['organisasi'];
 		$myemail = $_POST['email'];
 		$myphone = $_POST['phone'];
@@ -70,33 +72,23 @@
 			<?php
 		}
 		else {
-			$sql_add="INSERT INTO penulis (username, password, email, organisasi, nama_lengkap, no_hp) values ('$myusername', '$mypassword', '$myemail', '$myorganisasi', '$mynama', $myphone)";
+			$sql_add="INSERT INTO penulis (username, password, email, organisasi, nama_lengkap, no_hp, token_verifikasi) values ('$myusername', '$mypassword', '$myemail', '$myorganisasi', '$mynama', '$myphone', '$token')";
 			$result=mysql_query($sql_add);
 			/*if (!mysqli_query($db,$sql_add))
 			{
 				die('Error: ' . mysqli_error($db));
-			}*/
-			?>
-			<script type="text/javascript">
-				localStorage.username='<?php echo $myusername;?>';
-				var d = new Date();
-				d.setDate(d.getDate() + 30);
-				var n = d.getTime();
-				localStorage.expired_time=n; 
-			</script>
-			<?php
-				if(isset($_GET['submit'])){
-			?>
-				<script>
-					window.location="submit_form.php"+localStorage.username;
-				</script>
-			<?php
-				}else{
-			?>
-				<script>
-					window.location="index.php";
-				</script>
-			<?php
-			}
+			}*/?>
+			<script>
+				window.location="verify.php";
+			</script><?php
 		}
 	}
+	else{
+		?>
+		<script>
+			alert("Please complete required fields.");
+			window.location="register.php";
+		</script>
+		<?php
+	}
+?>
