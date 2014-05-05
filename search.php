@@ -86,7 +86,7 @@
 			<div class="row-fluid sortable">	
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2>Hasil Pencarian</h2>
+						<h2>Search Result</h2>
 					</div>
 					<div class="box-content">
 						<?php

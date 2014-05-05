@@ -13,7 +13,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>List Jurnal - SI Jurnal Sosioteknologi</title>
+	<title>List of Journals - SI Jurnal Sosioteknologi</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
 	<meta name="author" content="Muhammad Usman">
@@ -87,16 +87,16 @@
 			<div class="row-fluid sortable">	
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2>List Jurnal Sosioteknologi</h2>
+						<h2>List of Journals</h2>
 					</div>
 					<div class="box-content">
 						<table class="table table-bordered table-striped table-condensed">
 							  <thead>
 								  <tr>
-									  <th>Judul</th>
-									  <th>Tanggal Terbit</th>
-									  <th>Penulis</th>
-									  <th>Kategori</th>                                          
+									  <th>Title</th>
+									  <th>Published Date</th>
+									  <th>Author</th>
+									  <th>Category</th>                                          
 								  </tr>
 							  </thead>   
 							  <tbody>
