@@ -75,7 +75,7 @@
 						<h2>Search Journal</h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="upload_file.php" method="post" enctype="multipart/form-data">
+						<form class="form-horizontal" action="search.php" method="get" enctype="multipart/form-data">
 							<fieldset>
 								<div class="control-group">
 									<label class="control-label" for="prependedInput">Title</label>

@@ -80,16 +80,16 @@
 			<div class="row-fluid sortable">	
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2>List Jurnal yang Telah Diterbitkan</h2>
+						<h2>My Published Journals</h2>
 					</div>
 					<div class="box-content">
 						<table class="table table-bordered table-striped table-condensed">
 							  <thead>
 								  <tr>
-									  <th>Judul</th>
-									  <th>Tanggal Terbit</th>
-									  <th>Penulis</th>
-									  <th>Kategori</th>                                          
+									  <th>Title</th>
+									  <th>Published Date</th>
+									  <th>Author</th>
+									  <th>Category</th>                                           
 								  </tr>
 							  </thead>   
 							  <tbody>
