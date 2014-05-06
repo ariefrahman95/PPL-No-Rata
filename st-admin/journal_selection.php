@@ -58,7 +58,7 @@
 	<?php include "topbar.php" ?>
 		<div class="container-fluid">
 		<div class="row-fluid">
-			<?php include "left_menu.php"?>
+			<?php include "left_menu.php" ?>
 			<noscript>
 				<div class="alert alert-block span10">
 					<h4 class="alert-heading">Warning!</h4>
@@ -79,7 +79,7 @@
 							<fieldset>
 								<div class="control-group">
 									<?php
-											$query_jurnal = "select id, judul from jurnal where status='Mentah'";
+											$query_jurnal = "select id, judul from jurnal where status='0'";
 											$hasil = mysql_query($query_jurnal,$db);
 											while($row = mysql_fetch_array($hasil)){
 												echo'<label class="checkbox">';
@@ -104,7 +104,7 @@
 							<fieldset>
 								<div class="control-group">
 								<?php
-											$query_jurnal = "select id, judul from jurnal where status='Mentah'";
+											$query_jurnal = "select id, judul from jurnal where status='1'";
 											$hasil = mysql_query($query_jurnal,$db);
 											while($row = mysql_fetch_array($hasil)){
 												echo'<label class="checkbox">';
@@ -130,7 +130,7 @@
 							<fieldset>
 								<div class="control-group">
 								<?php
-											$query_jurnal = "select id, judul from jurnal where status='Mentah'";
+											$query_jurnal = "select id, judul from jurnal where status='2'";
 											$hasil = mysql_query($query_jurnal,$db);
 											while($row = mysql_fetch_array($hasil)){
 												echo'<label class="checkbox">';
@@ -159,11 +159,11 @@
 					<!-- content ends -->
 			</div><!--/#content.span10-->
 				</div><!--/fluid-row-->
-		<?php include "modal_settings.php"?>
-		<?php include "footer.php"?>
+		<?php include "modal_settings.php" ?>
+		<?php include "footer.php" ?>
 		
 	</div><!--/.fluid-container-->
 
-	<?php include "script_dependencies.php"?>
+	<?php include "script_dependencies.php" ?>
 </body>
 </html>
