@@ -13,45 +13,7 @@
 	-->
 	<meta charset="utf-8">
 	<title>Form Penilaian | Website Jurnal Sosioteknologi</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
-	<meta name="author" content="Muhammad Usman">
-
-	<!-- The styles -->
-	<link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
-	<style type="text/css">
-	  body {
-		padding-bottom: 40px;
-	  }
-	  .sidebar-nav {
-		padding: 9px 0;
-	  }
-	</style>
-	<link href="css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="css/charisma-app.css" rel="stylesheet">
-	<link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
-	<link href='css/fullcalendar.css' rel='stylesheet'>
-	<link href='css/fullcalendar.print.css' rel='stylesheet'  media='print'>
-	<link href='css/chosen.css' rel='stylesheet'>
-	<link href='css/uniform.default.css' rel='stylesheet'>
-	<link href='css/colorbox.css' rel='stylesheet'>
-	<link href='css/jquery.cleditor.css' rel='stylesheet'>
-	<link href='css/jquery.noty.css' rel='stylesheet'>
-	<link href='css/noty_theme_default.css' rel='stylesheet'>
-	<link href='css/elfinder.min.css' rel='stylesheet'>
-	<link href='css/elfinder.theme.css' rel='stylesheet'>
-	<link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
-	<link href='css/opa-icons.css' rel='stylesheet'>
-	<link href='css/uploadify.css' rel='stylesheet'>
-
-	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	<!-- The fav icon -->
-	<link rel="shortcut icon" href="img/favicon.ico">
-		
+	<?php include "meta_and_css.php" ?>
 </head>
 
 <body>
@@ -67,7 +29,15 @@
 			</noscript>
 			
 			<div id="content" class="span10">
-			<!-- content starts -->
+				<!-- content starts -->
+				<?php 
+					include "database_connection.php";
+					$id = $_GET["id"];
+					$query_post = "select * from jurnal where id='$id'";
+					$hasil = mysql_query($query_post,$db);
+					$row = mysql_fetch_array($hasil);
+				?>
+
 			<p>Jurnal yang akan dinilai dapat di-download pada tombol "Download Naskah" di bawah: </p>
 			<fieldset>
 			 	<div class="form-actions">
@@ -78,7 +48,7 @@
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-list-alt"></i> Form Penilaian Mitra Bestari</h2>
+						<h2><i class="icon-edit"></i> Form Penilaian Mitra Bestari</h2>
 					</div>
 					<div class="box-content">
 						<form class="form-horizontal">
@@ -104,13 +74,17 @@
 							  	<div class="control-group">
 									<label class="control-label" for="focusedInput">Penulis</label>
 									<div class="controls">
-								  		<input class="input-xlarge focused" id="focusedInput" type="text" value="Bisa otomatis keisi sesuai naskah yang lagi dinilai? Pake autocomplete mungkin">
+										<?php
+								  		echo '<input class="input-xlarge focused" id="focusedInput" type="text" value="'.$row['penulis'].'">';
+										?>
 									</div>
 							  	</div>
 							  	<div class="control-group">
 									<label class="control-label" for="focusedInput">Judul</label>
 									<div class="controls">
-								  		<input class="input-xlarge focused" id="focusedInput" type="text" value="Bisa otomatis keisi sesuai naskah yang lagi dinilai? Pake autocomplete mungkin">
+								  		<?php
+								  		echo '<input class="input-xlarge focused" id="focusedInput" type="text" value="'.$row['judul'].'">';
+										?>
 									</div>
 							  	</div>
 							  	<div class="control-group">
@@ -200,32 +174,32 @@
 									
 							  	</div>
 							  	<p>5. Kelengkapan makalah :</p>
-							  	<div class="control-group">
+							  	<div class="control-group" id="group1">
 										<label class="radio">
-											<input type="radio" name="optionsRadios5" id="optionsRadios1" value="option1" checked="">
+											<input type="radio" name="optionsRadios5" id="optionsRadios1" value="option1" checked="" onclick=disabletextbox()>
 											Lengkap
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios5" id="optionsRadios2" value="option2">
+											<input type="radio" name="optionsRadios5" id="optionsRadios2" value="option2" onclick=disabletextbox()>
 											Kurang lengkap (diuraikan dalam bagian C)
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios5" id="optionsRadios3" value="option3">
+											<input type="radio" name="optionsRadios5" id="optionsRadios3" value="option3" onclick=disabletextbox()>
 											Berisi hal-hal yang tidak perlu (diuraikan dalam bagian C)
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios5" id="optionsRadios4" value="option4">
+											<input type="radio" name="optionsRadios5" id="optionsRadios4" value="option4" onclick=disabletextbox()>
 											Mengandung kesalahan (diuraikan dalam bagian C)
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios5" id="optionsRadio5" value="option5">
+											<input type="radio" name="optionsRadios5" id="optionsRadio5" value="option5" onclick=enabletextbox()>
 											Lain-lain :
 								  		</label>
-										<input class="input-xlarge focused" id="focusedInput" type="text" value="Ini di-disabled dulu kalo radio buttonnya ga di-check">
+										<input class="input-xlarge focused" id="focusedInput-lain" type="text" value="Ini di-disabled dulu kalo radio buttonnya ga di-check" disabled> 
 
 							  	</div>
 							  	<p>6. Keterbacaan untuk dipahami :</p>
@@ -368,12 +342,11 @@
 						<form class="form-horizontal">
 							<fieldset>
 								<div class="control-group">
-							  		<label class="control-label" for="fileInput">File upload</label>
-							  		<div class="controls">
-							  			<p><input type="file" name="file" id="file" accept="application/pdf"> .docx, .doc</p>
-							  		</div>
+									<label class="control-label">File Upload</label>
+									<div class="controls">
+								  		<p><input type="file" name="file" id="file" accept="application/pdf"> .pdf, .docx, .doc</p>
+									</div>
 							  	</div>
-							  	
 							</fieldset>
 						</form>
 					</div>
@@ -385,17 +358,26 @@
 				<div class="form-actions">
 					<button type="submit" class="btn btn-primary"><i class="icon-ok"></i> Finish</button>
 					<button type="reset" class="btn">Cancel</button>
-					
 				</div>
 			</fieldset>
 					<!-- content ends -->
 			</div><!--/#content.span10-->
 				</div><!--/fluid-row-->
-		<?php include "modal_settings.php"?>
-		<?php include "footer.php"?>
+		<?php include "modal_settings.php" ?>
+		<?php include "footer.php" ?>
 		
 	</div><!--/.fluid-container-->
 
-	<?php include "script_dependencies.php"?>
+	<?php include "script_dependencies.php" ?>
 </body>
+
+<script>
+	function enabletextbox(){
+		document.getElementById("focusedInput-lain").disabled=false;
+	}
+	function disabletextbox(){
+		document.getElementById("focusedInput-lain").disabled=true;
+	}
+</script>
+
 </html>

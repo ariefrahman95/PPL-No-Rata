@@ -18,7 +18,8 @@
 							</form>
 						</li>
 					</ul>
-				</div><!-- /.nav-collapse -->
+				</div> -->
+				<!-- /.nav-collapse -->
 			</div>
 		</div>
 	</div>
