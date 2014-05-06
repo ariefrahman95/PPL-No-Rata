@@ -57,7 +57,7 @@
 </head>
 
 <body>
-	<?php include "topbar.php"?>
+	<?php include "topbar.php" ?>
 	<div class="container-fluid">
 		<div class="row-fluid">
 				
@@ -134,7 +134,7 @@
 		
 	</div><!--/.fluid-container-->
 
-	<?php include "script_dependencies.php"?>
+	<?php include "script_dependencies.php" ?>
 	
 		
 </body>

@@ -70,10 +70,7 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			
-			
-			<div class="row-fluid sortable">
-				<div class="pagination pagination-centered">
+			<div class="pagination pagination-centered">
 				<ul>
 					<li><a href="#">Prev</a></li>
 					<li class="active"><a href="#">1</a></li>
@@ -83,6 +80,8 @@
 					<li><a href="#">Next</a></li>
 				</ul>
 			</div>
+
+			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-ok"></i> Journals Accepted</h2>
@@ -116,7 +115,8 @@
 						?>
 					</div>
 				</div><!--/span-->
-
+			</div>
+			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-remove"></i> Journals Rejected</h2>
@@ -149,10 +149,10 @@
 							}
 						?>
 					</div>
+				</div>
+
 				</div><!--/span-->
-				 
-			</div><!--/row-->
-			<div class="pagination pagination-centered">
+				<div class="pagination pagination-centered">
 				<ul>
 					<li><a href="#">Prev</a></li>
 					<li class="active"><a href="#">1</a></li>
@@ -162,8 +162,11 @@
 					<li><a href="#">Next</a></li>
 				</ul>
 			</div> 
+			</div><!--/row-->
+			
     		
-					<!-- content ends -->
+
+			<!-- content ends -->
 			</div><!--/#content.span10-->
 				</div><!--/fluid-row-->
 

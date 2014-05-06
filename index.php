@@ -62,7 +62,7 @@ session_start();
 	<?php include "topbar.php" ?>
 		<div class="container-fluid">
 		<div class="row-fluid">
-			<?php include "left_menu.php"?>
+			<?php include "left_menu.php" ?>
 			<noscript>
 				<div class="alert alert-block span10">
 					<h4 class="alert-heading">Warning!</h4>
@@ -72,28 +72,29 @@ session_start();
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			<?
+			<?php
 				if(isset($_SESSION['logged_in'])){
 				if($_SESSION['logged_in']!=null){
 					$user = $_SESSION['logged_in'];
 					echo '<div class="row-fluid sortable">';
-					echo '<div class="box span12">';
-					echo '<div class="box-header well" data-original-title>';
-					echo '<h2><i class="icon-picture"></i>Journal\'s Progress</h2>';
-					echo'</div>';
-					echo '<div class="box-content">';
-					include "database_connection.php";
-					$query_post = "select * from jurnal where diupload_oleh='$user'";
-					$hasil = mysql_query($query_post,$db);
-					while($row = mysql_fetch_array($hasil)){
-							echo '<h3>'.$row['judul'].'</h3>
-								<div class="progress progress-striped progress-success active">
-									<div class="bar" style="width: '.($row['status']*20).'%;">
-									</div>
-								</div>
-						';
-					}
-					echo '</div></div></div>';
+						echo '<div class="box span12">';
+							echo '<div class="box-header well" data-original-title>';
+								echo '<h2><i class="icon-picture"></i>Journal\'s Progress</h2>';
+							echo'</div>';
+							echo '<div class="box-content">';
+								include "database_connection.php";
+								$query_post = "select * from jurnal where diupload_oleh='$user'";
+								$hasil = mysql_query($query_post,$db);
+								while($row = mysql_fetch_array($hasil)){
+									echo '<h3>'.$row['judul'].'</h3>
+									<div class="progress progress-striped progress-success active">
+										<div class="bar" style="width: '.($row['status']*20).'%;">
+										</div>
+									</div>';
+								}
+							echo '</div>
+						</div>
+					</div>';
 				}
 				}
 			?>
@@ -116,12 +117,12 @@ session_start();
 					<!-- content ends -->
 			</div><!--/#content.span10-->
 		</div><!--/fluid-row-->
-		<?php include "modal_settings.php"?>
-		<?php include "footer.php"?>
+		<?php include "modal_settings.php" ?>
+		<?php include "footer.php" ?>
 		
 	</div><!--/.fluid-container-->
 
-	<?php include "script_dependencies.php"?>
+	<?php include "script_dependencies.php" ?>
 	
 </body>
 </html>

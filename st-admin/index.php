@@ -80,6 +80,20 @@
 						<h2><i class="icon-book"></i> Journal Statistics</h2>
 					</div>
 					<div class="box-content">
+						<p>Persentase jurnal yang ditolak, dipublikasikan, dan sedang dalam progress saat ini:</p>
+						<?php include "database_connection.php";
+							$query_jurnal = "select id from jurnal_terpublish";
+							$hasil = mysql_query($query_jurnal,$db);
+							$n_publish = mysql_num_rows($hasil);
+
+							$query_jurnal = "select id from jurnal where status<>'0'";
+							$hasil = mysql_query($query_jurnal,$db);
+							$n_wait = mysql_num_rows($hasil);
+
+							$query_jurnal = "select id from jurnal where status='0'";
+							$hasil = mysql_query($query_jurnal,$db);
+							$n_reject = mysql_num_rows($hasil);
+						?>
 						<div id="donutchart" style="height: 300px;">
 							
             			</div>
@@ -99,10 +113,13 @@
 	<?php include "script_dependencies.php" ?>
 	
 	<script>
+	var nwait = '<?php echo $n_wait;?>';
+	var npublish = '<?php echo $n_publish;?>';
+	var nreject = '<?php echo $n_reject;?>';
 	var data = [
-	{ label: "Waiting Journal",  data: 25},
-	{ label: "Published Journal",  data: 50},
-	{ label: "Rejected Journal",  data: 25}
+	{ label: "Waiting Journal",  data: nwait},
+	{ label: "Published Journal",  data: npublish},
+	{ label: "Rejected Journal",  data: nreject}
 	];
 	if($("#donutchart").length)
 	{
@@ -120,13 +137,6 @@
 		});
 	}
 	
-	</script>
-
-	<script>
-		if(localStorage.username){
-			var username = localStorage.username;
-			document.getElementById("div1").innerHTML='<div class="box span12"><div class="box-header well" data-original-title><h2><i class="icon-picture"></i>Journal\'s Progress</h2></div><div class="box-content"><h3>Journal 1</h3><div class="progress progress-striped progress-success active"><div class="bar" style="width: 10%;"></div></div></div></div>';
-		}
 	</script>
 </body>
 </html>

@@ -68,8 +68,6 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			<div class="row-fluid sortable" id="div1">
-			</div><!--/row-->
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
@@ -77,33 +75,17 @@
 					</div>
 					<div class="box-content">
 						<?php include "database_connection.php";
-							$query_jurnal = "select * from jurnal where status='2'";
+							$query_jurnal = "select id, judul from jurnal where status='2'";
 							$hasil = mysql_query($query_jurnal,$db);
-							if(mysql_num_rows($hasil)==0) {
-								echo '<p>Tidak ada jurnal yang belum dinilai Mitra Bestari</p>';
-							} else {
-								echo'<table class="table table-bordered table-striped table-condensed">
-									<thead>
-										<tr>
-									  		<th>Judul</th>
-									  		<th>Penulis</th>
-									  		<th>Kategori</th>                                          
-								  		</tr>
-							  		</thead>   
-							  		<tbody>';
-							  		while($row = mysql_fetch_array($hasil)){
-										echo '<tr>';
-										echo '<td><a href="preview.php?id='.$row["id"].'">'.$row["judul"].'</a></td>';
-										echo '<td class="center">'.$row["penulis"].'</td>';
-										echo '<td class="center">'.$row["kategori"].'</td>';
-										echo '</tr>';
-									}
-									echo'</tbody>';
-						 		echo '</table>';
+							while($row = mysql_fetch_array($hasil)){
+								echo'<label class="checkbox">';
+								echo'<input type="checkbox" id="Checkbox'.$row['id'].'" value="option1"> <a href="form_penilaian.php?id='.$row["id"].'" target="_blank" >'.$row["judul"].'</a>';
+								 	echo'</label>';
 							}
 						?>
 						<div class="form-actions" align="center">
 							<button type="submit" class="btn btn-danger">Reject</button>
+							<button type="submit" class="btn btn-success">Accept with Revision</button>
 							<button type="submit" class="btn btn-success">Accept</button>
 						</div>
 					</div>
@@ -123,7 +105,7 @@
 											$hasil = mysql_query($query_jurnal,$db);
 											while($row = mysql_fetch_array($hasil)){
 												echo'<label class="checkbox">';
-												echo'<input type="checkbox" id="Checkbox'.$row['id'].'" value="option1"> <a href="download_jurnal.php?id='.$row["id"].'">'.$row["judul"].'</a>';
+												echo'<input type="checkbox" id="Checkbox'.$row['id'].'" value="option1"> <a href="form_penilaian.php?id='.$row["id"].'" target="_blank" >'.$row["judul"].'</a>';
 								  				echo'</label>';
 											}
 									?>
@@ -148,7 +130,7 @@
 											$hasil = mysql_query($query_jurnal,$db);
 											while($row = mysql_fetch_array($hasil)){
 												echo'<label class="checkbox">';
-												echo'<input type="checkbox" id="Checkbox'.$row['id'].'" value="option1"> <a href="download_jurnal.php?id='.$row["id"].'">'.$row["judul"].'</a>';
+												echo'<input type="checkbox" id="Checkbox'.$row['id'].'" value="option1"> <a href="form_penilaian.php?id='.$row["id"].'" target="_blank" >'.$row["judul"].'</a>';
 								  				echo'</label>';
 											}
 									?>
@@ -174,7 +156,7 @@
 											$hasil = mysql_query($query_jurnal,$db);
 											while($row = mysql_fetch_array($hasil)){
 												echo'<label class="checkbox">';
-												echo'<input type="checkbox" id="Checkbox'.$row['id'].'" value="option1"> <a href="download_jurnal.php?id='.$row["id"].'">'.$row["judul"].'</a>';
+												echo'<input type="checkbox" id="Checkbox'.$row['id'].'" value="option1"> <a href="form_penilaian.php?id='.$row["id"].'" target="_blank" >'.$row["judul"].'</a>';
 								  				echo'</label>';
 											}
 									?>
@@ -192,7 +174,7 @@
 
 			<fieldset>
 				<div class="form-actions">
-					<button type="submit" class="btn btn-primary"><i class="icon-ok"> </i> Apply</button>
+					<button type="submit" class="btn btn-primary"><i class="icon-ok"> </i> Apply All Changes</button>
 					<button type="reset" class="btn">Cancel</button>
 				</div>
 			</fieldset>

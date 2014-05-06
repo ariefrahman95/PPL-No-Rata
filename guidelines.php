@@ -58,7 +58,7 @@
 	<?php include "topbar.php" ?>
 		<div class="container-fluid">
 		<div class="row-fluid">
-			<?php include "left_menu.php"?>
+			<?php include "left_menu.php" ?>
 			<noscript>
 				<div class="alert alert-block span10">
 					<h4 class="alert-heading">Warning!</h4>
@@ -86,8 +86,8 @@
 			?>	
 			</div>
 		</div>
-		<?php include "modal_settings.php"?>
-		<?php include "footer.php"?>
+		<?php include "modal_settings.php" ?>
+		<?php include "footer.php" ?>
 		
 		</div><!--/.fluid-container-->
 
