@@ -84,21 +84,36 @@
 					</div>
 					<div class="box-content">
 						<table class="table table-bordered table-striped table-condensed">
-							  <thead>
-								  <tr>
-									  <th>Title</th>
-									  <th>Published Date</th>
-									  <th>Author</th>
-									  <th>Category</th>                                           
-								  </tr>
-							  </thead>   
-							  <tbody>
+							<thead>
+								<tr>
+									<th>Title</th>
+									<th>Published Date</th>
+									<th>Author</th>
+									<th>Category</th>                                           
+								</tr>
+							</thead>   
+							<tbody>
 								<?php include "database_connection.php";
 									$myusername = $_SESSION['logged_in'];
+									
+									define("NUMBER_PER_PAGE", 10);
+									
+									$page = 1;
+									if(isset($_GET['page'])) {
+										$page = $_GET['page'];
+									}
+									$start = ($page-1) * NUMBER_PER_PAGE;
+									
 									$query_jurnal = "select jurnal_terpublish.id, jurnal_terpublish.judul, jurnal_terpublish.tanggal_terbit,
 										jurnal_terpublish.penulis, jurnal_terpublish.kategori, penulis.username
 										from jurnal_terpublish inner join penulis 
 										where penulis.nama_lengkap = jurnal_terpublish.penulis and penulis.username = '$myusername'";
+									
+									// Hitung jumlah seluruh row
+									$total = mysql_num_rows(mysql_query($query_jurnal));
+									
+									// Limit query untuk menampilkan sesuai jumlah halaman paginasi
+									$query_jurnal .= " limit $start, " . NUMBER_PER_PAGE;
 									$hasil = mysql_query($query_jurnal,$db);
 									$count = 0;
 									while($row = mysql_fetch_array($hasil)){
@@ -114,19 +129,20 @@
 										echo '<p>Belum ada jurnal yang dipublish.</p>';
 									}
 							    ?>
-							  </tbody>
-						 </table>  
-						 <div class="pagination pagination-centered">
-						  <ul>
-							<li><a href="#">Prev</a></li>
-							<li class="active">
-							  <a href="#">1</a>
-							</li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">Next</a></li>
-						  </ul>
+							</tbody>
+						</table>  
+						<div class="pagination pagination-centered">
+							<ul>
+								<?php
+									for ($curr_page = 1; $curr_page < ($total / NUMBER_PER_PAGE) + 1; $curr_page++) { 
+										if ($curr_page != $page) {
+											echo '<li><a href=my_journals.php?page='.$curr_page.'>'.$curr_page.'</a></li>';
+										} else {
+											echo '<li class = "active"><a href=#>'.$curr_page.'</a></li>';
+										}
+									}
+								?>
+							</ul>
 						</div>     
 					</div>
 				</div><!--/span-->
