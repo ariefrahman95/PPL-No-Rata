@@ -74,8 +74,6 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			<div class="row-fluid sortable" id="div1">
-			</div><!--/row-->
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
@@ -89,15 +87,17 @@
 				</div><!--/span-->
 			
 			</div><!--/row-->
-					<!-- content ends -->
+			<!-- content ends -->
 			</div><!--/#content.span10-->
 				</div><!--/fluid-row-->
+			</div>
 		<?php include "modal_settings.php" ?>
 		<?php include "footer.php" ?>
 		
 	</div><!--/.fluid-container-->
 
 	<?php include "script_dependencies.php" ?>
+	
 	<script>
 	var data = [
 	{ label: "Waiting Journal",  data: 25},
@@ -121,6 +121,7 @@
 	}
 	
 	</script>
+
 	<script>
 		if(localStorage.username){
 			var username = localStorage.username;

@@ -119,29 +119,32 @@
 						<h2><i class="icon-tasks"></i> Journals On Progress</h2>
 					</div>
 					<div class="box-content">
-						<table class="table table-bordered table-striped table-condensed">
-							  <thead>
-								  <tr>
-									  <th>Judul</th>
-									  <th>Penulis</th>
-									  <th>Kategori</th>                                          
-								  </tr>
-							  </thead>   
-							  <tbody>
-								<?php include "database_connection.php";
-									$query_jurnal = "select * from jurnal";
-									$hasil = mysql_query($query_jurnal,$db);
-									while($row = mysql_fetch_array($hasil)){
+						<?php include "database_connection.php";
+							$query_jurnal = "select * from jurnal where status<>'0'";
+							$hasil = mysql_query($query_jurnal,$db);
+							if(mysql_num_rows($hasil)==0) {
+								echo '<p>Tidak ada jurnal yang sedang dalam proses</p>';
+							} else {
+								echo'<table class="table table-bordered table-striped table-condensed">
+									<thead>
+										<tr>
+									  		<th>Judul</th>
+									  		<th>Penulis</th>
+									  		<th>Kategori</th>                                          
+								  		</tr>
+							  		</thead>   
+							  		<tbody>';
+							  		while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
 										echo '<td><a href="preview.php?id='.$row["id"].'">'.$row["judul"].'</a></td>';
 										echo '<td class="center">'.$row["penulis"].'</td>';
 										echo '<td class="center">'.$row["kategori"].'</td>';
 										echo '</tr>';
 									}
-							    ?>
-							  </tbody>
-						 </table>  
-						    
+									echo'</tbody>';
+						 		echo '</table>';
+							}
+						?>
 					</div>
 				</div><!--/span-->
     			
@@ -150,29 +153,32 @@
 						<h2><i class="icon-trash"></i> Journals Rejected</h2>
 					</div>
 					<div class="box-content">
-						<table class="table table-bordered table-striped table-condensed">
-							  <thead>
-								  <tr>
-									  <th>Judul</th>
-									  <th>Penulis</th>
-									  <th>Kategori</th>                                          
-								  </tr>
-							  </thead>   
-							  <tbody>
-								<?php include "database_connection.php";
-									$query_jurnal = "select * from jurnal";
-									$hasil = mysql_query($query_jurnal,$db);
-									while($row = mysql_fetch_array($hasil)){
+						<?php include "database_connection.php";
+							$query_jurnal = "select * from jurnal where status='0'";
+							$hasil = mysql_query($query_jurnal,$db);
+							if(mysql_num_rows($hasil)==0) {
+								echo '<p>Tidak ada jurnal yang ditolak</p>';
+							} else {
+								echo'<table class="table table-bordered table-striped table-condensed">
+									<thead>
+										<tr>
+									  		<th>Judul</th>
+									  		<th>Penulis</th>
+									  		<th>Kategori</th>                                          
+								  		</tr>
+							  		</thead>   
+							  		<tbody>';
+							  		while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
 										echo '<td><a href="preview.php?id='.$row["id"].'">'.$row["judul"].'</a></td>';
 										echo '<td class="center">'.$row["penulis"].'</td>';
 										echo '<td class="center">'.$row["kategori"].'</td>';
 										echo '</tr>';
 									}
-							    ?>
-							  </tbody>
-						 </table>  
-						    
+									echo'</tbody>';
+						 		echo '</table>';
+							}
+						?>
 					</div>
 				</div><!--/span-->
 				 
