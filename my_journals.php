@@ -1,10 +1,9 @@
-<?php session_start(); ?>
 <?php
-		if(!isset($_SESSION['logged_in'])){?>
-			<script>
-				window.location = "index.php";
-			</script>
-	<?php } ?>
+	session_start();
+	if(!isset($_SESSION['logged_in'])){
+		header('Location: login.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -13,8 +13,9 @@
 						}
 					}
 				?>
-				<li id="left4"><a class="ajax-link" href="list_journals.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Journals Gallery </span></a></li>
-				<li id="left5"><a href="about.php"><i class="icon-lock"></i><span class="hidden-tablet"> About Jurnal Sosioteknologi </span></a></li>
+				<li id="left4"><a class="ajax-link" href="profile.php"><i class="icon-user"></i><span class="hidden-tablet"> My Profile </span></a></li>
+				<li id="left5"><a class="ajax-link" href="list_journals.php"><i class="icon-align-justify"></i><span class="hidden-tablet"> Journals Gallery </span></a></li>
+				<li id="left6"><a href="about.php"><i class="icon-lock"></i><span class="hidden-tablet"> About Jurnal Sosioteknologi </span></a></li>
 				
 			</ul>
 		</div><!--/.well -->

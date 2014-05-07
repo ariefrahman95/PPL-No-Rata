@@ -16,7 +16,7 @@ session_start();
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>Home | SI Jurnal Sosioteknologi</title>
+	<title>Home | Website Jurnal Sosioteknologi</title>
 	<?php include "meta_and_css.php" ?>	
 </head>
 

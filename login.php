@@ -1,6 +1,3 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,11 +50,6 @@
 
 							<div class="input-prepend" title="Password" data-rel="tooltip">
 								<span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" name="password" id="password" type="password" value="password" />
-							</div>
-							<div class="clearfix"></div>
-
-							<div class="input-prepend">
-							<label class="remember" for="remember"><input type="checkbox" id="remember" />Remember me</label>
 							</div>
 							<div class="clearfix"></div>
 
