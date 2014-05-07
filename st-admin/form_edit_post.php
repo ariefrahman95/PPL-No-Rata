@@ -13,7 +13,12 @@
 	-->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Edit Post | Website Jurnal Sosioteknologi</title>
+	<?php
+		if($_GET['location']=='guidelines') $location = 'Guideline';
+		if($_GET['location']=='aboutus') $location = 'About Jurnal Sosioteknologi';
+		if($_GET['location']=='announcements') $location = 'Notification';
+	?>
+	<title>Edit <?php echo $location; ?> | Website Jurnal Sosioteknologi</title>
 	<?php include "meta_and_css.php" ?>
 </head>
 
@@ -34,13 +39,7 @@
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-edit"></i> New
-						<?php
-							if($_GET['location']=='guidelines') echo 'Guideline';
-							if($_GET['location']=='aboutus') echo 'About Sosioteknologi';
-							if($_GET['location']=='announcements') echo 'Notification';
-						?>
-						</h2>
+						<h2><i class="icon-edit"></i> New <?php echo $location; ?></h2>
 					</div>
 					<div class="box-content">
 						<form class="form-horizontal" action="add_post.php?location=<?php echo $_GET['location']?>" method="post" enctype="multipart/form-data">

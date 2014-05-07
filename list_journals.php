@@ -13,7 +13,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>List of Journals - SI Jurnal Sosioteknologi</title>
+	<title>Journals | Website Jurnal Sosioteknologi</title>
 	<?php include "meta_and_css.php" ?>	
 </head>
 

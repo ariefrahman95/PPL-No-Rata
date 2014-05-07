@@ -13,7 +13,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>Guidelines - SI Jurnal Sosioteknologi</title>
+	<title>Guidelines | Website Jurnal Sosioteknologi</title>
 	<?php include "meta_and_css.php" ?>	
 </head>
 
@@ -39,7 +39,7 @@
 					echo '<div class="row-fluid sortable">
 							<div class="box span7">
 								<div class="box-header well" data-original-title>
-									<h3>'.$row['judul'].'</h3>
+									<h2><i class="icon-check"></i> '.$row['judul'].'</h2>
 								</div>
 								<div class="box-content">'.$row['content'].'</div>
 							</div>
