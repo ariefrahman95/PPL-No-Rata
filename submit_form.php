@@ -76,6 +76,22 @@
 								</div>
 							  </div>
 							  <div class="control-group">
+								<label class="control-label" for="prependedInput">Abstract</label>
+								<div class="controls">
+								  <div>
+									<textarea class="autogrow" id="abstrak" name="abstrak">Press enter here, it will grow automatically.</textarea>
+								  </div>
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="prependedInput">Key words</label>
+								<div class="controls">
+								  <div class="input-prepend">
+									<input id="keywords" name="keywords" size="16" type="text">
+								  </div>
+								</div>
+							  </div>
+							  <div class="control-group">
 								<label class="control-label">File Upload</label>
 								<div class="controls">
 								  <p><input type="file" name="file" id="file" accept="application/pdf"> .pdf, .docx, .doc</p>
