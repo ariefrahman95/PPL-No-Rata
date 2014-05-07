@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['redaktur'])){
+		header('Location: login.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,17 +40,7 @@
 			<!-- content starts -->
 			
 			
-			<div class="row-fluid sortable">
-				<div class="pagination pagination-centered">
-				<ul>
-					<li><a href="#">Prev</a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">Next</a></li>
-				</ul>
-			</div>
+			<div class="row-fluid sortable">			
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-briefcase"></i> Journals Published</h2>
@@ -148,17 +144,6 @@
 				</div><!--/span-->
 				 
 			</div><!--/row-->
-			<div class="pagination pagination-centered">
-				<ul>
-					<li><a href="#">Prev</a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">Next</a></li>
-				</ul>
-			</div> 
-    		
 					<!-- content ends -->
 			</div><!--/#content.span10-->
 				</div><!--/fluid-row-->
