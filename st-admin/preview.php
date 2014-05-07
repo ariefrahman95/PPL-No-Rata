@@ -13,7 +13,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>Home - SI Jurnal Sosioteknologi</title>
+	<title>Preview Jurnal | SI Jurnal Sosioteknologi</title>
 	<?php include "meta_and_css.php" ?>
 </head>
 
@@ -34,32 +34,38 @@
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2>Search Journal</h2>
+						<h2>Preview</h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="search.php" method="get" enctype="multipart/form-data">
-							<fieldset>
-								<div class="control-group">
-									<label class="control-label" for="prependedInput">Title</label>
-									<div class="controls">
-										<div class="input-prepend">
-											<input id="title" size="16" type="text">
-										</div>
-									</div>
-								</div>
-								<div class="control-group">
-									<label class="control-label" for="prependedInput">Category</label>
-									<div class="controls">
-										<div class="input-prepend">
-											<input id="category" size="16" type="text">
-										</div>
-									</div>
-								</div>
-								<div>
-									<button>Search</button>
-								</div>
-							</fieldset>
-						</form>
+					<?php
+						include "database_connection.php";
+						if(isset($_GET['id'])) {
+							$id = $_GET['id'];
+							$query_jurnal = "select * from jurnal_terpublish where id = {$id}";
+							$hasil = mysql_query($query_jurnal,$db);
+							$row = mysql_fetch_array($hasil);
+							if($row == NULL) {
+								echo '<p>No journal chosen!</p>';
+							} else {
+								//the path to the PDF file
+								$pdfPath = $row['path_download'];
+								$imgPath = $row['path_preview'];
+								if($imgPath == NULL) {
+									$imgPath = 'img\\\\preview\\\\".$id.".jpg';
+									//echo $imgPath;
+									exec("convert \"{$pdfPath}[0]\" \"{$imgPath}\"");
+									$query_jurnal = "UPDATE jurnal_terpublish SET path_preview = '{$imgPath}' WHERE jurnal_terpublish.id = {$id}";
+									//echo $query_jurnal;
+									$hasil = mysql_query($query_jurnal,$db);
+								}
+								echo '<img src=\"{$imgPath}\"/>';
+								echo '<p>Download journal <a href=\"{$pdfPath}\">here</a>.</p>';
+							}
+						} else {
+							echo '<p>No journal chosen!</p>';
+						}
+						//phpinfo();
+					?>
 					</div>
 				</div><!--/span-->
 			

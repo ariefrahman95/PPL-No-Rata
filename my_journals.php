@@ -19,7 +19,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>My Journals - SI Jurnal Sosioteknologi</title>
+	<title>My Journals | Website Jurnal Sosioteknologi</title>
 	<?php include "meta_and_css.php" ?>	
 </head>
 
@@ -42,7 +42,7 @@
 			<div class="row-fluid sortable">	
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2>My Published Journals</h2>
+						<h2><i class="icon-book"></i> My Published Journals</h2>
 					</div>
 					<div class="box-content">
 						<table class="table table-bordered table-striped table-condensed">

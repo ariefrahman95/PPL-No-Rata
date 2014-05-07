@@ -47,12 +47,16 @@ session_start();
 								include "database_connection.php";
 								$query_post = "select * from jurnal where diupload_oleh='$user'";
 								$hasil = mysql_query($query_post,$db);
-								while($row = mysql_fetch_array($hasil)){
-									echo '<h3>'.$row['judul'].'</h3>
-									<div class="progress progress-striped progress-success active">
-										<div class="bar" style="width: '.($row['status']*20).'%;">
-										</div>
-									</div>';
+								if(mysql_num_rows($hasil)==0) {
+									echo '<p>Tidak ada jurnal yang sedang diproses</p>';
+								} else {
+									while($row = mysql_fetch_array($hasil)){
+										echo '<h3>'.$row['judul'].'</h3>
+										<div class="progress progress-striped progress-success active">
+											<div class="bar" style="width: '.($row['status']*20).'%;">
+											</div>
+										</div>';
+									}
 								}
 							echo '</div>
 						</div>

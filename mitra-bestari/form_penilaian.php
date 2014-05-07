@@ -40,8 +40,12 @@
 
 			<p>Jurnal yang akan dinilai dapat di-download pada tombol "Download Naskah" di bawah: </p>
 			<fieldset>
-			 	<div class="form-actions">
-					<button type="submit" class="btn btn-large btn-primary"><i class="icon-download-alt"></i> Download Naskah</button>
+			 	<div class="form-actions" align="center">
+					<?php
+					echo '<a class="btn btn-large btn-primary" href="../'.$row['path_download'].'" target="_blank">
+						<i class="icon-download-alt"></i> Download Naskah
+					</a>';
+					?>
 				</div>
 			</fieldset>
 
