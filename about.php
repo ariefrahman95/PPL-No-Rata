@@ -31,7 +31,6 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			<img src="img/sostekabout.jpg" width=465> 
 			<?php 
 				include "database_connection.php";
 				$query_post = "select * from post where lokasi='aboutus'";
@@ -40,7 +39,7 @@
 					echo '<div class="row-fluid sortable">
 							<div class="box span7">
 								<div class="box-header well" data-original-title>
-									<h2><i class="icon-user"></i> '.$row['judul'].'</h2>
+									<h2><i class="icon-comment"></i> '.$row['judul'].'</h2>
 								</div>
 								<div class="box-content">'.$row['content'].'</div>
 							</div>
