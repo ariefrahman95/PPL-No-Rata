@@ -44,7 +44,7 @@
 			document.getElementById("li1").innerHTML="<a href=\"profile.php\">Profile</a>";
 			document.getElementById("li2").innerHTML="<a href=\"logout.php\">Logout</a>";
 		} else {
-			document.getElementById("membership").innerHTML="Membership";
+			document.getElementById("membership").innerHTML=" Mitra Bestari ";
 			document.getElementById("li1").innerHTML="<a href=\"login.php\"> Login </a>";
 			document.getElementById("li2").innerHTML="<a href=\"register.php\"> Register </a>";
 		}

@@ -64,14 +64,28 @@
 								</div>
 							  </div>
 							  <div class="control-group">
+								<label class="control-label" for="prependedInput">Organization</label>
+								<div class="controls">
+								  <div class="input-prepend">
+									<input id="organization" name="organization" size="16" type="text">
+								  </div>
+								</div>
+							  </div>
+							  <div class="control-group">
 								<label class="control-label" for="kategori">Category</label>
 								<div class="controls">
 								  <select id="kategori" name="kategori" data-rel="chosen">
-									<option>Option 1</option>
-									<option>Option 2</option>
-									<option>Option 3</option>
-									<option>Option 4</option>
-									<option>Option 5</option>
+									<?php include "database_connection.php";
+										$query_kat = "select * from kategori";
+										$hasil = mysql_query($query_kat,$db);
+										if(mysql_num_rows($hasil)==0) {
+											echo 'Belum ada kategori';
+										} else {
+											while($row = mysql_fetch_array($hasil)) {
+												echo '<option>'.$row['nama'].'</option>';
+											}
+										}
+									?>
 								  </select>
 								</div>
 							  </div>

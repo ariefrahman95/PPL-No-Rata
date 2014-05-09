@@ -31,6 +31,7 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
+			<img src="img/sostekabout.jpg" width=465> 
 			<?php 
 				include "database_connection.php";
 				$query_post = "select * from post where lokasi='aboutus'";
