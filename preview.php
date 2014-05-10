@@ -59,7 +59,7 @@
 									$hasil = mysql_query($query_jurnal,$db);
 								}
 								echo '<img src=\"{$imgPath}\"/>';
-								echo '<p>Download journal <a href=\"{$pdfPath}\">here</a>.</p>';
+								echo '<p>Download journal <a href="'.$pdfPath.'">here</a>.</p>';
 							}
 						} else {
 							echo '<p>No journal chosen!</p>';

@@ -203,7 +203,7 @@
 											<input type="radio" name="optionsRadios5" id="optionsRadio5" value="option5" onclick=enabletextbox()>
 											Lain-lain :
 								  		</label>
-										<input class="input-xlarge focused" id="focusedInput-lain" type="text" value="Ini di-disabled dulu kalo radio buttonnya ga di-check" disabled> 
+										<input class="input-xlarge focused" id="focusedInput-lain" type="text" value="" disabled> 
 
 							  	</div>
 							  	<p>6. Keterbacaan untuk dipahami :</p>
@@ -343,12 +343,13 @@
 						<h2><i class=" icon-list-alt"></i> Dokumen Track Changes (Opsional)</h2>
 					</div>
 					<div class="box-content">
+						<p>Diharapkan menggunakan fitur Track Changes pada Microsoft Word.</p>
 						<form class="form-horizontal">
 							<fieldset>
 								<div class="control-group">
 									<label class="control-label">File Upload</label>
 									<div class="controls">
-								  		<p><input type="file" name="file" id="file" accept="application/pdf"> .pdf, .docx, .doc</p>
+								  		<p><input type="file" name="file" id="file" accept="application/pdf"> .docx, .doc</p>
 									</div>
 							  	</div>
 							</fieldset>
