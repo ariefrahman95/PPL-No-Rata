@@ -29,6 +29,24 @@
 </head>
 
 <body>
+	<?php
+		if(isset($_GET['id'])){
+			$id = $_GET['id'];
+			include "database_connection.php";
+			$query_jurnal = "select * from post where id='$id'";
+			$hasil = mysql_query($query_jurnal,$db);
+			if(mysql_num_rows($hasil)!=1) {
+				echo 'invalid post';
+				header('Location: index.php');
+			}
+			else{
+				while($row = mysql_fetch_array($hasil)){
+					$title = $row['judul'];
+					$content = $row['content'];
+				}
+			}
+		}
+	?>
 	<?php include "topbar.php" ?>
 		<div class="container-fluid">
 		<div class="row-fluid">
@@ -54,14 +72,27 @@
 								<label class="control-label" for="prependedInput">Title</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="post_title" name="post_title" size="16" type="text">
+									<?php
+										if(isset($title)){
+											echo '<input id="post_title" name="post_title" size="16" type="text" value="'.$title.'">';
+										}
+										else{
+											echo '<input id="post_title" name="post_title" size="16" type="text">';
+										}
+									?>
 								  </div>
 								</div>
 							  </div>
 							  <div class="control-group">
 								<label class="control-label" for="post_content">Content</label>
 								<div class="controls">
-									<textarea class="cleditor" id="post_content" name="post_content" rows="3"></textarea>
+									<textarea class="cleditor" id="post_content" name="post_content" rows="3">
+										<?php
+											if(isset($content)){
+												echo $content;
+											}
+										?>
+									</textarea>
 								</div>
 							  </div>
 							  <div class="form-actions">
