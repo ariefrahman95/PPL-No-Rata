@@ -10,20 +10,7 @@
 				<a href="index.php"> <img alt="Logo" src="../img/logo_baru.png" height="100px"/></a>
 				
 				
-				<!-- user dropdown starts -->
-				<div class="btn-group pull-right" >
-					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-						<i class="icon-user"></i><span class="hidden-phone" id="membership"></span>
-						<span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu">
-						<li id="li1"></li>
-						<li class="divider"></li>
-						<li id="li2"></li>
-						<li></li>
-					</ul>
-				</div>
-				<!-- user dropdown ends -->
+				
 				<!--
 				<div class="top-nav nav-collapse">
 					<ul class="nav">
@@ -37,6 +24,8 @@
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
+=======
 	<script type="text/javascript">
 		if (localStorage.username) {
 			var username=localStorage.getItem('username');
@@ -44,9 +33,10 @@
 			document.getElementById("li1").innerHTML="<a href=\"profile.php\">Profile</a>";
 			document.getElementById("li2").innerHTML="<a href=\"logout.php\">Logout</a>";
 		} else {
-			document.getElementById("membership").innerHTML="Membership";
+			document.getElementById("membership").innerHTML=" Mitra Bestari ";
 			document.getElementById("li1").innerHTML="<a href=\"login.php\"> Login </a>";
 			document.getElementById("li2").innerHTML="<a href=\"register.php\"> Register </a>";
 		}
 	</script>
+>>>>>>> b6e294dfa29e4066c088f8c842ef45f9b6cf4cf7
 	<!-- topbar ends -->

@@ -130,12 +130,6 @@
 	</div><!--/.fluid-container-->
 
 	<?php include "script_dependencies.php" ?>
-	<script>
-		if(localStorage.username){
-			var username = localStorage.username;
-			document.getElementById("div1").innerHTML='<div class="box span12"><div class="box-header well" data-original-title><h2><i class="icon-picture"></i>Journal\'s Progress</h2></div><div class="box-content"><h3>Journal 1</h3><div class="progress progress-striped progress-success active"><div class="bar" style="width: 10%;"></div></div></div></div>';
-		}
-	</script>
 </body>
 <script>
 	function reject_checked(){
@@ -176,7 +170,7 @@
 		}
 	}
 	function cancel(){
-		window.location="journal_selection.php";
+		window.location="index.php";
 	}
 	/*function apply(){
 		var xmlhttp;

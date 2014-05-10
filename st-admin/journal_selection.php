@@ -174,12 +174,15 @@
 	}
 	function apply(){
 		var xmlhttp;
+		var xmlhttp2;
 		var state = 0;
 		if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
 			xmlhttp=new XMLHttpRequest();
+			xmlhttp2=new XMLHttpRequest();
 		}
 		else{// code for IE6, IE5
 			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			xmlhttp2=new ActiveXObject("Microsoft.XMLHTTP");
 	    }
 		var i;
 		var reject = "";
@@ -206,19 +209,17 @@
 		}
 		
 		if(reject.length!=0){
-			xmlhttp.open("POST","reject.php",true);
-			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-			xmlhttp.send("count="+count+reject);
+			xmlhttp2.open("POST","reject.php",true);
+			xmlhttp2.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			xmlhttp2.send("count="+count+reject);
 			//alert("reject" + document.getElementById("Checkbox"+i+"b").value);
-			xmlhttp.onreadystatechange = function () {
-				if (xmlhttp.readyState==4 && xmlhttp.status==200){
+			xmlhttp2.onreadystatechange = function () {
+				if (xmlhttp2.readyState==4 && xmlhttp2.status==200){
 					state++;
 				}
 			}
 		}
-		
-		//setTimeout(cancel, 2000);
-		
+		window.location="journal_selection.php";
 	}
 </script>
 </html>

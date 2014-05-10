@@ -26,9 +26,7 @@
 	<?php include "topbar.php" ?>
 		<div class="container-fluid">
 		<div class="row-fluid">
-				
 			<?php include "left_menu.php" ?>
-			
 			<noscript>
 				<div class="alert alert-block span10">
 					<h4 class="alert-heading">Warning!</h4>
@@ -38,8 +36,6 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			
-			
 			<div class="row-fluid sortable">			
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
@@ -74,7 +70,8 @@
 						?>
 					</div>
 				</div><!--/span-->
-
+			</div>
+			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-tasks"></i> Journals On Progress</h2>
@@ -108,7 +105,8 @@
 						?>
 					</div>
 				</div><!--/span-->
-    			
+    		</div>
+			<div class="row-fluid sortable">	
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-trash"></i> Journals Rejected</h2>
@@ -144,9 +142,9 @@
 				</div><!--/span-->
 				 
 			</div><!--/row-->
-					<!-- content ends -->
+			<!-- content ends -->
 			</div><!--/#content.span10-->
-				</div><!--/fluid-row-->
+		</div><!--/fluid-row-->
 
 		<?php include "modal_settings.php" ?>
 		<?php include "footer.php" ?>
