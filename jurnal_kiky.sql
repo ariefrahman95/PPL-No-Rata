@@ -102,6 +102,10 @@ CREATE TABLE IF NOT EXISTS `mitra_bestari` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+INSERT INTO `mitra_bestari` (`id`, `username`, `password`, `email`) VALUES
+(1, 'jokobodho', '12345678', 'jokobodho@alamgaib.com'),
+(2, 'sujiwotejo', '12345678', 'sujiwo@jancukers.com');
+
 -- --------------------------------------------------------
 
 --
