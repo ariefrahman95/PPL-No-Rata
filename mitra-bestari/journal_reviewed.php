@@ -32,16 +32,6 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			<div class="pagination pagination-centered">
-				<ul>
-					<li><a href="#">Prev</a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">Next</a></li>
-				</ul>
-			</div>
 
 			<div class="row-fluid sortable">
 				<div class="box span12">
@@ -66,7 +56,7 @@
 							  		<tbody>';
 							  		while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
-										echo '<td><a href="preview.php?id='.$row["id"].'">'.$row["judul"].'</a></td>';
+										echo '<td><a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a></td>';
 										echo '<td class="center">'.$row["penulis"].'</td>';
 										echo '<td class="center">'.$row["kategori"].'</td>';
 										echo '</tr>';
@@ -101,7 +91,7 @@
 							  		<tbody>';
 							  		while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
-										echo '<td><a href="preview.php?id='.$row["id"].'">'.$row["judul"].'</a></td>';
+										echo '<td><a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a></td>';
 										echo '<td class="center">'.$row["penulis"].'</td>';
 										echo '<td class="center">'.$row["kategori"].'</td>';
 										echo '</tr>';
@@ -114,16 +104,7 @@
 				</div>
 
 				</div><!--/span-->
-				<div class="pagination pagination-centered">
-				<ul>
-					<li><a href="#">Prev</a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">Next</a></li>
-				</ul>
-			</div> 
+				<!--pagination should be here-->
 			</div><!--/row-->
 			
     		

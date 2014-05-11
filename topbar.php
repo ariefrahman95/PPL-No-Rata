@@ -31,7 +31,7 @@
 							<?php 
 							if(isset($_SESSION['logged_in'])){
 								if($_SESSION['logged_in']!=null){
-									echo '<a href="profile.php">Profile</a>';
+									echo '<a href="profile.php"><i class="icon-cog"></i> Profile</a>';
 								}
 							}
 							else{
@@ -44,7 +44,7 @@
 							<?php 
 							if(isset($_SESSION['logged_in'])){
 								if($_SESSION['logged_in']!=null){
-									echo '<a href="logout.php">Logout</a>';
+									echo '<a href="logout.php"><i class="icon-off"></i> Logout</a>';
 								}
 							}
 							else{
@@ -60,7 +60,6 @@
 				<div class="btn-group pull-right">
 					<ul class="nav">
 						<li>
-
 							<form class="navbar-search pull-left" action="search.php" method="get">
 								<input placeholder="Search" class="search-query span2" name="query" type="text">
 							</form>

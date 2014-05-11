@@ -20,12 +20,10 @@
 							</form>
 						</li>
 					</ul>
-				</div><!-- /.nav-collapse -->
+				</div>--><!-- /.nav-collapse -->
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-=======
 	<script type="text/javascript">
 		if (localStorage.username) {
 			var username=localStorage.getItem('username');
@@ -38,5 +36,4 @@
 			document.getElementById("li2").innerHTML="<a href=\"register.php\"> Register </a>";
 		}
 	</script>
->>>>>>> b6e294dfa29e4066c088f8c842ef45f9b6cf4cf7
 	<!-- topbar ends -->

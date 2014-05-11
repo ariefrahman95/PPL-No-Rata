@@ -74,16 +74,16 @@
 							<fieldset>
 								<div class="control-group" id="group2">
 								<?php
-											$query_jurnal = "select id, judul from jurnal where status='1'";
-											$hasil = mysql_query($query_jurnal,$db);
-											$count = mysql_num_rows($hasil);
-											$i=0;
-											while($row = mysql_fetch_array($hasil)){
-												echo'<label class="checkbox" id="Checkbok'.$i.'b">';
-												echo'<input type="checkbox" id="Checkbox'.$i.'b"  name="Checkbox'.$i.'b" value="'.$row['id'].'"> <a href="download_jurnal.php?id='.$row["id"].'">'.$row["judul"].'</a>';
-								  				echo'</label>';
-												$i++;
-											}
+									$query_jurnal = "select id, judul from jurnal where status='1'";
+									$hasil = mysql_query($query_jurnal,$db);
+									$count = mysql_num_rows($hasil);
+									$i=0;
+									while($row = mysql_fetch_array($hasil)){
+										echo'<label class="checkbox" id="Checkbok'.$i.'b">';
+										echo'<input type="checkbox" id="Checkbox'.$i.'b"  name="Checkbox'.$i.'b" value="'.$row['id'].'"> <a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a>';
+								  		echo'</label>';
+										$i++;
+									}
 									?>
 								</div>
 							</fieldset>

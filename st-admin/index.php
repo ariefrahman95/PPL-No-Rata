@@ -39,10 +39,28 @@
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
+						<h2><i class="icon-bell"></i> New Journal</h2>
+					</div>
+					<div class="box-content">
+						<p>Terdapat <a href="journal_selection.php">
+						<?php include "database_connection.php";
+							$query_jurnal = "select id from jurnal where status='1'";
+							$hasil = mysql_query($query_jurnal,$db);
+							$n_new = mysql_num_rows($hasil);
+							echo $n_new;
+						?>
+						</a> jurnal yang <strong>belum diseleksi</strong>.</p>
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+			<div class="row-fluid sortable">
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
 						<h2><i class="icon-signal"></i> Journal Statistics</h2>
 					</div>
 					<div class="box-content">
-						<p>Persentase jurnal yang ditolak, dipublikasikan, dan sedang dalam progress saat ini:</p>
+						<p>Persentase jurnal yang ditolak, dipublikasikan, dan sedang dalam progress dari total semua jurnal yang masuk ke Sosioteknologi:</p>
 						<?php include "database_connection.php";
 							$query_jurnal = "select id from jurnal_terpublish";
 							$hasil = mysql_query($query_jurnal,$db);
@@ -61,7 +79,6 @@
             			</div>
 					</div>
 				</div><!--/span-->
-			
 			</div><!--/row-->
 			<!-- content ends -->
 			</div><!--/#content.span10-->
@@ -73,7 +90,7 @@
 	</div><!--/.fluid-container-->
 
 	<?php include "script_dependencies.php" ?>
-	
+
 	<script>
 	var nwait = '<?php echo $n_wait;?>';
 	var npublish = '<?php echo $n_publish;?>';

@@ -18,7 +18,12 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>List of Journals | Website Jurnal Sosioteknologi</title>
+	<?php
+		if($_GET['location']=='guidelines') $loc = 'Guideline';
+		if($_GET['location']=='aboutus') $loc = 'About Us';
+		if($_GET['location']=='announcements') $loc = 'Notification';
+	?>
+	<title>Edit<?php echo $loc?> Posts | Website Jurnal Sosioteknologi</title>
 	<?php include "meta_and_css.php" ?>	
 </head>
 
@@ -39,19 +44,28 @@
 			<div id="content" class="span10">
 			<!-- content starts -->
 			
-			
-			<div class="row-fluid sortable">			
+			<?php
+				if($loc=='Guideline') $view = '../guidelines.php';
+				if($loc=='About Us') $view = '../about.php';
+				if($loc=='Notification') $view = '../index.php';
+				echo '<p>
+					View published <strong>'.$loc.'</strong> posts <a href="'.$view.'" target="_blank">here</a>
+				</p>';	
+			?>
+			<div class="row-fluid sortable">
 				<div class="box span12">
+							
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-trash"></i> Posts in "<?php echo $_GET['location']?>"</h2>
+						<h2><i class="icon-edit"></i> <?php echo $loc ?> Posts</h2>
 					</div>
 					<div class="box-content">
 						<?php include "database_connection.php";
 							$location = $_GET['location'];
+
 							$query_jurnal = "select * from post where lokasi='$location'";
 							$hasil = mysql_query($query_jurnal,$db);
 							if(mysql_num_rows($hasil)==0) {
-								echo '<p>Tidak ada jurnal yang ditolak</p>';
+								echo '<p>Tidak ada post</p>';
 							} else {
 								echo'<table class="table table-bordered table-striped table-condensed">
 									<thead>
@@ -64,7 +78,10 @@
 							  		while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
 										echo '<td><a href="form_edit_post.php?location='.$location.'&id='.$row["id"].'">'.$row["judul"].'</a></td>';
-										echo '<td class="center"><a href="delete_post.php?id='.$row['id'].'">Delete</a></td>';
+										echo '<td class="center">
+												<a href="form_edit_post.php?id='.$row['id'].'">Edit</a> | 
+												<a href="delete_post.php?id='.$row['id'].'">Delete</a>
+											</td>';
 										echo '</tr>';
 									}
 									echo'</tbody>';

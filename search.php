@@ -36,7 +36,7 @@
 			<div class="row-fluid sortable">	
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2>Search Result</h2>
+						<h2><i class="icon-search"></i> Search Result</h2>
 					</div>
 					<div class="box-content">
 						<?php
