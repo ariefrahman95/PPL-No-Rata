@@ -55,12 +55,18 @@
 						<h2><i class="icon-edit"></i> Form Penilaian Mitra Bestari</h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal">
+						<form class="form-horizontal" action="add_penilaian.php" method="post" enctype="multipart/form-data">
 							<fieldset>
 								<div class="control-group">
-									<label class="control-label" for="focusedInput">Nomor Makalah</label>
+									<label class="control-label" for="nomor_makalah">Nomor Makalah</label>
 									<div class="controls">
 								  		<input class="input-xlarge focused" id="focusedInput" type="text" value="Sistem penomoran di sostek kayak apa bahkan :v">
+										<!--<?php
+											$File = "penilaian.txt";
+											$Handle = fopen($File, 'w');
+											$Data = "Joko\n";
+											fwrite($Handle, $Data);
+										?>-->
 									</div>
 							  	</div>
 							  	<div class="control-group">
@@ -72,14 +78,14 @@
 							  	<div class="control-group">
 									<label class="control-label" for="focusedInput">Untuk Penerbitan</label>
 									<div class="controls">
-								  		<input class="input-xlarge focused" id="focusedInput" type="text" value="Pengennya ini nanti bisa milih opsi penerbitan kapan #ngeyel">
+								  		<input class="input-xlarge focused" id="penerbitan" type="text" value="Pengennya ini nanti bisa milih opsi penerbitan kapan #ngeyel">
 									</div>
 							  	</div>
 							  	<div class="control-group">
 									<label class="control-label" for="focusedInput">Penulis</label>
 									<div class="controls">
 										<?php
-								  		echo '<input class="input-xlarge focused" id="focusedInput" type="text" value="'.$row['penulis'].'">';
+								  		echo '<input class="input-xlarge focused" id="penulis" type="text" value="'.$row['penulis'].'">';
 										?>
 									</div>
 							  	</div>
