@@ -41,7 +41,7 @@ session_start();
 					echo '<div class="row-fluid sortable">';
 						echo '<div class="box span12">';
 							echo '<div class="box-header well" data-original-title>';
-								echo '<h2><i class="icon-tasks"></i> Journal\'s Progress</h2>';
+								echo '<h2><i class="icon-tasks"></i> <i>Progress</i> Jurnal</h2>';
 							echo'</div>';
 							echo '<div class="box-content">';
 								include "database_connection.php";

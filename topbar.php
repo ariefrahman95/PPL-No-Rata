@@ -11,7 +11,7 @@
 				
 				<!-- user dropdown starts -->
 				<div class="btn-group pull-right" >
-					<a class="btn dropdown-toggle" id="login-button" data-toggle="dropdown" href="#">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 						<i class="icon-user"></i><span class="hidden-phone" id="membership">
 							<?php 
 							if(isset($_SESSION['logged_in'])){
@@ -52,7 +52,6 @@
 							}
 							?>
 						</li>
-						<li></li>
 					</ul>
 				</div>
 				<!-- user dropdown ends -->
@@ -60,7 +59,7 @@
 				<!-- language starts -->
 				<div class="btn-group pull-right" >
 					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-						<i class="icon-comment"></i><span class="hidden-phone" id="membership"> Language</span>
+						<i class="icon-comment"></i><span class="hidden-phone" id="language"> Language</span>
 						<span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu">
@@ -75,14 +74,10 @@
 				</div>
 				<!-- language ends -->
 
-				<div class="btn-group pull-right">
-					<ul class="nav">
-						<li>
-							<form class="navbar-search pull-left" action="search.php" method="get">
-								<input placeholder="Search Journal" class="search-query span2" name="query" type="text">
-							</form>
-						</li>
-					</ul>
+				<div class="btn-group navbar-search pull-right">
+					<form action="search.php" method="get">
+						<input placeholder="Search Journal" class="search-query span2" name="query" type="text">
+					</form>
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>
