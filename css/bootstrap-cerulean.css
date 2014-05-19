@@ -265,6 +265,8 @@ a:hover {
   float: left;
   margin-left: 2.127659574%;
   *margin-left: 2.0744680846382977%;
+  background: url ("../img/gallery/2.jpg");
+  
 }
 .row-fluid [class*="span"]:first-child {
   margin-left: 0;
