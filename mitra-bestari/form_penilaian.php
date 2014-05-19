@@ -57,6 +57,7 @@
 					<div class="box-content">
 						<form class="form-horizontal" action="add_penilaian.php" method="post" enctype="multipart/form-data">
 							<fieldset>
+
 								<div class="control-group">
 									<label class="control-label" for="nomor_makalah">Nomor Makalah</label>
 									<div class="controls">
@@ -69,18 +70,21 @@
 										?>-->
 									</div>
 							  	</div>
+							  	
 							  	<div class="control-group">
 							  		<label class="control-label" for="date01">Tanggal Diterima</label>
 							  		<div class="controls">
 										<input type="text" class="input-xlarge datepicker" id="date01" value="02/16/12">
 							  		</div>
 								</div>
+							  	
 							  	<div class="control-group">
 									<label class="control-label" for="focusedInput">Untuk Penerbitan</label>
 									<div class="controls">
 								  		<input class="input-xlarge focused" id="penerbitan" type="text" value="Pengennya ini nanti bisa milih opsi penerbitan kapan #ngeyel">
 									</div>
 							  	</div>
+							  	
 							  	<div class="control-group">
 									<label class="control-label" for="focusedInput">Penulis</label>
 									<div class="controls">
@@ -89,6 +93,7 @@
 										?>
 									</div>
 							  	</div>
+							  	
 							  	<div class="control-group">
 									<label class="control-label" for="focusedInput">Judul</label>
 									<div class="controls">
@@ -97,6 +102,7 @@
 										?>
 									</div>
 							  	</div>
+							  	
 							  	<div class="control-group">
 									<label class="control-label">Status Makalah</label>
 									<div class="controls">
@@ -111,8 +117,11 @@
 								  		</label>
 									</div>
 							  	</div>
+							  	
 							  	<h3>A. Substansi</h3>
+							  	
 							  	<p>1. Relevansi dengan Jurnal Sosioteknologi :</p>
+							  	
 							  	<div class="control-group">
 										<label class="radio">
 											<input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" checked="">
@@ -129,7 +138,9 @@
 											Tidak relevan
 								  		</label>
 							  	</div>
+							  	
 							  	<p>2. Jenis makalah : </p>
+							  	
 							  	<div class="control-group">
 										<label class="radio">
 											<input type="radio" name="optionsRadios2" id="optionsRadios1" value="option1" checked="">
@@ -147,7 +158,9 @@
 								  		</label>
 									
 							  	</div>
+							  	
 							  	<p>3. Keaslian makalah :</p>
+							  	
 							  	<div class="control-group">
 										<label class="radio">
 											<input type="radio" name="optionsRadios3" id="optionsRadios1" value="option1" checked="">
@@ -165,7 +178,9 @@
 								  		</label>
 									
 							  	</div>
+							  	
 							  	<p>4. Kualitas makalah :</p>
+							  	
 							  	<div class="control-group">
 										<label class="radio">
 											<input type="radio" name="optionsRadios4" id="optionsRadios1" value="option1" checked="">
@@ -183,7 +198,9 @@
 								  		</label>
 									
 							  	</div>
+							  	
 							  	<p>5. Kelengkapan makalah :</p>
+							  	
 							  	<div class="control-group" id="group1">
 										<label class="radio">
 											<input type="radio" name="optionsRadios5" id="optionsRadios1" value="option1" checked="" onclick=disabletextbox()>
@@ -212,7 +229,9 @@
 										<input class="input-xlarge focused" id="focusedInput-lain" type="text" value="" disabled> 
 
 							  	</div>
+							  	
 							  	<p>6. Keterbacaan untuk dipahami :</p>
+							  	
 							  	<div class="control-group">
 										<label class="radio">
 											<input type="radio" name="optionsRadios6" id="optionsRadios1" value="option1" checked="">
@@ -230,7 +249,9 @@
 								  		</label>
 									
 							  	</div>
+							  	
 							  	<p>7. Detail penulisan (jika jawabannya tidak, uraikan penjelasan dalam bagian C) :</p>
+							  	
 							  	<ul>
 							  	<li>Kesesuaian judul?</li>
 							  	<div class="control-group">
@@ -246,6 +267,7 @@
 									
 							  	</div>
 							  	<li>Kesesuaian panjang paper?</li>
+							  	
 							  	<div class="control-group">
 										<label class="radio">
 											<input type="radio" name="optionsRadios72" id="optionsRadios1" value="option1" checked="">
@@ -258,6 +280,7 @@
 								  		</label>	
 									
 							  	</div>
+							  	
 							  	<li>Kesesuaian ringkasan/kesimpulan?</li>
 							  	<div class="control-group">
 										<label class="radio">
@@ -271,6 +294,7 @@
 								  		</label>	
 									
 							  	</div>
+							  	
 							  	<li>Kesesuaian daftar pustaka?</li>
 							  	<div class="control-group">
 										<label class="radio">
@@ -285,7 +309,9 @@
 									
 							  	</div>
 							  	</ul>
+								
 								<h3>B. Rekomendasi</h3>
+							  	
 							  	<p>1. Nilai keseluruhan :</p>
 							  	<div class="control-group">
 										<label class="radio">
@@ -309,7 +335,9 @@
 								  		</label>
 									
 							  	</div>
+							  	
 							  	<p>2. Rekomendasi :</p>
+							  	
 							  	<div class="control-group">
 										<label class="radio">
 											<input type="radio" name="optionsRadios9" id="optionsRadios1" value="option1" checked="">
@@ -332,7 +360,9 @@
 								  		</label>
 									
 							  	</div>
+							  	
 							  	<h3>C. Komentar untuk Perubahan</h3>
+							  	
 							  	<div class="control-group">
 									<textarea class="autogrow"></textarea>
 							  	</div>
@@ -348,6 +378,7 @@
 					<div class="box-header well" data-original-title>
 						<h2><i class=" icon-list-alt"></i> Dokumen Track Changes (Opsional)</h2>
 					</div>
+					
 					<div class="box-content">
 						<p>Diharapkan menggunakan fitur Track Changes pada Microsoft Word.</p>
 						<form class="form-horizontal">
