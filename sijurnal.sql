@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 11, 2014 at 01:49 PM
+-- Generation Time: May 19, 2014 at 04:45 PM
 -- Server version: 5.1.37
 -- PHP Version: 5.3.0
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `jurnal` (
 INSERT INTO `jurnal` (`id`, `judul`, `penulis`, `status`, `kategori`, `path_download`, `path_preview`, `diupload_oleh`, `path_form_penilaian`) VALUES
 (1, 'Perilaku Remaja dalam Menggunakan Media', 'Arief Rahman', 2, 'Sosio-komunikasi', 'files/DPPL e-Cow.pdf', 'img/preview/1.jpg', 'arief_rahman', ''),
 (2, 'Makna Ikon Naga, Elemen Utama Arsitektur Tradisional Tionghoa', 'Sugiri Kustedja', 1, 'Sosio-kapital', '', NULL, '', ''),
-(3, 'Orientasi Pengembangan Ilmu dalam Perspektif Islam', 'Furqon Syarief Hidayatulloh', 1, 'Sosio-religi', '', NULL, '', ''),
+(3, 'Orientasi Pengembangan Ilmu dalam Perspektif Islam', 'Furqon Syarief Hidayatulloh', 2, 'Sosio-religi', '', NULL, '', ''),
 (4, 'Incorporating And Converting Biogas Technology Into Household Space', 'Meredian Alam', 0, 'Sosio-dinamika', '', NULL, '', ''),
 (20, 'Strength Journey', 'lolololol', 3, 'Bahasa dan teknologi', 'files/1- Pendahuluan if3240.pdf', NULL, 'destraaaa', ''),
 (21, 'New Journal', 'asdhaldak', 5, 'Bioetika', 'files/2-Data,Info&Knowledge.pdf', NULL, 'destraaaa', '');

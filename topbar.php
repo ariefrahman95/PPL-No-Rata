@@ -61,7 +61,7 @@
 					<ul class="nav">
 						<li>
 							<form class="navbar-search pull-left" action="search.php" method="get">
-								<input placeholder="Search" class="search-query span2" name="query" type="text">
+								<input placeholder="Search Journal" class="search-query span2" name="query" type="text">
 							</form>
 						</li>
 					</ul>
