@@ -7,11 +7,11 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a href="index.php"> <img alt="Logo" src="img/logo_baru.png" height="100px"/></a>
+				<a href="index.php"> <img alt="Logo" src="img/sostekheader.png" height="135px"/></a>
 				
 				<!-- user dropdown starts -->
 				<div class="btn-group pull-right" >
-					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+					<a class="btn dropdown-toggle" id="login-button" data-toggle="dropdown" href="#">
 						<i class="icon-user"></i><span class="hidden-phone" id="membership">
 							<?php 
 							if(isset($_SESSION['logged_in'])){
