@@ -265,6 +265,8 @@ a:hover {
   float: left;
   margin-left: 2.127659574%;
   *margin-left: 2.0744680846382977%;
+  background: url ("../img/gallery/2.jpg");
+  
 }
 .row-fluid [class*="span"]:first-child {
   margin-left: 0;
@@ -887,6 +889,11 @@ input[type="radio"][readonly],
 input[type="checkbox"][readonly] {
   background-color: transparent;
 }
+/* Tambahan */
+#login-button {
+	margin-top: 10px;
+}
+
 .control-group.warning > label,
 .control-group.warning .help-block,
 .control-group.warning .help-inline {
@@ -3080,7 +3087,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-search {
   position: relative;
   float: left;
-  margin-top: 0px;
+  margin-top: 10px;
   margin-bottom: 0;
 }
 .navbar-search .search-query {
