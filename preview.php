@@ -47,19 +47,22 @@
 							if($row == NULL) {
 								echo '<p>No journal chosen!</p>';
 							} else {
-								//the path to the PDF file
+								// Tampilin abstrak
 								$pdfPath = $row['path_download'];
-								$imgPath = $row['path_preview'];
-								if($imgPath == NULL) {
-									$imgPath = 'img\\\\preview\\\\".$id.".jpg';
-									//echo $imgPath;
-									exec("convert \"{$pdfPath}[0]\" \"{$imgPath}\"");
-									$query_jurnal = "UPDATE jurnal_terpublish SET path_preview = '{$imgPath}' WHERE jurnal_terpublish.id = {$id}";
-									//echo $query_jurnal;
-									$hasil = mysql_query($query_jurnal,$db);
-								}
-								echo '<img src=\"{$imgPath}\"/>';
-								echo '<p>Download journal <a href="'.$pdfPath.'">here</a>.</p>';
+								$title = $row['judul'];
+								$penulis = $row['penulis'];
+								$abstract = $row['abstract'];
+								echo '<p><b>Title: </b></p>';
+								echo '<p>'.$title.'</p>';
+								echo '<p><b>Author: </b></p>';
+								echo '<p>'.$penulis.'</p>';
+								echo '<p><b>Abstract: </b></p>';
+								echo '<p>'.$abstract.'</p><br>';
+								if(isset($_SESSION['logged_in'])){
+									if($_SESSION['logged_in']!=null){
+										echo '<p>Download journal <a href="'.$pdfPath.'">here</a>.</p>';
+									}
+								}				
 							}
 						} else {
 							echo '<p>No journal chosen!</p>';

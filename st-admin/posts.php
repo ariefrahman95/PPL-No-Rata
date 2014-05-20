@@ -77,9 +77,9 @@
 							  		<tbody>';
 							  		while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
-										echo '<td><a href="form_edit_post.php?location='.$location.'&id='.$row["id"].'">'.$row["judul"].'</a></td>';
+										echo '<td>'.$row["judul"].'</td>';
 										echo '<td class="center">
-												<a href="form_edit_post.php?id='.$row['id'].'">Edit</a> | 
+												<a href="form_edit_post.php?location='.$_GET['location'].'&id='.$row['id'].'">Edit</a> | 
 												<a href="delete_post.php?id='.$row['id'].'">Delete</a>
 											</td>';
 										echo '</tr>';
