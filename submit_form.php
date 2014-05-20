@@ -2,6 +2,8 @@
 	session_start();
 	if(!isset($_SESSION['logged_in'])){
 		header('Location: login.php');
+	} else {
+		$username = $_SESSION['logged_in'];
 	}
 ?>
 <!DOCTYPE html>
@@ -59,7 +61,13 @@
 								<label class="control-label" for="prependedInput">Authors</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="authors" name="authors" size="16" type="text">
+								  	<?php
+								  		include "database_connection.php";
+								  		$query = 'select * from penulis where username="'.$username.'"';
+								  		$hasil = mysql_query($query,$db);
+								  		$row = mysql_fetch_array($hasil);
+								  		echo '<input id="authors" name="authors" size="16" type="text" value="'.$row['nama_lengkap'].'">';
+									?>
 								  </div>
 								</div>
 							  </div>
@@ -67,7 +75,9 @@
 								<label class="control-label" for="prependedInput">Organization</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="organization" name="organization" size="16" type="text">
+								  	<?php
+								  		echo '<input id="organization" name="organization" size="16" type="text" value="'.$row['organisasi'].'">';
+									?>
 								  </div>
 								</div>
 							  </div>

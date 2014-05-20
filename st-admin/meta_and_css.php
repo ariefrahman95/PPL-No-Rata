@@ -1,4 +1,4 @@
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Website Jurnal Sosioteknologi: portal untuk penulis, redaktur, Mitra Bestari, dan editor.">
 	<meta name="author" content="Pusheen Group | PPL-No-Rata | IF ITB 2011">
 
@@ -35,4 +35,4 @@
 	<![endif]-->
 
 	<!-- The fav icon -->
-	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="shortcut icon" href="img/logo50.png">
