@@ -891,7 +891,7 @@ input[type="checkbox"][readonly] {
 }
 /* Tambahan */
 #login-button {
-	margin-top: 10px;
+	margin-top: 0px;
 }
 
 .control-group.warning > label,
@@ -3087,7 +3087,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-search {
   position: relative;
   float: left;
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 0;
 }
 .navbar-search .search-query {
