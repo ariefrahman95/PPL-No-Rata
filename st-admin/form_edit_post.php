@@ -61,7 +61,17 @@
 						<h2><i class="icon-edit"></i> Write Post</h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="add_post.php?location=<?php echo $_GET['location']?>" method="post" enctype="multipart/form-data">
+						<?php
+							if(isset($_GET['id'])){
+								$dest = "edit_post.php?location=".$_GET['location']."&id=".$_GET['id'];
+								$button = '<button type="submit" class="btn btn-primary">Edit</button>';
+							}
+							else{
+								$dest = "add_post.php".$_GET['location'];
+								$button = '<button type="submit" class="btn btn-primary">Post</button>';
+							}
+						?>
+						<form class="form-horizontal" action="<?php echo $dest ;?>" method="post" enctype="multipart/form-data">
 							<fieldset>
 							  <div class="control-group">
 								<label class="control-label" for="prependedInput">Title</label>
@@ -91,8 +101,8 @@
 								</div>
 							  </div>
 							  <div class="form-actions">
-								<button type="submit" class="btn btn-primary">Post</button>
-								<button type="submit" class="btn">Cancel</button>
+								<?php echo $button; ?>
+							  <button class="btn" type="submit" onclick="cancel()">Cancel</button>
 							  </div>
 							</fieldset>
 						</form>
@@ -111,4 +121,9 @@
 
 	<?php include "script_dependencies.php" ?>
 </body>
+<script>
+	function cancel(){
+		window.location="posts.php";
+	}
+</script>
 </html>
