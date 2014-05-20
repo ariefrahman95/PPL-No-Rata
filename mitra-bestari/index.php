@@ -125,7 +125,7 @@
 
 			<fieldset>
 				<div class="form-actions">
-					<button type="submit" class="btn btn-primary" onclick="apply()"><i class="icon-ok"> </i> Apply</button>
+					<button class="btn btn-primary noty" data-noty-options='{"text":"Please wait...","layout":"center","type":"success"}' onclick="apply()" ><i class="icon-ok"></i> Apply</button>
 					<button type="reset" class="btn" onclick="cancel()">Cancel</button>
 				</div>
 			</fieldset>
