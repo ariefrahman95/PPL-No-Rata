@@ -57,6 +57,24 @@
 				</div>
 				<!-- user dropdown ends -->
 				
+				<!-- language starts -->
+				<div class="btn-group pull-right" >
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="icon-comment"></i><span class="hidden-phone" id="membership"> Language</span>
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li id="li1">
+							<a href="ind/index.php"> Indonesia</a>
+						</li>
+						<li class="divider"></li>
+						<li id="li2">
+							<a href="index.php"> English</a>
+						</li>
+					</ul>
+				</div>
+				<!-- language ends -->
+
 				<div class="btn-group pull-right">
 					<ul class="nav">
 						<li>
