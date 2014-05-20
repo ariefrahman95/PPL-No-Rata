@@ -7,7 +7,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a href="index.php"> <img alt="Logo" src="../img/logo_baru.png" height="100px"/></a>
+				<a href="index.php"> <img alt="Logo" src="../img/sostekheader.png" height="135px"/></a>
 				<!-- user dropdown ends -->
 				<!--
 				<div class="top-nav nav-collapse">

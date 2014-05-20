@@ -9,6 +9,7 @@
 				<li id="left4"><a class="ajax-link" href="posts.php?location=guidelines"><i class="icon-road"></i><span class="hidden-tablet"> Edit Guidelines </span></a></li>
 				<li id="left5"><a class="ajax-link" href="posts.php?location=aboutus"><i class="icon-briefcase"></i><span class="hidden-tablet"> Edit About Us </span></a></li>
 				<li id="left6"><a class="ajax-link" href="posts.php?location=announcements"><i class="icon-bullhorn"></i><span class="hidden-tablet"> Edit Notifications </span></a></li>
+				<li id="left6"><a class="ajax-link" href="editor.php"><i class="icon-user"></i><span class="hidden-tablet"> Editor Page </span></a></li>
 			</ul>
 		</div><!--/.well -->
 	</div><!--/span-->
