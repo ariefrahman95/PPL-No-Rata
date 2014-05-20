@@ -1,9 +1,3 @@
-<?php
-	session_start();
-	if(!isset($_SESSION['logged_in'])){
-		header('Location: login.php');
-	}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +12,8 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>Submit | Website Jurnal Sosioteknologi</title>
-	<?php include "meta_and_css.php" ?>
+	<title>Submit - SI Jurnal Sosioteknologi</title>
+	<?php include "meta_and_css.php" ?>	
 </head>
 
 <body>
@@ -42,66 +36,40 @@
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-edit"></i> Informasi Jurnal Baru</h2>
+						<h2><i class="icon-edit"></i> Publish Journal </h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="add_jurnal.php" method="post" enctype="multipart/form-data">
+						<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
 							<fieldset>
 							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Title</label>
+								<label class="control-label" for="prependedInput">Judul</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="title" name="title" size="16" type="text">
+									<input id="title" size="16" type="text">
 								  </div>
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Authors</label>
+								<label class="control-label" for="prependedInput">Tanggal terbit</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="authors" name="authors" size="16" type="text">
+									<input id="author" size="16" type="text">
 								  </div>
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Organization</label>
+								<label class="control-label" for="prependedInput">Penulis</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="organization" name="organization" size="16" type="text">
+									<input id="author" size="16" type="text">
 								  </div>
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="kategori">Category</label>
-								<div class="controls">
-								  <select id="kategori" name="kategori" data-rel="chosen">
-									<?php include "database_connection.php";
-										$query_kat = "select * from kategori";
-										$hasil = mysql_query($query_kat,$db);
-										if(mysql_num_rows($hasil)==0) {
-											echo 'Belum ada kategori';
-										} else {
-											while($row = mysql_fetch_array($hasil)) {
-												echo '<option>'.$row['nama'].'</option>';
-											}
-										}
-									?>
-								  </select>
-								</div>
-							  </div>
-							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Abstract</label>
-								<div class="controls">
-								  <div>
-									<textarea class="autogrow" id="abstrak" name="abstrak">Press enter here, it will grow automatically.</textarea>
-								  </div>
-								</div>
-							  </div>
-							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Key words</label>
+								<label class="control-label" for="prependedInput">Kategori</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="keywords" name="keywords" size="16" type="text">
+									<input id="author" size="16" type="text">
 								  </div>
 								</div>
 							  </div>

@@ -57,7 +57,7 @@
 							<button type="submit" class="btn btn-primary">Login</button>
 							</p>
 							<br>
-							or if you don't have an account, 
+							Don't have an account?
 							<p class="center span5">
 							<?php
 								if(isset($_GET['submit'])){

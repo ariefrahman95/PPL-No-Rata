@@ -3,7 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 19, 2014 at 10:22 PM
+<<<<<<< HEAD
+-- Generation Time: May 20, 2014 at 05:23 PM
+=======
+-- Generation Time: May 20, 2014 at 02:08 PM
+>>>>>>> 6efa1c5111ff83ef9e5d96a52e4e9707b16fa939
 -- Server version: 5.1.37
 -- PHP Version: 5.3.0
 
@@ -12,57 +16,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `sijurnal`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `editor`
---
-
-CREATE TABLE IF NOT EXISTS `editor` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `nama_lengkap` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `editor`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `jurnal`
---
-
-CREATE TABLE IF NOT EXISTS `jurnal` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `judul` varchar(200) DEFAULT NULL,
-  `penulis` varchar(100) DEFAULT NULL,
-  `status` int(2) NOT NULL DEFAULT '0',
-  `kategori` text,
-  `path_download` varchar(512) NOT NULL,
-  `path_preview` varchar(512) DEFAULT NULL,
-  `diupload_oleh` varchar(255) NOT NULL,
-  `path_form_penilaian` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
-
---
--- Dumping data for table `jurnal`
---
-
-INSERT INTO `jurnal` (`id`, `judul`, `penulis`, `status`, `kategori`, `path_download`, `path_preview`, `diupload_oleh`, `path_form_penilaian`) VALUES
-(1, 'Perilaku Remaja dalam Menggunakan Media', 'Arief Rahman', 2, 'Sosio-komunikasi', 'files/DPPL e-Cow.pdf', 'img/preview/1.jpg', 'arief_rahman', ''),
-(2, 'Makna Ikon Naga, Elemen Utama Arsitektur Tradisional Tionghoa', 'Sugiri Kustedja', 1, 'Sosio-kapital', '', NULL, '', ''),
-(3, 'Orientasi Pengembangan Ilmu dalam Perspektif Islam', 'Furqon Syarief Hidayatulloh', 2, 'Sosio-religi', '', NULL, '', ''),
-(4, 'Incorporating And Converting Biogas Technology Into Household Space', 'Meredian Alam', 0, 'Sosio-dinamika', '', NULL, '', ''),
-(20, 'Strength Journey', 'lolololol', 3, 'Bahasa dan teknologi', 'files/1- Pendahuluan if3240.pdf', NULL, 'destraaaa', ''),
-(21, 'New Journal', 'asdhaldak', 5, 'Bioetika', 'files/2-Data,Info&Knowledge.pdf', NULL, 'destraaaa', '');
 
 -- --------------------------------------------------------
 
@@ -77,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `jurnal_terpublish` (
   `tanggal_terbit` date NOT NULL,
   `kategori` varchar(255) NOT NULL,
   `path_download` varchar(255) NOT NULL,
-  `path_preview` varchar(255) NOT NULL,
+  `abstract` varchar(3000) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
@@ -85,14 +38,24 @@ CREATE TABLE IF NOT EXISTS `jurnal_terpublish` (
 -- Dumping data for table `jurnal_terpublish`
 --
 
+<<<<<<< HEAD
 INSERT INTO `jurnal_terpublish` (`id`, `judul`, `penulis`, `tanggal_terbit`, `kategori`, `path_download`, `path_preview`) VALUES
-(1, 'Punden Berundak Gunung Padang "Refleksi Adaptasi Lingkungan dari Masyarakat Megalitik"', 'Lutfi Yondri', '2014-04-25', 'Kategori 1', 'files/1 Yondri.pdf', ''),
+(1, 'Punden Berundak Gunung Padang "Refleksi Adaptasi Lingkungan dari Masyarakat Megalitik"', 'Lutfi Yondri', '2014-04-25', 'Kategori 1', 'files/1 Yondri.pdf', 'img\\preview\\".$id.".jpg'),
 (2, 'Analisis Sikap Multiatribut Fishbein Mengenai Atribut Obat Herbal Merek Tolak Angin Sido Muncul di Kota Bandung', 'Windriani Puspita, RahUtami Nugrahani', '2014-04-25', 'Kategori Kategori', 'files/2 Windriani.pdf', ''),
 (3, 'Partisipasi Masyarakat dan Nelayan dalam Mengurangi Pencemaran Air Laut di Kawasan Pantai Manado-Sulawesi Utara', 'Chairil Nur Siregar', '2014-04-25', '', 'files/3 Chairil.pdf', ''),
 (4, 'Hubungan Fakta Geopolitik dengan Perencanaan Bahasa', 'Yani Suryani', '2014-04-25', '', 'files/4 Yani.pdf', ''),
 (5, 'Memaknai Pesan Spiritual Ajaran Agama dalam Membangun Karakter Kasalehan Sosial', 'Yedi Yurwanto', '2014-04-25', '', 'files/5 Yedi.pdf', ''),
 (6, 'Fenomena Bahasa Baliho Sebagai Identitas Diri Tokoh Cerminan Karakter Budaya', 'Sulastri, Ronidin', '2014-04-25', '', 'files/6 Sulastri.pdf', ''),
 (7, 'Fleksibilitas Ruang Kelas sebagai Upaya Memenuhi Kebutuhan dalam Membangun Motivasi Anak TK', 'R. Rr. Hasri Sulistiyani, Ruly Darmawan, Lies Neni Budiarti', '2014-04-25', '', 'files/7 Hasri.pdf', '');
+=======
+INSERT INTO `jurnal_terpublish` (`id`, `judul`, `penulis`, `tanggal_terbit`, `kategori`, `path_download`, `abstract`) VALUES
+(1, 'Punden Berundak Gunung Padang "Refleksi Adaptasi Lingkungan dari Masyarakat Megalitik"', 'Lutfi Yondri', '2014-04-25', 'Kategori 1', 'files/1 Yondri.pdf', 'Punden berundak Gunung Padang merupakan hasil temuan kembali pada tahun 1979. Sebelumnya temuan ini pernah dicatat oleh N.J. Krom pada tahun 1914. Sejak penemuan kembali pada tahun 1979, berturut-turut telah dilakukan penelitian oleh tim baik dari Direktorat Purbakala, PUSPAN (saat sekarang bernama Pusat Penelitian dan Pengembangan Arkeologi Nasional), Balai Arkeologi Bandung, Pemerintah Daerah, serta berbagai kelompok masyarakat yang mencoba menggali nilai-nilai lain yang terkandung dalam tinggalan tersebut. Dalam tulisan ini akan dibahas tentang fisik dan pola susun balok-balok batu penyusun struktur punden berundak yang disimpulkan merupakan refleksi adaptasi terhadap kondisi lingkungan dari masyarakat pendukung tradisi budaya megalitik pada masa lalu masa lalu.<br> Kata kunci: nilai, pola fisik dan tumpukan, struktur, pundan berundak, adaptasi.'),
+(2, 'Analisis Sikap Multiatribut Fishbein Mengenai Atribut Obat Herbal Merek Tolak Angin Sido Muncul di Kota Bandung', 'Windriani Puspita, RahUtami Nugrahani', '2014-04-25', 'Kategori Kategori', 'files/2 Windriani.pdf', 'Metode pengobatan herbal saat ini diyakini sebagai metode pola hidup sehat. Meningkatnya kecenderungan ini karena masyarakat berkeyakinan mengonsumsi obat alami relatif lebih aman di bandingkan dengan obat sintetik. Hal ini yang menjadi latar belakang dilakukan penelitian mengenai sikap konsumen mengenai produk obat herbal merek Tolak Angin Sido Muncul di kota Bandung. Metode analisis data yang digunakan dalam penelitian ini adalah model multi atribut fishbein yaitu attitude toward to object model dan theory of reasoned action. Atribut yang digunakan dalam penelitian ini adalah kualitas produk, fitur produk, desain produk, merek, kemasan, promosi penjualan, layanan pelengkap dan harga. Variable norma subjektif yang digunakan adalah keluarga, teman, media, penjual, dan orang lain. Berdasarkan hasil penelitian dan analisis yang telah dilakukan disimpulkan bahwa: (i) atribut yang dipertimbangkan oleh konsumen memiliki nilai rata-rata 1.06. Atribut yang dianggap paling penting oleh responden adalah atribut kualitas dari sisi keampuhan khasiat obat (performance) dengan nilai 1.75, sedangkan nilai evaluasi terendah adalah atribut layanan pelengkap dari sisi konsultasi gratis (consult) dengan nilai 0.1. (ii) Total nilai sikap konsumen (Ao) sebesar 19.35. Sikap yang dianggap paling baik oleh konsumen adalah sikap mengenai atribut harga dari sisi harga murah (pricing) dengan nilai 2.71, sedangkan nilai sikap terendah adalah sikap mengenai atribut layanan pendukung dari sisi konsultasi gratis (consult) dengan nilai 0. (iii) Total nilai norma subjektif (SN) sebesar 5.46. Norma subjektif yang dianggap paling dominan dalam memengaruhi keputusan konsumen adalah media dengan nilai 2.36, sedangkan norma subjektif paling rendah adalah orang lain dengan nilai 0.28.<br> Kata kunci: atribut produk, sikap multi atribut fishbein, norma subjektif.'),
+(3, 'Partisipasi Masyarakat dan Nelayan dalam Mengurangi Pencemaran Air Laut di Kawasan Pantai Manado-Sulawesi Utara', 'Chairil Nur Siregar', '2014-04-25', '', 'files/3 Chairil.pdf', 'Kondisi pantai Manado yang tercemari limbah setelah direklamasi untuk membangun gedung-gedung hotel, perkantoran dan "mall" yang megah merupakan masalah yang menjadi titik awal penelitian ini. Penelitian ini bertujuan untuk mengurangai pencemaran atau polusi laut di tepi pantai Manado. Usaha ini dapat dilakukan di antaranya melalui partisipasi masyarakat dalam pengurangan polusi atau pencemaran laut di tepi pantai. Untuk mengatasi masalah sampah, masyarakat berpartisipasi dengan cara berkelompok. Upaya melibatkan masyarakat untuk membersihkan pantai dilakukan melalui pendekatan sosiokultural untuk mengubah prilaku yang kurang mendukung upaya tersebut.<br> Kata kunci: Partisipasi masyarakat, pencemaran air laut, kawasan pantai Manado, sosiokultural.'),
+(4, 'Hubungan Fakta Geopolitik dengan Perencanaan Bahasa', 'Yani Suryani', '2014-04-25', '', 'files/4 Yani.pdf', 'Geopolitik berperan penting terhadap eksistensi sebuah bahasa dan bangsa. Perencanaan bahasa di sebuah negara menjadi penting karena dapat berperan menjaga keutuhan bangsa, melancarkan hubungan diplomatik, dan melakukan ekspansi bahasa bagi kebutuhan industri dan ekonomi. Dari negara-negara yang terdapat di lima benua, didapat simpulan bahwa geopolitik sebuah negara berperan besar terhadap perencanaan bahasa di negara tersebut. Negara yang situasi geopolitiknya stabil dapat melakukan ekspansi bahasa ke negara lain. Sementara itu, negara dengan geopolitik yang masih bergejolak sangat memerlukan perencanaan bahasa yang matang.<br> Kata kunci: geopolitik, perencanaan bahasa, ekspansi.'),
+(5, 'Memaknai Pesan Spiritual Ajaran Agama dalam Membangun Karakter Kasalehan Sosial', 'Yedi Purwanto', '2014-04-25', '', 'files/5 Yedi.pdf', 'Adanya fenomena bahwa kesalehan individu kurang berdampak pada kesalehan sosial merupakan latar belakang kajian ini. Pilar agama Islam (Rukun Islam) tidak bisa dipahami hanya sebagai bentuk kewajiban ritual individual seorang muslim dengan Sang Khalik, melainkan juga mengandung maksud bahwa kelima hal itu menjadi suatu sarana membina hubungan sosial antara seorang muslim dengan orang lain, bahkan dengan makhluk lainya. Dengan kata lain, kewajiban menjalankan rukun Islam, memenuhi kewajiban spiritual seseorang (muslim) juga kewajiban sosial. Pada akhirnya hal tersebut akan membentuk karakter kesalehan sosial. Kelima rukun Islam tersebut secara sosiologis memberikan pemahaman bahwa di dalam menjalankan kewajiban ritual agama, seorang muslim hendaknya memenuhi aspek lainnya, yaitu membina hubungan harmonis dengan sesama manusia. Dengan demikian maka terciptalah keharmonisan hubungan secara vertikal dengan Sang Pencipta (hablum minallah), juga hubungan harmonis dengan manusia (hablum minannas). Jika kedua aspek sudah terpenuhi maka akan menjadi nyatalah perwujudan seorang insan kamil atau manusia sempurna.<br> Kata kunci: manusia, insan, bani adam, kesalehan sosial.'),
+(6, 'Fenomena Bahasa Baliho Sebagai Identitas Diri Tokoh Cerminan Karakter Budaya', 'Sulastri, Ronidin', '2014-04-25', '', 'files/6 Sulastri.pdf', 'Keyakinan dan ide-ide sering diiklankan di billboard melalui bahasa dan simbol. Oleh karena itu, keyakinan dan ide-ide pada billboard dapat diteliti dengan menggunakan analisis tekstual. Billboard dapat dianggap sebagai salah satu kekayaan budaya dan oleh karena itu tidak dapat dipisahkan dari aspek identitas, yang dibentuk melalui ideologi dan dapat dibangun melalui kesadaran perilaku individu. Teks billboard tampak sederhana tetapi dapat ditafsirkan ke dalam berbagai tingkatan dan makna. Selama proses membaca billboard, peran "mengundang" dan "mengundang" bisa menjadi "memerintah" dan "yang diperintah". Bahasa billboard mungkin membuat orang tidak ekspresif dan non-eksperimental tetapi dapat menghasilkan bahasa ekspresif yang dapat membawa pencerahan dan kecerdasan. Bahasa ''terlihat'' dan ''tak terlihat'' tidak bisa menghindari penafsiran sederhana atau terkendali dan bahkan makna ganda karena bahasa pada billboard menggunakan gaya bahasa hiperbola atau melebih-lebihkan gaya. Teks-teks billboard juga dikemas dalam simbol dan tanda yang tidak berubah-ubah. Melalui semiotika, aspek tanda dan simbol yang tersembunyi dalam bahasa billboard dapat direpresentasikan dan di analisis secara rinci. Pendekatan semiotika menjelaskan hubungan antara satu tanda dengan tanda lain yang mewakilinya. Selain itu, ada posisi yang sama antara representasi dari apa yang tersedia dan representasi apa yang tidak tersedia, antara "mewakili apa yang ada" dengan "apa yang tidak ada", yang diwakili".<br> Kata kunci: bahasa billboard, identitas, perilaku, semiotik, tanda dan simbol.'),
+(7, 'Fleksibilitas Ruang Kelas sebagai Upaya Memenuhi Kebutuhan dalam Membangun Motivasi Anak TK', 'R. Rr. Hasri Sulistiyani, Ruly Darmawan, Lies Neni Budiarti', '2014-04-25', '', 'files/7 Hasri.pdf', 'Metode pembelajaran Taman Kanak-kanak (TK) senantiasa berkembang untuk mengoptimalkan pembelajaran dan meningkatkan motivasi bermain-belajar anak. Salah satu metode pembelajaran yang dikembangkan yaitu pembelajaran atraktifdengan penataan lingkungan di luar dan dalam kelas sebagai pilar pertamanya. Penataan lingkungan kelas di beberapa TK bukanlah hal mudah karena terkendala oleh keterbatasan lahan atau keleluasaan mengubah bangunanyang ada.Oleh karena itu, pada penelitian ini diuraikan peran fleksibilitas ruang sebagai upaya memenuhi kebutuhan dalam membangun motivasi bermain-belajar anakpada TK dengan keterbatasan lahan.Penelitian ini menggunakan metode kualitatif bersifat deskriptif dengan studi kasus TK Bunda Ganesa Bandung.Analisis menggunakan quality learning instrument (QLI) yang ditriangulasikan dengan teori motivasi Maslow dan teori fleksibilitas ruang oleh Monahan, serta hasil wawancara.Hasil penelitian menunjukkan fleksibilitas ruang kategori fluiditylebih berperan dalam menunjang motivasi bermain-belajar melalui pemenuhan kebutuhan dan kenyamanan ketika anak berkegiatan, sedangkan fleksibilitas versatilitydan modifiability juga berperan dalam menangani perubahan kebutuhan ruang pada keterbatasan lahan maupun bangunan yang ada.<br> Kata kunci: fleksibilitas ruang, kebutuhan ruang anak, ruang bermain-belajar, motivasi anak TK.');
 
 -- --------------------------------------------------------
 
@@ -229,3 +192,4 @@ CREATE TABLE IF NOT EXISTS `redaktur` (
 
 INSERT INTO `redaktur` (`id`, `username`, `password`, `email`) VALUES
 (2, 'admin_sostek', 'sostek_feat_if', 'destra.bintang.perkasa@gmail.com');
+>>>>>>> 6efa1c5111ff83ef9e5d96a52e4e9707b16fa939

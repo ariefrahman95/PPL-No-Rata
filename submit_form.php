@@ -2,6 +2,8 @@
 	session_start();
 	if(!isset($_SESSION['logged_in'])){
 		header('Location: login.php');
+	} else {
+		$username = $_SESSION['logged_in'];
 	}
 ?>
 <!DOCTYPE html>
@@ -42,7 +44,7 @@
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-edit"></i> Submit New Journal </h2>
+						<h2><i class="icon-edit"></i> New Journal's Information</h2>
 					</div>
 					<div class="box-content">
 						<form class="form-horizontal" action="add_jurnal.php" method="post" enctype="multipart/form-data">
@@ -59,7 +61,13 @@
 								<label class="control-label" for="prependedInput">Authors</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="authors" name="authors" size="16" type="text">
+								  	<?php
+								  		include "database_connection.php";
+								  		$query = 'select * from penulis where username="'.$username.'"';
+								  		$hasil = mysql_query($query,$db);
+								  		$row = mysql_fetch_array($hasil);
+								  		echo '<input id="authors" name="authors" size="16" type="text" value="'.$row['nama_lengkap'].'">';
+									?>
 								  </div>
 								</div>
 							  </div>
@@ -67,7 +75,9 @@
 								<label class="control-label" for="prependedInput">Organization</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="organization" name="organization" size="16" type="text">
+								  	<?php
+								  		echo '<input id="organization" name="organization" size="16" type="text" value="'.$row['organisasi'].'">';
+									?>
 								  </div>
 								</div>
 							  </div>
