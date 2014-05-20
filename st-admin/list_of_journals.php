@@ -88,15 +88,19 @@
 										<tr>
 									  		<th>Judul</th>
 									  		<th>Penulis</th>
-									  		<th>Kategori</th>                                          
+									  		<th>Kategori</th>
+											<th>Abstrak</th>
+											<th>Status</th>
 								  		</tr>
 							  		</thead>   
 							  		<tbody>';
 							  		while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
 										echo '<td><a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a></td>';
-										echo '<td class="center">'.$row["penulis"].'</td>';
-										echo '<td class="center">'.$row["kategori"].'</td>';
+										echo '<td>'.$row["penulis"].'</td>';
+										echo '<td>'.$row["kategori"].'</td>';
+										echo '<td>'.$row["abstrak"].'</td>';
+										echo '<td>'.$row["status"].'</td>';
 										echo '</tr>';
 									}
 									echo'</tbody>';

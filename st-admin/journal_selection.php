@@ -74,7 +74,7 @@
 							<fieldset>
 								<div class="control-group" id="group2">
 								<?php
-									$query_jurnal = "select id, judul from jurnal where status='1'";
+									$query_jurnal = "select * from jurnal where status='1'";
 									$hasil = mysql_query($query_jurnal,$db);
 									$count = mysql_num_rows($hasil);
 									$i=0;
@@ -219,7 +219,7 @@
 				}
 			}
 		}
-		window.location="journal_selection.php";
+		setTimeout(cancel, 2000);
 	}
 </script>
 </html>

@@ -42,28 +42,13 @@
 			<?php
 		}
 		else {
-			?>
-			<script type="text/javascript">
-				localStorage.username='<?php echo $myusername;?>';
-				var d = new Date();
-				d.setDate(d.getDate() + 30);
-				var n = d.getTime();
-				localStorage.expired_time=n; 
-			</script>
-			<?php
-				if(isset($_GET['submit'])){
-			?>
-				<script>
-					window.location="submit_form.php";
-				</script>
-			<?php
-				}else{
+				session_start();
+				$_SESSION['mibes'] = $myusername;
 			?>
 				<script>
 					window.location="index.php";
 				</script>
 			<?php
-			}
 		}
 	}
 ?>
