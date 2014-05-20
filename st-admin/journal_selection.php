@@ -74,7 +74,7 @@
 							<fieldset>
 								<div class="control-group" id="group2">
 								<?php
-									$query_jurnal = "select id, judul from jurnal where status='1'";
+									$query_jurnal = "select * from jurnal where status='1'";
 									$hasil = mysql_query($query_jurnal,$db);
 									$count = mysql_num_rows($hasil);
 									$i=0;
@@ -117,7 +117,7 @@
 
 			<fieldset>
 				<div class="form-actions">
-					<button type="submit" class="btn btn-primary" onclick="apply()"><i class="icon-ok"> </i> Apply</button>
+					<button class="btn btn-primary noty" data-noty-options='{"text":"Please wait...","layout":"center","type":"success"}' onclick="apply()" ><i class="icon-ok"></i> Apply</button>
 					<button type="reset" class="btn" onclick="cancel()">Cancel</button>
 				</div>
 			</fieldset>
@@ -219,7 +219,7 @@
 				}
 			}
 		}
-		window.location="journal_selection.php";
+		setTimeout(cancel, 2000);
 	}
 </script>
 </html>

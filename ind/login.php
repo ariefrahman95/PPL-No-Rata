@@ -22,7 +22,7 @@
 		
 			<div class="row-fluid">
 				<div class="span12 center login-header">
-					<h2>Login to Jurnal Sosioteknologi Website</h2>
+					<h2>Masuk ke Website Jurnal Sosioteknologi</h2>
 				</div><!--/span-->
 			</div><!--/row-->
 			
@@ -31,7 +31,7 @@
 					<?php if (isset($_GET['submit'])){
 					?>
 						<div class="alert alert-info">
-							Please login with your Username and Password.
+							Mohon mengisi Username and Password.
 						</div>
 					<?php }?>
 					<?php
@@ -54,10 +54,10 @@
 							<div class="clearfix"></div>
 
 							<p class="center span5">
-							<button type="submit" class="btn btn-primary">Login</button>
+							<button type="submit" class="btn btn-primary">Masuk</button>
 							</p>
 							<br>
-							or if you don't have an account, 
+							Belum punya akun? 
 							<p class="center span5">
 							<?php
 								if(isset($_GET['submit'])){

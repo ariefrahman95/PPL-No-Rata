@@ -7,19 +7,9 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a href="index.php"> <img alt="Logo" src="../img/sostekheader.png" height="135px"/></a>
-				<!-- user dropdown ends -->
-				<!--
-				<div class="top-nav nav-collapse">
-					<ul class="nav">
-						<li>
-							<form class="navbar-search pull-left">
-								<input placeholder="Search" class="search-query span2" name="query" type="text">
-							</form>
-						</li>
-					</ul>
-				</div> -->
-				<!-- /.nav-collapse -->
+
+				<a href="index.php"> <img alt="Logo" src="img/sostekheader.png" height="135px"/></a>
+
 			</div>
 		</div>
 	</div>

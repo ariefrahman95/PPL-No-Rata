@@ -7,7 +7,11 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
+<<<<<<< HEAD
+				<a href="index.php"> <img alt="Logo" src="../img/sostekheader.png" height="135px"/></a>
+=======
 				<a href="index.php"> <img alt="Logo" src="img/sostekheader.png" height="135px"/></a>
+>>>>>>> 6efa1c5111ff83ef9e5d96a52e4e9707b16fa939
 				
 				<!-- user dropdown starts -->
 				<div class="btn-group pull-right" >
@@ -31,7 +35,7 @@
 							<?php 
 							if(isset($_SESSION['logged_in'])){
 								if($_SESSION['logged_in']!=null){
-									echo '<a href="profile.php"><i class="icon-cog"></i> Profile</a>';
+									echo '<a href="profile.php"><i class="icon-cog"></i> Profil</a>';
 								}
 							}
 							else{
@@ -44,7 +48,7 @@
 							<?php 
 							if(isset($_SESSION['logged_in'])){
 								if($_SESSION['logged_in']!=null){
-									echo '<a href="logout.php"><i class="icon-off"></i> Logout</a>';
+									echo '<a href="logout.php"><i class="icon-off"></i> Keluar</a>';
 								}
 							}
 							else{
@@ -52,7 +56,6 @@
 							}
 							?>
 						</li>
-						<li></li>
 					</ul>
 				</div>
 				<!-- user dropdown ends -->
@@ -60,7 +63,7 @@
 				<!-- language starts -->
 				<div class="btn-group pull-right" >
 					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-						<i class="icon-comment"></i><span class="hidden-phone" id="membership"> Bahasa</span>
+						<i class="icon-comment"></i><span class="hidden-phone" id="language"> Bahasa</span>
 						<span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu">
@@ -75,14 +78,11 @@
 				</div>
 				<!-- language ends -->
 
-				<div class="btn-group pull-right">
-					<ul class="nav">
-						<li>
-							<form class="navbar-search pull-left" action="search.php" method="get">
-								<input placeholder="Cari Jurnal" class="search-query span2" name="query" type="text">
-							</form>
-						</li>
-					</ul>
+				<div class="btn-group navbar-search pull-right">
+					<form action="search.php" method="get">
+						<input placeholder="Cari Jurnal" class="search-query span2" name="query" type="text">
+					</form>
+				</div><!--/.nav-collapse -->
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>

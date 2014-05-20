@@ -265,8 +265,6 @@ a:hover {
   float: left;
   margin-left: 2.127659574%;
   *margin-left: 2.0744680846382977%;
-  background: url ("../img/gallery/2.jpg");
-  
 }
 .row-fluid [class*="span"]:first-child {
   margin-left: 0;
@@ -889,11 +887,14 @@ input[type="radio"][readonly],
 input[type="checkbox"][readonly] {
   background-color: transparent;
 }
+<<<<<<< HEAD
+=======
 /* Tambahan */
 #login-button {
 	margin-top: 0px;
 }
 
+>>>>>>> 6efa1c5111ff83ef9e5d96a52e4e9707b16fa939
 .control-group.warning > label,
 .control-group.warning .help-block,
 .control-group.warning .help-inline {
@@ -3087,7 +3088,11 @@ input[type="submit"].btn.btn-mini {
 .navbar-search {
   position: relative;
   float: left;
+<<<<<<< HEAD
+  margin-top: 6px;
+=======
   margin-top: 0px;
+>>>>>>> 6efa1c5111ff83ef9e5d96a52e4e9707b16fa939
   margin-bottom: 0;
 }
 .navbar-search .search-query {
