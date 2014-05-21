@@ -45,7 +45,7 @@ session_start();
 							echo'</div>';
 							echo '<div class="box-content">';
 								include "database_connection.php";
-								$query_post = "select * from jurnal where diupload_oleh='$user'";
+								$query_post = "select * from jurnal where diupload_oleh='$user' and status<>0";
 								$hasil = mysql_query($query_post,$db);
 								if(mysql_num_rows($hasil)==0) {
 									echo '<p>Tidak ada jurnal yang sedang diproses</p>';

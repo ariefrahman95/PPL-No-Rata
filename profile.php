@@ -88,7 +88,7 @@
 				if($_SESSION['logged_in']!=null){
 					$user = $_SESSION['logged_in'];
 					echo '<div class="row-fluid sortable">';
-						echo '<div class="box span12">';
+						echo '<div class="box span6">';
 							echo '<div class="box-header well" data-original-title>';
 								echo '<h2><i class="icon-edit"></i> Profile </h2>';
 							echo'</div>';
@@ -99,14 +99,6 @@
 								$hasil = mysql_query($query_post,$db);
 								$row = mysql_fetch_array($hasil);
 								
-								echo '
-
-
-
-								';
-
-
-
 								echo '<form class="form-horizontal" action="update_profile.php" method="post" enctype="multipart/form-data">
 									<fieldset>
 									  <div class="control-group">
@@ -118,13 +110,15 @@
 									  <div class="control-group">
 										<label class="control-label" for="appendedInput">Password</label>
 										<div class="controls">
-										  <input id="password" name="password" size="16" type="password" value="'.$row['password'].'">
+											<input class="input focused" name="password" id="password" type="password" value="'.$row['password'].'" onkeyup="password_check()">
+											<p class="help-block" id="status2"></p>
 										</div>
 									  </div>
 									  <div class="control-group">
 										<label class="control-label" for="appendedInput">Confirm Password</label>
 										<div class="controls">
-										  <input id="passwordconfirmed" name="passwordconfirmed" size="16" type="password" value="'.$row['password'].'">
+										  <input class="input focused" name="password2" id="password2" type="password" value="'.$row['password'].'" onkeyup="password2_check()">
+										  <p class="help-block" id="status3"></p>
 										</div>
 									  </div>
 									  <div class="control-group">
