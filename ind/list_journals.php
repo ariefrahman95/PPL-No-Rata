@@ -43,10 +43,10 @@
 						<table class="table table-bordered table-striped table-condensed">
 							<thead>
 								<tr>
-									<th>Title</th>
-									<th>Published Date</th>
-									<th>Author</th>
-									<th>Category</th>                                          
+									<th>Judul</th>
+									<th>Tanggal Publikasi</th>
+									<th>Penulis</th>
+									<th>Kategori</th>                                          
 								</tr>
 							</thead>   
 							<tbody>

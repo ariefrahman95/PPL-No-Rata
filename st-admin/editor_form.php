@@ -33,19 +33,38 @@
 			<div id="content" class="span10">
 			<!-- content starts -->
 			
+			<?php 
+				include "database_connection.php";
+				$id = $_GET["id"];
+				$query_post = "select * from jurnal where id='$id'";
+				$hasil = mysql_query($query_post,$db);
+				$row = mysql_fetch_array($hasil);
+			?>
+
+			<p>Jurnal yang akan dinilai dapat di-download pada tombol "Download Naskah" di bawah: </p>
+			<fieldset>
+			 	<div class="form-actions" align="center">
+					<?php
+					echo '<a class="btn btn-large btn-primary" href="../'.$row['path_download'].'" target="_blank">
+						<i class="icon-download-alt"></i> Download Naskah
+					</a>';
+					?>
+				</div>
+			</fieldset>
+			
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-edit"></i> Publish Journal </h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+						<form class="form-horizontal" action="editor_upload.php" method="post" enctype="multipart/form-data">
 							<fieldset>
 							  <div class="control-group">
 								<label class="control-label" for="prependedInput">Judul</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="title" size="16" type="text">
+									<input name="title" size="16" type="text" value="<?php echo $row['judul'];?>">
 								  </div>
 								</div>
 							  </div>
@@ -53,7 +72,7 @@
 								<label class="control-label" for="prependedInput">Tanggal terbit</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="author" size="16" type="text">
+									<input name="date" size="16" type="text">
 								  </div>
 								</div>
 							  </div>
@@ -61,7 +80,7 @@
 								<label class="control-label" for="prependedInput">Penulis</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="author" size="16" type="text">
+									<input name="author" size="16" type="text" value="<?php echo $row['penulis'];?>">
 								  </div>
 								</div>
 							  </div>
@@ -69,7 +88,15 @@
 								<label class="control-label" for="prependedInput">Kategori</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<input id="author" size="16" type="text">
+									<input name="category" size="16" type="text" value="<?php echo $row['kategori'];?>">
+								  </div>
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="prependedInput">Abstrak</label>
+								<div class="controls">
+								  <div class="input-prepend">
+									<input name="abstract" size="16" type="text">
 								  </div>
 								</div>
 							  </div>

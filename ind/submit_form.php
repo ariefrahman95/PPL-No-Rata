@@ -48,7 +48,7 @@
 						<form class="form-horizontal" action="add_jurnal.php" method="post" enctype="multipart/form-data">
 							<fieldset>
 							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Title</label>
+								<label class="control-label" for="prependedInput">Judul</label>
 								<div class="controls">
 								  <div class="input-prepend">
 									<input id="title" name="title" size="16" type="text">
@@ -56,7 +56,7 @@
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Authors</label>
+								<label class="control-label" for="prependedInput">Penulis</label>
 								<div class="controls">
 								  <div class="input-prepend">
 									<input id="authors" name="authors" size="16" type="text">
@@ -64,7 +64,7 @@
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Organization</label>
+								<label class="control-label" for="prependedInput">Organisasi</label>
 								<div class="controls">
 								  <div class="input-prepend">
 									<input id="organization" name="organization" size="16" type="text">
@@ -72,7 +72,7 @@
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="kategori">Category</label>
+								<label class="control-label" for="kategori">Kategori</label>
 								<div class="controls">
 								  <select id="kategori" name="kategori" data-rel="chosen">
 									<?php include "database_connection.php";
@@ -90,15 +90,15 @@
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Abstract</label>
+								<label class="control-label" for="prependedInput">Abstrak</label>
 								<div class="controls">
 								  <div>
-									<textarea class="autogrow" id="abstrak" name="abstrak">Press enter here, it will grow automatically.</textarea>
+									<textarea class="autogrow" id="abstrak" name="abstrak">Abstrak dari artikel Anda.</textarea>
 								  </div>
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Key words</label>
+								<label class="control-label" for="prependedInput">Kata Kunci</label>
 								<div class="controls">
 								  <div class="input-prepend">
 									<input id="keywords" name="keywords" size="16" type="text">
@@ -106,7 +106,7 @@
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label">File Upload</label>
+								<label class="control-label">Upload File</label>
 								<div class="controls">
 								  <p><input type="file" name="file" id="file" accept="application/pdf"> .pdf, .docx, .doc</p>
 								</div>

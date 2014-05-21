@@ -125,7 +125,7 @@
 
 			<fieldset>
 				<div class="form-actions">
-					<button type="submit" class="btn btn-primary" onclick="apply()"><i class="icon-ok"> </i> Apply</button>
+					<button class="btn btn-primary noty" data-noty-options='{"text":"Please wait...","layout":"center","type":"success"}' onclick="apply()" ><i class="icon-ok"></i> Apply</button>
 					<button type="reset" class="btn" onclick="cancel()">Cancel</button>
 				</div>
 			</fieldset>
@@ -202,18 +202,22 @@
 	function apply(){
 		var xmlhttp;
 		var xmlhttp2;
+		var xmlhttp3;
 		var state = 0;
 		if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
 			xmlhttp=new XMLHttpRequest();
 			xmlhttp2=new XMLHttpRequest();
+			xmlhttp3=new XMLHttpRequest();
 		}
 		else{// code for IE6, IE5
 			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 			xmlhttp2=new ActiveXObject("Microsoft.XMLHTTP");
+			xmlhttp3=new ActiveXObject("Microsoft.XMLHTTP");
 	    }
 		var i;
 		var reject = "";
 		var accept = "";
+		var accept_rev = "";
 		var count = <?php echo $count;?>;
 		for(i=0; i<count; i++){
 			if((document.getElementById("Checkbox"+i+"b").checked)&&(document.getElementById("Checkbok"+i+"b").parentNode==document.getElementById("group3"))){
@@ -221,7 +225,10 @@
 			}
 			else if((document.getElementById("Checkbox"+i+"b").checked)&&(document.getElementById("Checkbok"+i+"b").parentNode==document.getElementById("group1"))){
 				reject = reject + "&id" + i + "=" + document.getElementById("Checkbox"+i+"b").value;
-			}			
+			}
+			else if((document.getElementById("Checkbox"+i+"b").checked)&&(document.getElementById("Checkbok"+i+"b").parentNode==document.getElementById("group4"))){
+				accept_rev = accept_rev + "&id" + i + "=" + document.getElementById("Checkbox"+i+"b").value;
+			}
 		}
 		if(accept.length!=0){
 			xmlhttp.open("POST","send_to_mibes.php",true);
@@ -246,7 +253,22 @@
 				}
 			}
 		}
+<<<<<<< HEAD
 		window.location="index.php";
+=======
+		if(accept_rev.length!=0){
+			xmlhttp3.open("POST","accept_rev.php",true);
+			xmlhttp3.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			xmlhttp3.send("count="+count+accept_rev);
+			//alert("reject" + document.getElementById("Checkbox"+i+"b").value);
+			xmlhttp3.onreadystatechange = function () {
+				if (xmlhttp3.readyState==4 && xmlhttp3.status==200){
+					state++;
+				}
+			}
+		}
+		setTimeout(cancel, 2000);
+>>>>>>> f5b8db3705a98fe923203bb634c87ccdfe74b8c9
 	}
 </script>
 </html>

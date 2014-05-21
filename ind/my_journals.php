@@ -41,16 +41,16 @@
 			<div class="row-fluid sortable">	
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-book"></i> Jurnal yang Dpublikasikan</h2>
+						<h2><i class="icon-book"></i> Jurnal yang Dipublikasikan</h2>
 					</div>
 					<div class="box-content">
 						<table class="table table-bordered table-striped table-condensed">
 							<thead>
 								<tr>
-									<th>Title</th>
-									<th>Published Date</th>
-									<th>Author</th>
-									<th>Category</th>                                           
+									<th>Judul</th>
+									<th>Tanggal Publikasi</th>
+									<th>Penulis</th>
+									<th>Kategori</th>                                           
 								</tr>
 							</thead>   
 							<tbody>
