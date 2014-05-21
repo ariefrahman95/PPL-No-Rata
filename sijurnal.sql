@@ -237,3 +237,33 @@ CREATE TABLE IF NOT EXISTS `redaktur` (
 
 INSERT INTO `redaktur` (`id`, `username`, `password`, `email`) VALUES
 (2, 'admin_sostek', 'sostek_feat_if', 'destra.bintang.perkasa@gmail.com');
+
+
+CREATE TABLE IF NOT EXISTS `penilaian` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nomor_makalah` varchar(255) NOT NULL,
+  `tanggal_terima` date NOT NULL,
+  `penerbitan` varchar(255) NOT NULL,
+  `penulis` varchar(255) NOT NULL,
+  `judul` varchar(255) NOT NULL,
+  `status` text,
+  `relevansi` text,
+  `jenis` text,
+  `keaslian` text,
+  `kualitas` text,
+  `kelengkapan` text,
+  `kelengkapan_lain` varchar(512),
+  `keterbacaan` text,
+  `kesesuaian_judul` text,
+  `kesesuaian_panjang` text,
+  `kesesuaian_ringkasan` text,
+  `kesesuaian_dafpus` text,
+  `nilai_keseluruhan` text,
+  `rekomendasi` text,
+  `komentar` text,
+  `path_trackchanges` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=2;
+
+INSERT INTO `penilaian` (`id`, `nomor_makalah`, `tanggal_terima`, `penerbitan`, `penulis`, `judul`, `status`, `relevansi`, `jenis`, `keaslian`, `kualitas`, `kelengkapan`, `kelengkapan_lain`, `keterbacaan`,  `kesesuaian_judul`, `kesesuaian_panjang`, `kesesuaian_ringkasan`, `kesesuaian_ringkasan`, `nilai_keseluruhan`, `rekomendasi`, `komentar`, `path_trackchanges`) VALUES
+(1, 'AB/12345/2014/15', '2014-04-25', 'Desember', 'Joko Bodho', 'Kitab Bodho', 'Relevan', 'Penelitian teoritis', 'Original', 'Bernilai tinggi', 'Lain-lain', 'kurang cover', 'Mudah dipahami', 'ya', 'ya', 'ya', 'ya', 'Sangat baik', 'Diterima Langsung', 'tulisannya jelek', 'trackchanges/track_1.pdf');
