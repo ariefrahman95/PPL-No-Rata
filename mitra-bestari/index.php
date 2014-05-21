@@ -53,7 +53,7 @@
 									$i=0;
 									while($row = mysql_fetch_array($hasil)){
 										echo'<label class="checkbox" id="Checkbok'.$i.'b">';
-										echo'<input type="checkbox" id="Checkbox'.$i.'b"  name="Checkbox'.$i.'b" value="'.$row['id'].'"> <a href="form_penilaian.php?id='.$row['id'].'" target="_blank">'.$row["judul"].'</a>';
+										echo'<input type="checkbox" id="Checkbox'.$i.'b"  name="Checkbox'.$i.'b" value="'.$row['id'].'"> <a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a>';
 								  		echo'</label>';
 										$i++;
 									}
@@ -167,11 +167,30 @@
 			}
 		}
 	}
+	function accept_revision(){
+		var i;
+		for(i=0; i<<?php echo $count;?>; i++){
+			if((document.getElementById("Checkbox"+i+"b").checked)&&(document.getElementById("Checkbok"+i+"b").parentNode==document.getElementById("group2"))){
+				//alert(document.getElementById("Checkbox"+i+"b").value);
+				document.getElementById("group4").appendChild(document.getElementById("Checkbok"+i+"b"));
+			}
+		}
+	}
 	function undo_accept(){
 		var i;
 		var count = <?php echo $count;?>;
 		for(i=0; i<<?php echo $count;?>; i++){
 			if((document.getElementById("Checkbox"+i+"b").checked)&&(document.getElementById("Checkbok"+i+"b").parentNode==document.getElementById("group3"))){
+				//alert(document.getElementById("Checkbox"+i+"b").value);
+				document.getElementById("group2").appendChild(document.getElementById("Checkbok"+i+"b"));
+			}
+		}
+	}
+	function undo_accept_revision(){
+		var i;
+		var count = <?php echo $count;?>;
+		for(i=0; i<<?php echo $count;?>; i++){
+			if((document.getElementById("Checkbox"+i+"b").checked)&&(document.getElementById("Checkbok"+i+"b").parentNode==document.getElementById("group4"))){
 				//alert(document.getElementById("Checkbox"+i+"b").value);
 				document.getElementById("group2").appendChild(document.getElementById("Checkbok"+i+"b"));
 			}
@@ -183,18 +202,22 @@
 	function apply(){
 		var xmlhttp;
 		var xmlhttp2;
+		var xmlhttp3;
 		var state = 0;
 		if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
 			xmlhttp=new XMLHttpRequest();
 			xmlhttp2=new XMLHttpRequest();
+			xmlhttp3=new XMLHttpRequest();
 		}
 		else{// code for IE6, IE5
 			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 			xmlhttp2=new ActiveXObject("Microsoft.XMLHTTP");
+			xmlhttp3=new ActiveXObject("Microsoft.XMLHTTP");
 	    }
 		var i;
 		var reject = "";
 		var accept = "";
+		var accept_rev = "";
 		var count = <?php echo $count;?>;
 		for(i=0; i<count; i++){
 			if((document.getElementById("Checkbox"+i+"b").checked)&&(document.getElementById("Checkbok"+i+"b").parentNode==document.getElementById("group3"))){
@@ -202,7 +225,10 @@
 			}
 			else if((document.getElementById("Checkbox"+i+"b").checked)&&(document.getElementById("Checkbok"+i+"b").parentNode==document.getElementById("group1"))){
 				reject = reject + "&id" + i + "=" + document.getElementById("Checkbox"+i+"b").value;
-			}			
+			}
+			else if((document.getElementById("Checkbox"+i+"b").checked)&&(document.getElementById("Checkbok"+i+"b").parentNode==document.getElementById("group4"))){
+				accept_rev = accept_rev + "&id" + i + "=" + document.getElementById("Checkbox"+i+"b").value;
+			}
 		}
 		if(accept.length!=0){
 			xmlhttp.open("POST","send_to_mibes.php",true);
@@ -223,6 +249,17 @@
 			//alert("reject" + document.getElementById("Checkbox"+i+"b").value);
 			xmlhttp2.onreadystatechange = function () {
 				if (xmlhttp2.readyState==4 && xmlhttp2.status==200){
+					state++;
+				}
+			}
+		}
+		if(accept_rev.length!=0){
+			xmlhttp3.open("POST","accept_rev.php",true);
+			xmlhttp3.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			xmlhttp3.send("count="+count+accept_rev);
+			//alert("reject" + document.getElementById("Checkbox"+i+"b").value);
+			xmlhttp3.onreadystatechange = function () {
+				if (xmlhttp3.readyState==4 && xmlhttp3.status==200){
 					state++;
 				}
 			}
