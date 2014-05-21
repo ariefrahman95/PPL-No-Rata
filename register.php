@@ -124,17 +124,15 @@
 								<div class="controls">
 								  <input class="input-xlarge focused" name="password" id="password" type="password" onkeyup="password_check()">
 								</div>
-								<span id="status2"></span>
+								<p class="help-block" id="status2"></p>
 							</div>
-							<div class="clearfix"></div>
 							<div class="control-group">
 								<label class="control-label" for="password">Confirm Password</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="password2" id="password2" type="password" onkeyup="password2_check()">
 								</div>
-								<span id="status3"></span>
+								<p class="help-block" id="status3"></p>
 							</div>
-							<div class="clearfix"></div>
 							<div class="control-group">
 								<label class="control-label" for="nama">Full Name</label>
 								<div class="controls">
