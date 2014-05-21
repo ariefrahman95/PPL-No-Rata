@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 21, 2014 at 12:06 PM
+-- Generation Time: May 21, 2014 at 12:33 PM
 -- Server version: 5.1.37
 -- PHP Version: 5.3.0
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `jurnal_terpublish` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `judul` varchar(255) NOT NULL,
   `penulis` varchar(255) NOT NULL,
-  `tanggal_terbit` date NOT NULL,
+  `tanggal_terbit` varchar(20) NOT NULL,
   `kategori` varchar(255) NOT NULL,
   `path_download` varchar(255) NOT NULL,
   `path_preview` varchar(255) NOT NULL,
