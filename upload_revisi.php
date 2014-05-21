@@ -17,7 +17,8 @@ if (in_array($extension, $allowedExts))
 	*/
     if (file_exists($file_lama))
       {
-		unlink($file_lama);
+		$realpath=realpath($file_lama);
+		unlink($realpath);
       }
       move_uploaded_file($_FILES["file_revisi"]["tmp_name"],
       "files/" . $_FILES["file_revisi"]["name"]);

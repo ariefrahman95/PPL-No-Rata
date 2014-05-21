@@ -16,7 +16,7 @@
 	$query_jurnal = "UPDATE jurnal SET status=4 where $query";
 	date_default_timezone_set('Asia/Jakarta');
 	$now = date("Y/m/d H:i:s");
-	$query_date = "UPDATE jurnal SET tanggal_diterima_mibes='".$now."' where $query";
+	$query_date = "UPDATE jurnal SET tanggal_diterima_mibes='".$now."', tanggal_masuk_editor='".$now."' where $query";
 	if(mysql_query($query_jurnal,$db)&&mysql_query($query_date,$db)){
 		echo $query_jurnal;
 	}

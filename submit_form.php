@@ -133,7 +133,7 @@
 								</div>
 							  </div>
 							  </div>
-							  <div id="revisi">
+							  <div id="revisi" style="display:none">
 								<div class="control-group">
 								<label class="control-label" for="kategori">Revision From</label>
 								<div class="controls">

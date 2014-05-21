@@ -34,13 +34,13 @@
 			$uploadedby=$_SESSION['logged_in'];
 			$sql_file="SELECT * FROM jurnal where diupload_oleh='$uploadedby' and judul='$revisi_dari'";
 			$result=mysql_query($sql_file);
-			while($row=mysql_fetch_array($result, $db)){
+			while($row=mysql_fetch_array($result)){
 				$file_lama=$row['path_download'];
 			}
 			include "upload_revisi.php";
 			date_default_timezone_set('Asia/Jakarta');
 			$now = date("Y/m/d H:i:s");
-			$sql_update="UPDATE jurnal SET tanggal_submit_revisi='$now', path_download='$file_revisi'";
+			$sql_update="UPDATE jurnal SET tanggal_submit_revisi='$now', path_download='$file_revisi' where diupload_oleh='$uploadedby' and judul='$revisi_dari'";
 			$result=mysql_query($sql_update);
 			?>
 			<script>
