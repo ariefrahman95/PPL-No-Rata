@@ -53,7 +53,7 @@
 									$i=0;
 									while($row = mysql_fetch_array($hasil)){
 										echo'<label class="checkbox" id="Checkbok'.$i.'b">';
-										echo'<input type="checkbox" id="Checkbox'.$i.'b"  name="Checkbox'.$i.'b" value="'.$row['id'].'"> <a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a>';
+										echo'<input type="checkbox" id="Checkbox'.$i.'b"  name="Checkbox'.$i.'b" value="'.$row['id'].'"> <a href="form_penilaian.php?id='.$row['id'].'" target="_blank">'.$row["judul"].'</a>';
 								  		echo'</label>';
 										$i++;
 									}
