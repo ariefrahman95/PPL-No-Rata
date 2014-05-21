@@ -36,6 +36,7 @@
 					$query_post = "select * from jurnal where id='$id'";
 					$hasil = mysql_query($query_post,$db);
 					$row = mysql_fetch_array($hasil);
+					date_default_timezone_set('Asia/Jakarta');
 				?>
 
 			<p>Jurnal yang akan dinilai dapat di-download pada tombol "Download Naskah" di bawah: </p>
@@ -61,27 +62,21 @@
 								<div class="control-group">
 									<label class="control-label" for="nomor_makalah">Nomor Makalah</label>
 									<div class="controls">
-								  		<input class="input-xlarge focused" id="focusedInput" type="text" value="Sistem penomoran di sostek kayak apa bahkan :v">
-										<!--<?php
-											$File = "penilaian.txt";
-											$Handle = fopen($File, 'w');
-											$Data = "Joko\n";
-											fwrite($Handle, $Data);
-										?>-->
+								  		<input class="input-xlarge focused" id="focusedInput" type="text" value="">
 									</div>
 							  	</div>
 							  	
 							  	<div class="control-group">
 							  		<label class="control-label" for="date01">Tanggal Diterima</label>
 							  		<div class="controls">
-										<input type="text" class="input-xlarge datepicker" id="date01" value="02/16/12">
+										<input type="text" class="input-xlarge datepicker" id="date01" value=<?php echo '"'.date("Y/m/d").'"'; ?>>
 							  		</div>
 								</div>
 							  	
 							  	<div class="control-group">
 									<label class="control-label" for="focusedInput">Untuk Penerbitan</label>
 									<div class="controls">
-								  		<input class="input-xlarge focused" id="penerbitan" type="text" value="Pengennya ini nanti bisa milih opsi penerbitan kapan #ngeyel">
+								  		<input class="input-xlarge focused" id="penerbitan" type="text" value="">
 									</div>
 							  	</div>
 							  	
