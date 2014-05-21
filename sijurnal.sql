@@ -265,5 +265,5 @@ CREATE TABLE IF NOT EXISTS `penilaian` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=2;
 
-INSERT INTO `penilaian` (`id`, `nomor_makalah`, `tanggal_terima`, `penerbitan`, `penulis`, `judul`, `status`, `relevansi`, `jenis`, `keaslian`, `kualitas`, `kelengkapan`, `kelengkapan_lain`, `keterbacaan`,  `kesesuaian_judul`, `kesesuaian_panjang`, `kesesuaian_ringkasan`, `kesesuaian_ringkasan`, `nilai_keseluruhan`, `rekomendasi`, `komentar`, `path_trackchanges`) VALUES
-(1, 'AB/12345/2014/15', '2014-04-25', 'Desember', 'Joko Bodho', 'Kitab Bodho', 'Relevan', 'Penelitian teoritis', 'Original', 'Bernilai tinggi', 'Lain-lain', 'kurang cover', 'Mudah dipahami', 'ya', 'ya', 'ya', 'ya', 'Sangat baik', 'Diterima Langsung', 'tulisannya jelek', 'trackchanges/track_1.pdf');
+INSERT INTO `penilaian` (`id`, `nomor_makalah`, `tanggal_terima`, `penerbitan`, `penulis`, `judul`, `status`, `relevansi`, `jenis`, `keaslian`, `kualitas`, `kelengkapan`, `kelengkapan_lain`, `keterbacaan`,  `kesesuaian_judul`, `kesesuaian_panjang`, `kesesuaian_ringkasan`, `kesesuaian_dafpus`, `nilai_keseluruhan`, `rekomendasi`, `komentar`, `path_trackchanges`) VALUES
+(1, 'AB/12345/2014/15', '2014-04-25', 'Desember', 'Joko Bodho', 'Kitab Bodho', 'Makalah baru', 'Relevan', 'Penelitian teoritis', 'Original', 'Bernilai tinggi', 'Lain-lain', 'kurang cover', 'Mudah dipahami', 'ya', 'ya', 'ya', 'ya', 'Sangat baik', 'Diterima Langsung', 'tulisannya jelek', 'trackchanges/track_1.pdf');
