@@ -98,7 +98,7 @@
 									<label class="control-label" for="focusedInput">Judul</label>
 									<div class="controls">
 								  		<?php
-								  		echo '<input class="input-xlarge focused" id="focusedInput" type="text" value="'.$row['judul'].'">';
+								  		echo '<input class="input-xlarge focused" id="title" type="text" value="'.$row['judul'].'">';
 										?>
 									</div>
 							  	</div>
