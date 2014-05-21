@@ -49,6 +49,21 @@
 					<div class="box-content">
 						<form class="form-horizontal" action="add_jurnal.php" method="post" enctype="multipart/form-data">
 							<fieldset>
+							<div class="control-group">
+								<label class="control-label">Paper Status</label>
+								<div class="controls">
+									<label class="radio">
+										<input type="radio" name="optionsRadios" id="optionsRadios1" value="baru" checked="" onclick="show_baru()">
+										New Paper
+									</label>
+									<div style="clear:both"></div>
+									<label class="radio">
+										<input type="radio" name="optionsRadios" id="optionsRadios2" value="revisi" onclick="show_revisi()">
+										Revision Paper
+									</label>
+								</div>
+							  </div>
+							  <div id="baru">
 							  <div class="control-group">
 								<label class="control-label" for="prependedInput">Title</label>
 								<div class="controls">
@@ -72,13 +87,9 @@
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Organization</label>
+								<label class="control-label" for="disabledInput">Organization</label>
 								<div class="controls">
-								  <div class="input-prepend">
-								  	<?php
-								  		echo '<input id="organization" name="organization" size="16" type="text" value="'.$row['organisasi'].'">';
-									?>
-								  </div>
+								  <input id="organization" name="organization" class="input disabled" size="16" type="text" disabled="" placeholder=<?php echo '"'.$row['organisasi'].'"'; ?>></input>
 								</div>
 							  </div>
 							  <div class="control-group">
@@ -121,6 +132,33 @@
 								  <p><input type="file" name="file" id="file" accept="application/pdf"> .pdf, .docx, .doc</p>
 								</div>
 							  </div>
+							  </div>
+							  <div id="revisi">
+								<div class="control-group">
+								<label class="control-label" for="kategori">Revision From</label>
+								<div class="controls">
+								  <select id="revisi_dari" name="revisi_dari" data-rel="chosen">
+									<?php include "database_connection.php";
+										$query_kat = "select * from jurnal where diupload_oleh='".$username."' and status=3";
+										$hasil = mysql_query($query_kat,$db);
+										if(mysql_num_rows($hasil)==0) {
+											echo 'Belum ada jurnal untuk direvisi';
+										} else {
+											while($row = mysql_fetch_array($hasil)) {
+												echo '<option>'.$row['judul'].'</option>';
+											}
+										}
+									?>
+								  </select>
+								</div>
+							  </div>
+								<div class="control-group">
+								<label class="control-label">Revision File Upload</label>
+								<div class="controls">
+								  <p><input type="file" name="file_revisi" id="file_revisi" accept="application/pdf"> .pdf, .docx, .doc</p>
+								</div>
+							  </div>
+							  </div>
 							  <div class="form-actions">
 								<button type="submit" class="btn btn-primary">Submit</button>
 							  </div>
@@ -141,7 +179,15 @@
 	</div><!--/.fluid-container-->
 
 	<?php include "script_dependencies.php" ?>
-	
-		
 </body>
+<script>
+	function show_baru(){
+		document.getElementById("baru").style="display:block";
+		document.getElementById("revisi").style="display:none";
+	}
+	function show_revisi(){
+		document.getElementById("baru").style="display:none";
+		document.getElementById("revisi").style="display:block";
+	}
+</script>
 </html>
