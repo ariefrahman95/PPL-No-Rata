@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 21, 2014 at 11:37 AM
+-- Generation Time: May 21, 2014 at 12:06 PM
 -- Server version: 5.1.37
 -- PHP Version: 5.3.0
 
@@ -49,11 +49,11 @@ CREATE TABLE IF NOT EXISTS `jurnal` (
   `path_preview` varchar(512) DEFAULT NULL,
   `diupload_oleh` varchar(255) NOT NULL,
   `path_form_penilaian` varchar(255) NOT NULL,
-  `tanggal_submit` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `tanggal_masuk_mibes` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `tanggal_diterima_mibes` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `tanggal_submit_revisi` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `tanggal_masuk_editor` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `tanggal_submit` varchar(20) DEFAULT NULL,
+  `tanggal_masuk_mibes` varchar(20) DEFAULT NULL,
+  `tanggal_diterima_mibes` varchar(20) DEFAULT NULL,
+  `tanggal_submit_revisi` varchar(20) DEFAULT NULL,
+  `tanggal_masuk_editor` varchar(20) DEFAULT NULL,
   `abstrak` text NOT NULL,
   `keywords` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
@@ -64,9 +64,9 @@ CREATE TABLE IF NOT EXISTS `jurnal` (
 --
 
 INSERT INTO `jurnal` (`id`, `judul`, `penulis`, `status`, `kategori`, `path_download`, `path_preview`, `diupload_oleh`, `path_form_penilaian`, `tanggal_submit`, `tanggal_masuk_mibes`, `tanggal_diterima_mibes`, `tanggal_submit_revisi`, `tanggal_masuk_editor`, `abstrak`, `keywords`) VALUES
-(1, 'Perilaku Remaja dalam Menggunakan Media', 'Arief Rahman', 2, 'Sosio-komunikasi', 'files/DPPL e-Cow.pdf', 'img/preview/1.jpg', 'arief_rahman', '', '0000-00-00 00:00:00', '2014-05-21 11:17:59', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(2, 'Makna Ikon Naga, Elemen Utama Arsitektur Tradisional Tionghoa', 'Sugiri Kustedja', 2, 'Sosio-kapital', '', NULL, '', '', '0000-00-00 00:00:00', '2014-05-21 10:20:53', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(3, 'Orientasi Pengembangan Ilmu dalam Perspektif Islam', 'Furqon Syarief Hidayatulloh', 4, 'Sosio-religi', '', NULL, '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
+(1, 'Perilaku Remaja dalam Menggunakan Media', 'Arief Rahman', 4, 'Sosio-komunikasi', 'files/DPPL e-Cow.pdf', 'img/preview/1.jpg', 'arief_rahman', '', NULL, '2014-05-21 11:01:54', '2014/05/21 11:05:45', NULL, NULL, '', ''),
+(2, 'Makna Ikon Naga, Elemen Utama Arsitektur Tradisional Tionghoa', 'Sugiri Kustedja', 4, 'Sosio-kapital', '', NULL, '', '', NULL, '2014-05-21 10:20:53', NULL, NULL, NULL, '', ''),
+(3, 'Orientasi Pengembangan Ilmu dalam Perspektif Islam', 'Furqon Syarief Hidayatulloh', 4, 'Sosio-religi', '', NULL, '', '', '0000-00-00 00:00:00', '2014-05-21 10:49:27', '2014-05-21 10:49:57', '2014-05-21 10:50:31', '2014-05-21 10:51:08', '', ''),
 (4, 'Incorporating And Converting Biogas Technology Into Household Space', 'Meredian Alam', 0, 'Sosio-dinamika', '', NULL, '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (20, 'Strength Journey', 'lolololol', 3, 'Bahasa dan teknologi', 'files/1- Pendahuluan if3240.pdf', NULL, 'destraaaa', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (21, 'New Journal', 'asdhaldak', 5, 'Bioetika', 'files/2-Data,Info&Knowledge.pdf', NULL, 'destraaaa', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),

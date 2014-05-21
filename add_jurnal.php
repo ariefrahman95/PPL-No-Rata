@@ -11,7 +11,8 @@
 		$keywords = $_POST['keywords'];
 		$filepath = "files/".$_FILES['file']['name'];
 		date_default_timezone_set('Asia/Jakarta')
-		$sql_add="insert into jurnal (judul, penulis, status, kategori, path_download, diupload_oleh, abstrak, keywords) values ('$mytitle', '$myauthors', '1', '$mykategori', '$filepath' ,'$uploadedby', '$abstrak', '$keywords')";
+		$now = date("Y/m/d H:i:s");
+		$sql_add="insert into jurnal (judul, penulis, status, kategori, path_download, diupload_oleh, abstrak, keywords, tanggal_submit) values ('$mytitle', '$myauthors', '1', '$mykategori', '$filepath' ,'$uploadedby', '$abstrak', '$keywords','$now')";
 		$result=mysql_query($sql_add);
 		/*if (!mysql_query($sql_add, $db))
 		{
