@@ -7,11 +7,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-<<<<<<< HEAD
-				<a href="index.php"> <img alt="Logo" src="../img/sostekheader.png" height="135px"/></a>
-=======
 				<a href="index.php"> <img alt="Logo" src="img/sostekheader.png" height="135px"/></a>
->>>>>>> 6efa1c5111ff83ef9e5d96a52e4e9707b16fa939
 				
 				<!-- user dropdown starts -->
 				<div class="btn-group pull-right" >

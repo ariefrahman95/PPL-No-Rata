@@ -20,6 +20,51 @@
 	<meta charset="utf-8">
 	<title>Profile | Website Jurnal Sosioteknologi</title>
 	<?php include "meta_and_css.php" ?>
+
+	<script type="text/javascript">
+		var xmlhttp;
+		if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp=new XMLHttpRequest();
+		}
+		else{// code for IE6, IE5
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	   }
+	   var valid = false;
+	   
+		function password_check () {
+			var password = document.getElementById('password').value;
+			//var email = document.getElementById('email').value;
+			//var username = document.getElementById('username').value;
+			//if(password == email || password == username) {
+			//	document.getElementById("status2").innerHTML='<font color="#cc0000">Password tidak boleh sama dengan email maupun username</font>';
+			//}
+			if(password.length > 7){//if the lenght greater than 3 characters
+				valid = true;
+				document.getElementById("status2").innerHTML='<font color="Green"></font>';
+			}
+			else{
+				document.getElementById("status2").innerHTML='<font color="#cc0000">Password must contains more than 7 characters</font>';
+			}
+			this.validasi();
+		}
+		function password2_check() {
+			var password = document.getElementById('password').value;
+			var password2 = document.getElementById('password2').value;
+			if(password == password2) {
+				valid = true;
+				document.getElementById("status3").innerHTML='<font color="Green"></font>';
+			}
+			else{
+				document.getElementById("status3").innerHTML='<font color="#cc0000">Enter the same password as above</font>';
+			}
+			this.validasi();
+		}
+		function validasi () {
+			if (valid) {
+				document.getElementById("reg_btn").disabled = false;
+			}
+		}
+	</script>
 </head>
 
 <body>
@@ -54,58 +99,62 @@
 								$hasil = mysql_query($query_post,$db);
 								$row = mysql_fetch_array($hasil);
 								
-								echo '<form class="form-horizontal" action="upload_file.php" method="post" enctype="multipart/form-data">
+								echo '
+
+
+
+								';
+
+
+
+								echo '<form class="form-horizontal" action="update_profile.php" method="post" enctype="multipart/form-data">
 									<fieldset>
 									  <div class="control-group">
-										<label class="control-label" for="prependedInput">Username</label>
+										<label class="control-label" for="disabledInput">Username</label>
 										<div class="controls">
-										  <div class="input-prepend">
-											<input id="title" size="16" type="text" value="'.$row['username'].'">
-										  </div>
+										  <input id="username" name="username" class="input disabled" type="text" disabled="" placeholder="'.$row['username'].'"></input>
 										</div>
 									  </div>
 									  <div class="control-group">
 										<label class="control-label" for="appendedInput">Password</label>
 										<div class="controls">
-										  <div class="input-append">
-											<input id="title" size="16" type="password" value="'.$row['password'].'">
-										  </div>
+										  <input id="password" name="password" size="16" type="password" value="'.$row['password'].'">
 										</div>
 									  </div>
 									  <div class="control-group">
-										<label class="control-label">Confirm Password</label>
+										<label class="control-label" for="appendedInput">Confirm Password</label>
 										<div class="controls">
-										  <input id="title" size="16" type="password" value="'.$row['password'].'">
+										  <input id="passwordconfirmed" name="passwordconfirmed" size="16" type="password" value="'.$row['password'].'">
 										</div>
 									  </div>
 									  <div class="control-group">
-										<label class="control-label">Name and Title</label>
+										<label class="control-label" for="appendedInput">Name and Title</label>
 										<div class="controls">
-										  <input id="title" size="30" type="text" value="'.$row['nama_lengkap'].'">
+										  <input id="title" name="title" size="16" type="text" value="'.$row['nama_lengkap'].'">
 										</div>
 									  </div>
 									  <div class="control-group">
-										<label class="control-label">Organization</label>
+										<label class="control-label" for="appendedInput">Organization</label>
 										<div class="controls">
-										  <input id="title" size="16" type="text" value="'.$row['organization'].'">
+										  <input id="organization" name="organization" size="16" type="text" value="'.$row['organisasi'].'">
 										</div>
 									  </div>
 									  <div class="control-group">
-										<label class="control-label">Address</label>
+										<label class="control-label" for="appendedInput">Address</label>
 										<div class="controls">
-										  <textarea class="autogrow">'.$row['address'].'</textarea>
+										  <textarea class="autogrow" id="address" name="address">'.$row['address'].'</textarea>
 										</div>
 									  </div>
 									  <div class="control-group">
-										<label class="control-label">email</label>
+										<label class="control-label" for="disabledInput">Email</label>
 										<div class="controls">
-										  <input id="title" size="16" type="text" value="'.$row['email'].'">
+										  <input id="email" name="email" class="input disabled" type="text" disabled="" placeholder="'.$row['email'].'"></input>
 										</div>
 									  </div>
 									  <div class="control-group">
-										<label class="control-label">Phone</label>
+										<label class="control-label" for="appendedInput">Phone</label>
 										<div class="controls">
-										  <input id="title" size="16" type="text" value="'.$row['no_hp'].'">
+										  <input id="phone" name="phone" size="16" type="text" value="'.$row['no_hp'].'">
 										</div>
 									  </div>
 									  <div class="form-actions">

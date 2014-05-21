@@ -110,7 +110,7 @@
 							<div class="control-group">
 								<label class="control-label" for="username">Username</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="username" id="username" type="text" value="admin" onkeyup="username_check()">
+								  <input class="input-xlarge focused" name="username" id="username" type="text" onkeyup="username_check()">
 								</div>
 								<span id="status"></span>
 							</div>
@@ -122,7 +122,7 @@
 							<div class="control-group">
 								<label class="control-label" for="password">Password</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="password" id="password" type="password" value="admin123456" onkeyup="password_check()">
+								  <input class="input-xlarge focused" name="password" id="password" type="password" onkeyup="password_check()">
 								</div>
 								<span id="status2"></span>
 							</div>
@@ -130,7 +130,7 @@
 							<div class="control-group">
 								<label class="control-label" for="password">Confirm Password</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="password2" id="password2" type="password" value="admin123456" onkeyup="password2_check()">
+								  <input class="input-xlarge focused" name="password2" id="password2" type="password" onkeyup="password2_check()">
 								</div>
 								<span id="status3"></span>
 							</div>
