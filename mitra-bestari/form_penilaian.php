@@ -102,12 +102,12 @@
 									<label class="control-label">Status Makalah</label>
 									<div class="controls">
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+											<input type="radio" name="status" id="optionsRadios1" value="option1" checked="">
 											Makalah baru
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+											<input type="radio" name="status" id="optionsRadios2" value="option2">
 											Makalah hasil revisi
 								  		</label>
 									</div>
@@ -119,17 +119,17 @@
 							  	
 							  	<div class="control-group">
 										<label class="radio">
-											<input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" checked="">
+											<input type="radio" name="relevan" id="optionsRadios1" value="option1" checked="">
 											Relevan
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+											<input type="radio" name="relevan" id="optionsRadios2" value="option2">
 											Kurang relevan
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios1" id="optionsRadios3" value="option3">
+											<input type="radio" name="relevan" id="optionsRadios3" value="option3">
 											Tidak relevan
 								  		</label>
 							  	</div>
@@ -138,17 +138,17 @@
 							  	
 							  	<div class="control-group">
 										<label class="radio">
-											<input type="radio" name="optionsRadios2" id="optionsRadios1" value="option1" checked="">
+											<input type="radio" name="jenis" id="optionsRadios1" value="option1" checked="">
 											Penelitian teoretis
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios2" id="optionsRadios2" value="option2">
+											<input type="radio" name="jenis" id="optionsRadios2" value="option2">
 											Kajian ulang metode yang sudah ada
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios2" id="optionsRadios3" value="option3">
+											<input type="radio" name="jenis" id="optionsRadios3" value="option3">
 											Penelitian eksperimental
 								  		</label>
 									
@@ -158,17 +158,17 @@
 							  	
 							  	<div class="control-group">
 										<label class="radio">
-											<input type="radio" name="optionsRadios3" id="optionsRadios1" value="option1" checked="">
+											<input type="radio" name="keaslian" id="optionsRadios1" value="option1" checked="">
 											Original
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios3" id="optionsRadios2" value="option2">
+											<input type="radio" name="keaslian" id="optionsRadios2" value="option2">
 											Tidak ada yang baru
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios3" id="optionsRadios3" value="option3">
+											<input type="radio" name="keaslian" id="optionsRadios3" value="option3">
 											Pengembangan dari yang sudah ada
 								  		</label>
 									
@@ -178,17 +178,17 @@
 							  	
 							  	<div class="control-group">
 										<label class="radio">
-											<input type="radio" name="optionsRadios4" id="optionsRadios1" value="option1" checked="">
+											<input type="radio" name="kualitas" id="optionsRadios1" value="option1" checked="">
 											Bernilai tinggi
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios4" id="optionsRadios2" value="option2">
+											<input type="radio" name="kualitas" id="optionsRadios2" value="option2">
 											Cukup
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios4" id="optionsRadios3" value="option3">
+											<input type="radio" name="kualitas" id="optionsRadios3" value="option3">
 											Kurang
 								  		</label>
 									
@@ -198,27 +198,27 @@
 							  	
 							  	<div class="control-group" id="group1">
 										<label class="radio">
-											<input type="radio" name="optionsRadios5" id="optionsRadios1" value="option1" checked="" onclick=disabletextbox()>
+											<input type="radio" name="kelengkapan" id="optionsRadios1" value="option1" checked="" onclick=disabletextbox()>
 											Lengkap
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios5" id="optionsRadios2" value="option2" onclick=disabletextbox()>
+											<input type="radio" name="kelengkapan" id="optionsRadios2" value="option2" onclick=disabletextbox()>
 											Kurang lengkap (diuraikan dalam bagian C)
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios5" id="optionsRadios3" value="option3" onclick=disabletextbox()>
+											<input type="radio" name="kelengkapan" id="optionsRadios3" value="option3" onclick=disabletextbox()>
 											Berisi hal-hal yang tidak perlu (diuraikan dalam bagian C)
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios5" id="optionsRadios4" value="option4" onclick=disabletextbox()>
+											<input type="radio" name="kelengkapan" id="optionsRadios4" value="option4" onclick=disabletextbox()>
 											Mengandung kesalahan (diuraikan dalam bagian C)
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios5" id="optionsRadio5" value="option5" onclick=enabletextbox()>
+											<input type="radio" name="kelengkapan" id="optionsRadio5" value="option5" onclick=enabletextbox()>
 											Lain-lain :
 								  		</label>
 										<input class="input-xlarge focused" id="focusedInput-lain" type="text" value="" disabled> 
@@ -229,17 +229,17 @@
 							  	
 							  	<div class="control-group">
 										<label class="radio">
-											<input type="radio" name="optionsRadios6" id="optionsRadios1" value="option1" checked="">
+											<input type="radio" name="keterbacaan" id="optionsRadios1" value="option1" checked="">
 											Mudah dipahami
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios6" id="optionsRadios2" value="option2">
+											<input type="radio" name="keterbacaan" id="optionsRadios2" value="option2">
 											Sulit dipahami (perlu ditulis ulang)
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios6" id="optionsRadios3" value="option3">
+											<input type="radio" name="keterbacaan" id="optionsRadios3" value="option3">
 											Perlu bahan bacaan lain untuk memahami
 								  		</label>
 									
@@ -251,12 +251,12 @@
 							  	<li>Kesesuaian judul?</li>
 							  	<div class="control-group">
 										<label class="radio">
-											<input type="radio" name="optionsRadios71" id="optionsRadios1" value="option1" checked="">
+											<input type="radio" name="kesesuaian_judul" id="optionsRadios1" value="option1" checked="">
 											ya
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios71" id="optionsRadios2" value="option2">
+											<input type="radio" name="kesesuaian_judul" id="optionsRadios2" value="option2">
 											tidak
 								  		</label>	
 									
@@ -265,12 +265,12 @@
 							  	
 							  	<div class="control-group">
 										<label class="radio">
-											<input type="radio" name="optionsRadios72" id="optionsRadios1" value="option1" checked="">
+											<input type="radio" name="kesesuaian_panjang" id="optionsRadios1" value="option1" checked="">
 											ya
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios72" id="optionsRadios2" value="option2">
+											<input type="radio" name="kesesuaian_panjang" id="optionsRadios2" value="option2">
 											tidak
 								  		</label>	
 									
@@ -279,12 +279,12 @@
 							  	<li>Kesesuaian ringkasan/kesimpulan?</li>
 							  	<div class="control-group">
 										<label class="radio">
-											<input type="radio" name="optionsRadios73" id="optionsRadios1" value="option1" checked="">
+											<input type="radio" name="kesesuaian_ringkasan" id="optionsRadios1" value="option1" checked="">
 											ya
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios73" id="optionsRadios2" value="option2">
+											<input type="radio" name="kesesuaian_ringkasan" id="optionsRadios2" value="option2">
 											tidak
 								  		</label>	
 									
@@ -293,12 +293,12 @@
 							  	<li>Kesesuaian daftar pustaka?</li>
 							  	<div class="control-group">
 										<label class="radio">
-											<input type="radio" name="optionsRadios74" id="optionsRadios1" value="option1" checked="">
+											<input type="radio" name="kesesuaian_dafpus" id="optionsRadios1" value="option1" checked="">
 											ya
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios74" id="optionsRadios2" value="option2">
+											<input type="radio" name="kesesuaian_dafpus" id="optionsRadios2" value="option2">
 											tidak
 								  		</label>	
 									
@@ -310,22 +310,22 @@
 							  	<p>1. Nilai keseluruhan :</p>
 							  	<div class="control-group">
 										<label class="radio">
-											<input type="radio" name="optionsRadios8" id="optionsRadios1" value="option1" checked="">
+											<input type="radio" name="nilai_keseluruhan" id="optionsRadios1" value="option1" checked="">
 											Di bawah rata-rata
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios8" id="optionsRadios2" value="option2">
+											<input type="radio" name="nilai_keseluruhan" id="optionsRadios2" value="option2">
 											Cukup baik
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios8" id="optionsRadios3" value="option3">
+											<input type="radio" name="nilai_keseluruhan" id="optionsRadios3" value="option3">
 											Baik
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios8" id="optionsRadios4" value="option4">
+											<input type="radio" name="nilai_keseluruhan" id="optionsRadios4" value="option4">
 											Sangat baik
 								  		</label>
 									
@@ -335,22 +335,22 @@
 							  	
 							  	<div class="control-group">
 										<label class="radio">
-											<input type="radio" name="optionsRadios9" id="optionsRadios1" value="option1" checked="">
+											<input type="radio" name="rekomendasi" id="optionsRadios1" value="option1" checked="">
 											Diterima langsung
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios9" id="optionsRadios2" value="option2">
+											<input type="radio" name="rekomendasi" id="optionsRadios2" value="option2">
 											Diterima langsung jika revisi telah dilakukan (tidak perlu review ulang)
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios9" id="optionsRadios3" value="option3">
+											<input type="radio" name="rekomendasi" id="optionsRadios3" value="option3">
 											Ditolak, disarankan untuk direvisi serta diserahkan kembali (alasan disampaikan dalam bagian C)
 								  		</label>
 								  		<div style="clear:both"></div>
 								  		<label class="radio">
-											<input type="radio" name="optionsRadios9" id="optionsRadios4" value="option4">
+											<input type="radio" name="rekomendasi" id="optionsRadios4" value="option4">
 											Ditolak (alasan disampaikan dalam bagian C)
 								  		</label>
 									
@@ -359,7 +359,7 @@
 							  	<h3>C. Komentar untuk Perubahan</h3>
 							  	
 							  	<div class="control-group">
-									<textarea class="autogrow"></textarea>
+									<textarea class="autogrow" id="komentar" name="komentar"></textarea>
 							  	</div>
 							</fieldset>
 						</form>
