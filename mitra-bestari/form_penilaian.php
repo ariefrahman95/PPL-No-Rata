@@ -61,7 +61,7 @@
 								<div class="control-group">
 									<label class="control-label" for="nomor_makalah">Nomor Makalah</label>
 									<div class="controls">
-								  		<input class="input-xlarge focused" name= "nomor_makalah" id="nomor_makalah" type="text" value="Sistem penomoran di sostek kayak apa bahkan :v">
+								  		<input class="input-xlarge focused" name= "nomor_makalah" id="nomor_makalah" type="text" value="">
 									</div>
 							  	</div>
 							  	
@@ -75,7 +75,7 @@
 							  	<div class="control-group">
 									<label class="control-label" for="focusedInput">Untuk Penerbitan</label>
 									<div class="controls">
-								  		<input class="input-xlarge focused" name="penerbitan" id="penerbitan" type="text" value="Pengennya ini nanti bisa milih opsi penerbitan kapan #ngeyel">
+								  		<input class="input-xlarge focused" name="penerbitan" id="penerbitan" type="text" value="">
 									</div>
 							  	</div>
 							  	
