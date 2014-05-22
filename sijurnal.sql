@@ -1,13 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.0.1
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 21, 2014 at 12:33 PM
--- Server version: 5.1.37
--- PHP Version: 5.3.0
+-- Generation Time: May 22, 2014 at 05:46 AM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `sijurnal`
@@ -27,11 +34,6 @@ CREATE TABLE IF NOT EXISTS `editor` (
   `nama_lengkap` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `editor`
---
-
 
 -- --------------------------------------------------------
 
@@ -64,13 +66,13 @@ CREATE TABLE IF NOT EXISTS `jurnal` (
 --
 
 INSERT INTO `jurnal` (`id`, `judul`, `penulis`, `status`, `kategori`, `path_download`, `path_preview`, `diupload_oleh`, `path_form_penilaian`, `tanggal_submit`, `tanggal_masuk_mibes`, `tanggal_diterima_mibes`, `tanggal_submit_revisi`, `tanggal_masuk_editor`, `abstrak`, `keywords`) VALUES
-(1, 'Perilaku Remaja dalam Menggunakan Media', 'Arief Rahman', 4, 'Sosio-komunikasi', 'files/DPPL e-Cow.pdf', 'img/preview/1.jpg', 'arief_rahman', '', NULL, '2014-05-21 11:01:54', '2014/05/21 11:05:45', NULL, NULL, '', ''),
-(2, 'Makna Ikon Naga, Elemen Utama Arsitektur Tradisional Tionghoa', 'Sugiri Kustedja', 4, 'Sosio-kapital', '', NULL, '', '', NULL, '2014-05-21 10:20:53', NULL, NULL, NULL, '', ''),
+(1, 'Perilaku Remaja dalam Menggunakan Media', 'Arief Rahman', 1, 'Sosio-komunikasi', 'files/DPPL e-Cow.pdf', 'img/preview/1.jpg', 'arief_rahman', '', NULL, '2014-05-21 11:01:54', '2014/05/21 11:05:45', NULL, NULL, '', ''),
+(2, 'Makna Ikon Naga, Elemen Utama Arsitektur Tradisional Tionghoa', 'Sugiri Kustedja', 3, 'Sosio-kapital', '', NULL, 'redirected', '', '2014-05-21 10:20:53', '2014-05-21 10:20:53', '2014/05/22 09:06:06', NULL, NULL, '', ''),
 (3, 'Orientasi Pengembangan Ilmu dalam Perspektif Islam', 'Furqon Syarief Hidayatulloh', 4, 'Sosio-religi', '', NULL, '', '', '0000-00-00 00:00:00', '2014-05-21 10:49:27', '2014-05-21 10:49:57', '2014-05-21 10:50:31', '2014-05-21 10:51:08', '', ''),
 (4, 'Incorporating And Converting Biogas Technology Into Household Space', 'Meredian Alam', 0, 'Sosio-dinamika', '', NULL, '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (20, 'Strength Journey', 'lolololol', 3, 'Bahasa dan teknologi', 'files/1- Pendahuluan if3240.pdf', NULL, 'destraaaa', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (21, 'New Journal', 'asdhaldak', 5, 'Bioetika', 'files/2-Data,Info&Knowledge.pdf', NULL, 'destraaaa', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(22, 'Test', 'Redirect Dust', 0, 'Penyakit dan masyarakat di Indonesia', 'files/Halaman Kosong.pdf', NULL, 'redirected', '', '2014-05-20 12:37:13', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Press enter here, it will grow automatically.', 'test');
+(22, 'Test', 'Redirect Dust', 1, 'Penyakit dan masyarakat di Indonesia', 'files/Halaman Kosong.pdf', NULL, 'redirected', '', '2014-05-20 12:37:13', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Press enter here, it will grow automatically.', 'test');
 
 -- --------------------------------------------------------
 
@@ -164,6 +166,47 @@ INSERT INTO `mitra_bestari` (`id`, `username`, `password`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `penilaian`
+--
+
+CREATE TABLE IF NOT EXISTS `penilaian` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nomor_makalah` varchar(255) NOT NULL,
+  `tanggal_terima` varchar(20) NOT NULL,
+  `penerbitan` varchar(255) NOT NULL,
+  `penulis` varchar(255) NOT NULL,
+  `judul` varchar(255) NOT NULL,
+  `status` text,
+  `relevansi` text,
+  `jenis` text,
+  `keaslian` text,
+  `kualitas` text,
+  `kelengkapan` text,
+  `kelengkapan_lain` varchar(512) DEFAULT NULL,
+  `keterbacaan` text,
+  `kesesuaian_judul` text,
+  `kesesuaian_panjang` text,
+  `kesesuaian_ringkasan` text,
+  `kesesuaian_dafpus` text,
+  `nilai_keseluruhan` text,
+  `rekomendasi` text,
+  `komentar` text,
+  `path_trackchanges` varchar(255) NOT NULL,
+  `id_makalah` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `penilaian`
+--
+
+INSERT INTO `penilaian` (`id`, `nomor_makalah`, `tanggal_terima`, `penerbitan`, `penulis`, `judul`, `status`, `relevansi`, `jenis`, `keaslian`, `kualitas`, `kelengkapan`, `kelengkapan_lain`, `keterbacaan`, `kesesuaian_judul`, `kesesuaian_panjang`, `kesesuaian_ringkasan`, `kesesuaian_dafpus`, `nilai_keseluruhan`, `rekomendasi`, `komentar`, `path_trackchanges`, `id_makalah`) VALUES
+(1, 'AB/12345/2014/15', '2014-04-25', 'Desember', 'Joko Bodho', 'Kitab Bodho', 'Makalah baru', 'Relevan', 'Penelitian teoritis', 'Original', 'Bernilai tinggi', 'Lain-lain', 'kurang cover', 'Mudah dipahami', 'ya', 'ya', 'ya', 'ya', 'Sangat baik', 'Diterima Langsung', 'tulisannya jelek', 'trackchanges/track_1.pdf', 0),
+(8, 'Sistem penomoran di sostek kayak apa bahkan :v', '02/16/12', 'Pengennya ini nanti bisa milih opsi penerbitan kapan #ngeyel', 'Sugiri Kustedja', 'Makna Ikon Naga, Elemen Utama Arsitektur Tradisional Tionghoa', 'Makalah baru', 'Relevan', 'Kajian ulang metode yang sudah ada', 'Original', 'Kurang', 'Kurang lengkap', 'Kurang lengkap', 'Sulit dipahami', 'tidak', 'tidak', 'tidak', 'tidak', 'Cukup baik', 'Diterima langsung', 'aklsjdakldjald', 'trackchanges/2-Data,Info&Knowledge.pdf', 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `penulis`
 --
 
@@ -238,32 +281,6 @@ CREATE TABLE IF NOT EXISTS `redaktur` (
 INSERT INTO `redaktur` (`id`, `username`, `password`, `email`) VALUES
 (2, 'admin_sostek', 'sostek_feat_if', 'destra.bintang.perkasa@gmail.com');
 
-
-CREATE TABLE IF NOT EXISTS `penilaian` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `nomor_makalah` varchar(255) NOT NULL,
-  `tanggal_terima` date NOT NULL,
-  `penerbitan` varchar(255) NOT NULL,
-  `penulis` varchar(255) NOT NULL,
-  `judul` varchar(255) NOT NULL,
-  `status` text,
-  `relevansi` text,
-  `jenis` text,
-  `keaslian` text,
-  `kualitas` text,
-  `kelengkapan` text,
-  `kelengkapan_lain` varchar(512),
-  `keterbacaan` text,
-  `kesesuaian_judul` text,
-  `kesesuaian_panjang` text,
-  `kesesuaian_ringkasan` text,
-  `kesesuaian_dafpus` text,
-  `nilai_keseluruhan` text,
-  `rekomendasi` text,
-  `komentar` text,
-  `path_trackchanges` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=2;
-
-INSERT INTO `penilaian` (`id`, `nomor_makalah`, `tanggal_terima`, `penerbitan`, `penulis`, `judul`, `status`, `relevansi`, `jenis`, `keaslian`, `kualitas`, `kelengkapan`, `kelengkapan_lain`, `keterbacaan`,  `kesesuaian_judul`, `kesesuaian_panjang`, `kesesuaian_ringkasan`, `kesesuaian_dafpus`, `nilai_keseluruhan`, `rekomendasi`, `komentar`, `path_trackchanges`) VALUES
-(1, 'AB/12345/2014/15', '2014-04-25', 'Desember', 'Joko Bodho', 'Kitab Bodho', 'Makalah baru', 'Relevan', 'Penelitian teoritis', 'Original', 'Bernilai tinggi', 'Lain-lain', 'kurang cover', 'Mudah dipahami', 'ya', 'ya', 'ya', 'ya', 'Sangat baik', 'Diterima Langsung', 'tulisannya jelek', 'trackchanges/track_1.pdf');
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
