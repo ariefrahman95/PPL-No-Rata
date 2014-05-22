@@ -55,7 +55,7 @@
 						<h2><i class="icon-edit"></i> Form Penilaian Mitra Bestari</h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="add_penilaian.php" method="post" enctype="multipart/form-data">
+						<form class="form-horizontal" action="add_penilaian.php?id=<?php echo $_GET['id'];?>" method="post" enctype="multipart/form-data">
 							<fieldset>
 
 								<div class="control-group">
