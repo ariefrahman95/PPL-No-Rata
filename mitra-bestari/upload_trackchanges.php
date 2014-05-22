@@ -27,7 +27,7 @@ if (in_array($extension, $allowedExts))
     else
       {
       move_uploaded_file($_FILES["file"]["tmp_name"],
-      "../trackchanges/" . $_FILES["file"]["name"]);
+      "trackchanges/" . $_FILES["file"]["name"]);
       //echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
       }
     }

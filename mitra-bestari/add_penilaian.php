@@ -29,7 +29,7 @@
 		$mynilai_keseluruhan = $_POST['nilai_keseluruhan'];
 		$myrekomendasi = $_POST['rekomendasi'];
 		$mykomentar = $_POST['komentar'];
-		$filepath = "../trackchanges/".$_FILES['file']['name'];
+		$filepath = "trackchanges/".$_FILES['file']['name'];
 		$id_makalah=$_GET['id'];
 		$sql_add="INSERT INTO penilaian (nomor_makalah, tanggal_terima, penerbitan, penulis, judul, status, relevansi, jenis, keaslian, kualitas, kelengkapan, kelengkapan_lain, keterbacaan, kesesuaian_judul, kesesuaian_panjang, kesesuaian_ringkasan, kesesuaian_dafpus, nilai_keseluruhan, rekomendasi, komentar, path_trackchanges, id_makalah) values ('$mynomormakalah', '$mydate', '$mypenerbitan', '$mypenulis', '$mytitle', '$mystatus', '$myrelevan', '$myjenis', '$mykeaslian', '$mykualitas', '$mykelengkapan', '$mykelengkapan_lain', '$myketerbacaan', '$mykesesuaian_judul', '$mykesesuaian_panjang', '$mykesesuaian_ringkasan', '$mykesesuaian_dafpus', '$mynilai_keseluruhan', '$myrekomendasi', '$mykomentar', '$filepath', '$id_makalah')";
 		//$result=mysql_query($sql_add);

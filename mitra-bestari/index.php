@@ -47,7 +47,7 @@
 								<div class="control-group" id="group2">
 								<?php
 									include "database_connection.php";
-									$query_jurnal = "select * from jurnal where status='2'";
+									$query_jurnal = "select * from jurnal where status='2'or (status='3' and tanggal_submit_revisi<>'NULL')";
 									$hasil = mysql_query($query_jurnal,$db);
 									$count = mysql_num_rows($hasil);
 									$i=0;

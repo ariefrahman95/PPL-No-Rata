@@ -51,7 +51,29 @@ session_start();
 									echo '<p>Tidak ada jurnal yang sedang diproses</p>';
 								} else {
 									while($row = mysql_fetch_array($hasil)){
-										echo '<h3>'.$row['judul'].'</h3>
+										if($row['status']==1){
+											$pesan = 'Sudah sampai redaktur, belum diputuskan keberterimaannya';
+										}
+										else if($row['status']==2){
+											$pesan = 'Dinyatakan "diterima" oleh redaktur, belum di-review';
+										}
+										else if($row['status']==3){
+											$id=$row['id'];
+											$query_track = "select path_trackchanges from penilaian where id_makalah='$id'";
+											$result = mysql_query($query_track,$db);
+											$baris = mysql_fetch_array($result);
+											$path = $baris['path_trackchanges'];
+											$pesan = 'Dinyatakan "diterima" oleh reviewer dengan syarat Anda harus me-revisi berdasarkan trackchanges di <a href="mitra-bestari/'.$path.'">sini</a>';
+										}
+										else if($row['status']==4){
+											$id=$row['id'];
+											$query_track = "select path_trackchanges from penilaian where id_makalah='$id'";
+											$result = mysql_query($query_track,$db);
+											$baris = mysql_fetch_array($result);
+											$path = $baris['path_trackchanges'];
+											$pesan = 'Dinyatakan "diterima" oleh reviewer dan sedang di-edit. Lihat trackchanges di <a href="mitra-bestari/'.$path.'">sini</a>';
+										}
+										echo '<h3>'.$row['judul'].'</h3><h5>'.$pesan.'<h5>
 										<div class="progress progress-striped progress-success active">
 											<div class="bar" style="width: '.($row['status']*20).'%;">
 											</div>
