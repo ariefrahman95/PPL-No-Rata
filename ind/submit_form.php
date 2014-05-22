@@ -47,6 +47,21 @@
 					<div class="box-content">
 						<form class="form-horizontal" action="add_jurnal.php" method="post" enctype="multipart/form-data">
 							<fieldset>
+								<div class="control-group">
+								<label class="control-label">Status Makalah</label>
+								<div class="controls">
+									<label class="radio">
+										<input type="radio" name="optionsRadios" id="optionsRadios1" value="baru" checked="" onclick="show_baru()">
+										Makalah Baru
+									</label>
+									<div style="clear:both"></div>
+									<label class="radio">
+										<input type="radio" name="optionsRadios" id="optionsRadios2" value="revisi" onclick="show_revisi()">
+										Makalah Hasil Revisi
+									</label>
+								</div>
+							  </div>
+							  <div id="baru">
 							  <div class="control-group">
 								<label class="control-label" for="prependedInput">Judul</label>
 								<div class="controls">
@@ -111,6 +126,33 @@
 								  <p><input type="file" name="file" id="file" accept="application/pdf"> .pdf, .docx, .doc</p>
 								</div>
 							  </div>
+							  </div>
+							  <div id="revisi" style="display:none">
+							  <div class="control-group">
+								<label class="control-label" for="kategori">Revisi Dari</label>
+								<div class="controls">
+								  <select id="revisi_dari" name="revisi_dari" data-rel="chosen">
+									<?php include "database_connection.php";
+										$query_kat = "select * from jurnal where diupload_oleh='".$username."' and status=3";
+										$hasil = mysql_query($query_kat,$db);
+										if(mysql_num_rows($hasil)==0) {
+											echo 'Belum ada jurnal untuk direvisi';
+										} else {
+											while($row = mysql_fetch_array($hasil)) {
+												echo '<option>'.$row['judul'].'</option>';
+											}
+										}
+									?>
+								  </select>
+								</div>
+							  </div>
+								<div class="control-group">
+								<label class="control-label">Upload File Revisi</label>
+								<div class="controls">
+								  <p><input type="file" name="file_revisi" id="file_revisi" accept="application/pdf"> .pdf, .docx, .doc</p>
+								</div>
+							  </div>
+							  </div>
 							  <div class="form-actions">
 								<button type="submit" class="btn btn-primary">Submit</button>
 							  </div>
@@ -134,4 +176,14 @@
 	
 		
 </body>
+<script>
+	function show_baru(){
+		document.getElementById("baru").style="display:block";
+		document.getElementById("revisi").style="display:none";
+	}
+	function show_revisi(){
+		document.getElementById("baru").style="display:none";
+		document.getElementById("revisi").style="display:block";
+	}
+</script>
 </html>
