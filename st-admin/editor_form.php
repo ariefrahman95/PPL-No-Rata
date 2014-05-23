@@ -58,7 +58,7 @@
 						<h2><i class="icon-pencil"></i> Publish Journal</h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="editor_upload.php" method="post" enctype="multipart/form-data">
+						<form class="form-horizontal" action="editor_upload.php?id=<?php echo $_GET['id'];?>" method="post" enctype="multipart/form-data">
 							<fieldset>
 							  <div class="control-group">
 								<label class="control-label" for="prependedInput">Judul</label>

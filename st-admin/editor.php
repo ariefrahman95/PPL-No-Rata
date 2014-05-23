@@ -43,6 +43,9 @@
 										$query_jurnal = "select id, judul from jurnal where status='4'";
 										$hasil = mysql_query($query_jurnal,$db);
 										$count = mysql_num_rows($hasil);
+										if($count==0){
+											echo '<p>Tidak ada jurnal untuk di-edit</p>';
+										}
 										$i=0;
 										echo '<ul>';
 										while($row = mysql_fetch_array($hasil)){

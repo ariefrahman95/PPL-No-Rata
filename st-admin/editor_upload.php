@@ -1,5 +1,6 @@
 <?php
 	include "database_connection.php";
+	include "editor_upload_file.php";
 	if ((isset($_POST['title']))&&(isset($_POST['date']))&&(isset($_POST['author']))&&(isset($_POST['category']))
 		&&(isset($_POST['abstract']))&&(isset($_FILES['file']['name']))) {
 		$title=$_POST['title'];
@@ -8,10 +9,11 @@
 		$category=$_POST['category'];
 		$abstract=$_POST['abstract'];
 		$filepath = "files/".$_FILES['file']['name'];
-
+		$id=$_GET['id'];
 		$sql_add="INSERT INTO jurnal_terpublish (judul, penulis, tanggal_terbit, kategori, path_download, abstract) 
 			values ('$title', '$author', '$date', '$category', '$filepath', '$abstract')";
-		if (!mysql_query($sql_add, $db))
+		$sql_delete="DELETE FROM jurnal where id='$id'";
+		if (!mysql_query($sql_add, $db)||!mysql_query($sql_delete, $db))
 		{
 			die('Error: ' . mysql_error($db));
 		}

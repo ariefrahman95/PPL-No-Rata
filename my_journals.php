@@ -98,7 +98,6 @@
 									  		<th>Title</th>
 									  		<th>Authors</th>
 									  		<th>Category</th>
-											<th>Status</th>
 								  		</tr>
 							  		</thead>   
 							  		<tbody>';
@@ -107,7 +106,6 @@
 										echo '<td><a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a></td>';
 										echo '<td class="center">'.$row["penulis"].'</td>';
 										echo '<td class="center">'.$row["kategori"].'</td>';
-										echo '<td class="center">'.$row["status"].'</td>';
 										echo '</tr>';
 									}
 									echo'</tbody>';
