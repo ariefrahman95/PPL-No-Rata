@@ -88,7 +88,7 @@
 		
 			<div class="row-fluid">
 				<div class="span12 center login-header">
-					<h2>Register to Jurnal Sosioteknologi Website</h2>
+					<h2>Mendaftar Kenaggotaan di Website Jurnal Sosioteknologi</h2>
 				</div><!--/span-->
 			</div><!--/row-->
 			
@@ -128,7 +128,7 @@
 							</div>
 							<div class="clearfix"></div>
 							<div class="control-group">
-								<label class="control-label" for="password">Confirm Password</label>
+								<label class="control-label" for="password">Konfirmasi Password</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="password2" id="password2" type="password" value="admin123456" onkeyup="password2_check()">
 								</div>
@@ -136,14 +136,14 @@
 							</div>
 							<div class="clearfix"></div>
 							<div class="control-group">
-								<label class="control-label" for="nama">Full Name</label>
+								<label class="control-label" for="nama">Nama Lengkap</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="nama" id="nama" type="text">
 								</div>
 							</div>
 							<div class="clearfix"></div>
 							<div class="control-group">
-								<label class="control-label" for="organisasi">Organization</label>
+								<label class="control-label" for="organisasi">Organisasi</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="organisasi" id="organisasi" type="text">
 								</div>
@@ -157,21 +157,21 @@
 							</div>
 							<div class="clearfix"></div>
 							<div class="control-group">
-								<label class="control-label" for="phone">Phone Number</label>
+								<label class="control-label" for="phone">Nomor Telepon</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="phone" id="phone" type="text">
 								</div>
 							</div>
 							<div class="clearfix"></div>
 							<div class="control-group">
-								<label class="control-label" for="alamat">Address</label>
+								<label class="control-label" for="alamat">Alamat</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="alamat" id="alamat" type="text">
 								</div>
 							</div>
 							<div class="clearfix"></div>
 							<p class="center span5">
-							<button id="reg_btn" type="submit" class="btn btn-primary" disabled>Register</button>
+							<button id="reg_btn" type="submit" class="btn btn-primary" disabled>Daftar</button>
 							</p>
 						</fieldset>
 					</form>
