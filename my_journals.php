@@ -39,7 +39,7 @@
 			<div id="content" class="span10">
 			<!-- content starts -->
 			<div class="row-fluid sortable">			
-				<div class="box span12">
+				<div class="box span10">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-briefcase"></i> My Published Journals</h2>
 					</div>
@@ -52,12 +52,13 @@
 							$query_jurnal = "select * from jurnal_terpublish where penulis='".$row['nama_lengkap']."'";
 							$hasil = mysql_query($query_jurnal,$db);
 							if(mysql_num_rows($hasil)==0) {
-								echo '<p>Tidak ada jurnal yang sudah dipublikasikan di Jurnal Sosioteknologi</p>';
+								echo '<p>Tidak ada jurnal yang sudah dipublikasikan</p>';
 							} else {
 								echo'<table class="table table-bordered table-striped table-condensed">
 									<thead>
 										<tr>
 									  		<th>Judul</th>
+									  		<th>Penulis</th>
 									  		<th>Kategori</th>
 								  		</tr>
 							  		</thead>   
@@ -65,6 +66,7 @@
 							  		while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
 										echo '<td><a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a></td>';
+										echo '<td class="center">'.$row["penulis"].'</td>';
 										echo '<td class="center">'.$row["kategori"].'</td>';
 										echo '</tr>';
 									}
@@ -77,7 +79,7 @@
 			</div>
 
 			<div class="row-fluid sortable">
-				<div class="box span12">
+				<div class="box span10">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-tasks"></i> My On-going Journals</h2>
 					</div>
@@ -86,12 +88,13 @@
 							$query_jurnal = "select * from jurnal where diupload_oleh='$user' and status<>'0'";
 							$hasil = mysql_query($query_jurnal,$db);
 							if(mysql_num_rows($hasil)==0) {
-								echo '<p>Tidak ada jurnal yang sedang dalam pemrosesan Jurnal Sosioteknologi</p>';
+								echo '<p>Tidak ada jurnal yang sedang dalam pemrosesan</p>';
 							} else {
 								echo'<table class="table table-bordered table-striped table-condensed">
 									<thead>
 										<tr>
 									  		<th>Judul</th>
+									  		<th>Penulis</th>
 									  		<th>Kategori</th>
 											<th>Status</th>
 								  		</tr>
@@ -100,6 +103,7 @@
 							  		while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
 										echo '<td><a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a></td>';
+										echo '<td class="center">'.$row["penulis"].'</td>';
 										echo '<td class="center">'.$row["kategori"].'</td>';
 										echo '<td class="center">'.$row["status"].'</td>';
 										echo '</tr>';
@@ -113,7 +117,7 @@
     		</div>
 
 			<div class="row-fluid sortable">	
-				<div class="box span12">
+				<div class="box span10">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-trash"></i> My Rejected Journals</h2>
 					</div>
@@ -122,12 +126,13 @@
 							$query_jurnal = "select * from jurnal where diupload_oleh='$user' and status='0'";
 							$hasil = mysql_query($query_jurnal,$db);
 							if(mysql_num_rows($hasil)==0) {
-								echo '<p>Tidak ada jurnal yang ditolak oleh Jurnal Sosioteknologi</p>';
+								echo '<p>Tidak ada jurnal yang ditolak</p>';
 							} else {
 								echo'<table class="table table-bordered table-striped table-condensed">
 									<thead>
 										<tr>
 									  		<th>Judul</th>
+									  		<th>Penulis</th>
 									  		<th>Kategori</th>
 								  		</tr>
 							  		</thead>   
@@ -135,6 +140,7 @@
 							  		while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
 										echo '<td><a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a></td>';
+										echo '<td class="center">'.$row["penulis"].'</td>';
 										echo '<td class="center">'.$row["kategori"].'</td>';
 										echo '</tr>';
 									}

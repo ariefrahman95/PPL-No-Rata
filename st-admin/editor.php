@@ -12,7 +12,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>List Jurnal - SI Jurnal Sosioteknologi</title>
+	<title>Editor - Website Jurnal Sosioteknologi</title>
 	<?php include "meta_and_css.php" ?>	
 </head>
 
@@ -32,40 +32,24 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
-			
-
-			<!--<div>
-				<ul class="breadcrumb">
-					<li>
-						<a href="index.php">Home</a> <span class="divider">/</span>
-					</li>
-					<li>
-						<a href="#">List of Journals</a>
-					</li>
-				</ul>
-			</div>-->
-			
+			<h6>NOTIFICATION</h6>
 			<div class="row-fluid sortable">	
-				<div class="box span12">
+				<div class="box span10">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-filter"></i>Journals To Edit</h2>
+						<h2><i class="icon-star"></i> Journals To Edit</h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal">
-						<fieldset>
-						<div class="control-group" id="group2">
-							<?php include "database_connection.php";
-								$query_jurnal = "select id, judul from jurnal where status='4'";
-								$hasil = mysql_query($query_jurnal,$db);
-								$count = mysql_num_rows($hasil);
-								$i=0;
-								while($row = mysql_fetch_array($hasil)){
-									echo'<a href="editor_form.php?id='.$row['id'].'" target="_blank">'.$row["judul"].'</a>';
-								}
-							?>
-						</div>
-						</fieldset>
-						</form>
+									<?php include "database_connection.php";
+										$query_jurnal = "select id, judul from jurnal where status='4'";
+										$hasil = mysql_query($query_jurnal,$db);
+										$count = mysql_num_rows($hasil);
+										$i=0;
+										echo '<ul>';
+										while($row = mysql_fetch_array($hasil)){
+											echo'<li><a href="editor_form.php?id='.$row['id'].'" target="_blank">'.$row["judul"].'</a></li>';
+										}
+										echo '</ul>'
+									?>
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->

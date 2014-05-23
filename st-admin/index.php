@@ -36,8 +36,10 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
+			<h6>NOTIFICATION</h6>
+
 			<div class="row-fluid sortable">
-				<div class="box span12">
+				<div class="box span10">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-bell"></i> New Journal</h2>
 					</div>
@@ -54,8 +56,11 @@
 				</div><!--/span-->
 			</div><!--/row-->
 
+			<hr>
+			<h6>JURNAL SOSIOTEKNOLOGI STATISTICS</h6>
+
 			<div class="row-fluid sortable">
-				<div class="box span12">
+				<div class="box span10">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-signal"></i> Journal Statistics</h2>
 					</div>
@@ -75,8 +80,8 @@
 							$n_reject = mysql_num_rows($hasil);
 						?>
 						<div id="donutchart" style="height: 300px;">
-							
             			</div>
+            			<p>Lihat semua jurnal <a href="list_of_journals.php">di sini</a></p>
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->

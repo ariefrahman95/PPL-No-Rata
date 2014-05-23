@@ -12,7 +12,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>Submit - SI Jurnal Sosioteknologi</title>
+	<title>Publish - Website Jurnal Sosioteknologi</title>
 	<?php include "meta_and_css.php" ?>	
 </head>
 
@@ -55,7 +55,7 @@
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-edit"></i> Publish Journal </h2>
+						<h2><i class="icon-pencil"></i> Publish Journal</h2>
 					</div>
 					<div class="box-content">
 						<form class="form-horizontal" action="editor_upload.php" method="post" enctype="multipart/form-data">
@@ -107,7 +107,7 @@
 								</div>
 							  </div>
 							  <div class="form-actions">
-								<button type="submit" class="btn btn-primary">Submit</button>
+								<button type="submit" class="btn btn-primary">Publish!</button>
 							  </div>
 							</fieldset>
 						</form>
