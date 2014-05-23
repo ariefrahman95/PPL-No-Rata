@@ -2,6 +2,8 @@
 	session_start();
 	if(!isset($_SESSION['logged_in'])){
 		header('Location: login.php');
+	} else {
+		$user = $_SESSION['logged_in'];
 	}
 ?>
 <!DOCTYPE html>
