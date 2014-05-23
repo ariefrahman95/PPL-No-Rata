@@ -35,12 +35,13 @@ session_start();
 			<div id="content" class="span10">
 			<!-- content starts -->
 
-			<h6>MY JOURNALS SUMMARY</h6>
 			<?php
 				if(isset($_SESSION['logged_in'])){
 				if($_SESSION['logged_in']!=null){
 					$user = $_SESSION['logged_in'];
 
+					echo '<h6>MY JOURNALS</h6>';
+					
 					echo '<div class="row-fluid sortable">';
 						echo '<div class="box span10">';
 							echo '<div class="box-header well" data-original-title>';
@@ -122,7 +123,7 @@ session_start();
 				}
 			?>
 			<hr>
-			<h6>NOTIFICATION</h6>
+			<h6>NOTIFICATION FROM JURNAL SOSIOTEKNOLOGI</h6>
 			<?php 
 				include "database_connection.php";
 				$query_post = "select * from post where lokasi='announcements'";
