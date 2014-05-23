@@ -38,78 +38,115 @@
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
+			<div class="row-fluid sortable">			
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-briefcase"></i> My Published Journals</h2>
+					</div>
+					<div class="box-content">
+						<?php include "database_connection.php";
+							$query_user = "select nama_lengkap from penulis where username='".$user."'";
+							$hasil = mysql_query($query_user,$db);
+							$row = mysql_fetch_array($hasil);
+
+							$query_jurnal = "select * from jurnal_terpublish where penulis='".$row['nama_lengkap']."'";
+							$hasil = mysql_query($query_jurnal,$db);
+							if(mysql_num_rows($hasil)==0) {
+								echo '<p>Tidak ada jurnal yang sudah dipublikasikan di Jurnal Sosioteknologi</p>';
+							} else {
+								echo'<table class="table table-bordered table-striped table-condensed">
+									<thead>
+										<tr>
+									  		<th>Judul</th>
+									  		<th>Kategori</th>
+								  		</tr>
+							  		</thead>   
+							  		<tbody>';
+							  		while($row = mysql_fetch_array($hasil)){
+										echo '<tr>';
+										echo '<td><a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a></td>';
+										echo '<td class="center">'.$row["kategori"].'</td>';
+										echo '</tr>';
+									}
+									echo'</tbody>';
+						 		echo '</table>';
+							}
+						?>
+					</div>
+				</div><!--/span-->
+			</div>
+
+			<div class="row-fluid sortable">
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-tasks"></i> My On-going Journals</h2>
+					</div>
+					<div class="box-content">
+						<?php include "database_connection.php";
+							$query_jurnal = "select * from jurnal where diupload_oleh='$user' and status<>'0'";
+							$hasil = mysql_query($query_jurnal,$db);
+							if(mysql_num_rows($hasil)==0) {
+								echo '<p>Tidak ada jurnal yang sedang dalam pemrosesan Jurnal Sosioteknologi</p>';
+							} else {
+								echo'<table class="table table-bordered table-striped table-condensed">
+									<thead>
+										<tr>
+									  		<th>Judul</th>
+									  		<th>Kategori</th>
+											<th>Status</th>
+								  		</tr>
+							  		</thead>   
+							  		<tbody>';
+							  		while($row = mysql_fetch_array($hasil)){
+										echo '<tr>';
+										echo '<td><a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a></td>';
+										echo '<td class="center">'.$row["kategori"].'</td>';
+										echo '<td class="center">'.$row["status"].'</td>';
+										echo '</tr>';
+									}
+									echo'</tbody>';
+						 		echo '</table>';
+							}
+						?>
+					</div>
+				</div><!--/span-->
+    		</div>
+
 			<div class="row-fluid sortable">	
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-book"></i> My Published Journals</h2>
+						<h2><i class="icon-trash"></i> My Rejected Journals</h2>
 					</div>
 					<div class="box-content">
-						<table class="table table-bordered table-striped table-condensed">
-							<thead>
-								<tr>
-									<th>Title</th>
-									<th>Published Date</th>
-									<th>Author</th>
-									<th>Category</th>                                           
-								</tr>
-							</thead>   
-							<tbody>
-								<?php include "database_connection.php";
-									$myusername = $_SESSION['logged_in'];
-									
-									define("NUMBER_PER_PAGE", 10);
-									
-									$page = 1;
-									if(isset($_GET['page'])) {
-										$page = $_GET['page'];
-									}
-									$start = ($page-1) * NUMBER_PER_PAGE;
-									
-									$query_jurnal = "select jurnal_terpublish.id, jurnal_terpublish.judul, jurnal_terpublish.tanggal_terbit,
-										jurnal_terpublish.penulis, jurnal_terpublish.kategori, penulis.username
-										from jurnal_terpublish inner join penulis 
-										where penulis.nama_lengkap = jurnal_terpublish.penulis and penulis.username = '$myusername'";
-									
-									// Hitung jumlah seluruh row
-									$total = mysql_num_rows(mysql_query($query_jurnal));
-									
-									// Limit query untuk menampilkan sesuai jumlah halaman paginasi
-									$query_jurnal .= " limit $start, " . NUMBER_PER_PAGE;
-									$hasil = mysql_query($query_jurnal,$db);
-									$count = 0;
-									while($row = mysql_fetch_array($hasil)){
+						<?php include "database_connection.php";
+							$query_jurnal = "select * from jurnal where diupload_oleh='$user' and status='0'";
+							$hasil = mysql_query($query_jurnal,$db);
+							if(mysql_num_rows($hasil)==0) {
+								echo '<p>Tidak ada jurnal yang ditolak oleh Jurnal Sosioteknologi</p>';
+							} else {
+								echo'<table class="table table-bordered table-striped table-condensed">
+									<thead>
+										<tr>
+									  		<th>Judul</th>
+									  		<th>Kategori</th>
+								  		</tr>
+							  		</thead>   
+							  		<tbody>';
+							  		while($row = mysql_fetch_array($hasil)){
 										echo '<tr>';
-										echo '<td><a href="preview.php?id='.$row["id"].'">'.$row["judul"].'</a></td>';
-										echo '<td class="center">'.$row["tanggal_terbit"].'</td>';
-										echo '<td class="center">'.$row["penulis"].'</td>';
+										echo '<td><a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a></td>';
 										echo '<td class="center">'.$row["kategori"].'</td>';
 										echo '</tr>';
-										$count++;
-									}	
-									if ($count == 0) {
-										echo '<p>Belum ada jurnal yang dipublish.</p>';
 									}
-							    ?>
-							</tbody>
-						</table>  
-						<div class="pagination pagination-centered">
-							<ul>
-								<?php
-									for ($curr_page = 1; $curr_page < ($total / NUMBER_PER_PAGE) + 1; $curr_page++) { 
-										if ($curr_page != $page) {
-											echo '<li><a href=my_journals.php?page='.$curr_page.'>'.$curr_page.'</a></li>';
-										} else {
-											echo '<li class = "active"><a href=#>'.$curr_page.'</a></li>';
-										}
-									}
-								?>
-							</ul>
-						</div>     
+									echo'</tbody>';
+						 		echo '</table>';
+							}
+						?>
 					</div>
 				</div><!--/span-->
+				 
 			</div><!--/row-->
-    
-					<!-- content ends -->
+			<!-- content ends -->
 			</div><!--/#content.span10-->
 				</div><!--/fluid-row-->
 

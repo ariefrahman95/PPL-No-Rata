@@ -37,7 +37,7 @@
 				$hasil = mysql_query($query_post,$db);
 				while($row = mysql_fetch_array($hasil)){
 					echo '<div class="row-fluid sortable">
-							<div class="box span7">
+							<div class="box span12">
 								<div class="box-header well" data-original-title>
 									<h2><i class="icon-check"></i> '.$row['judul'].'</h2>
 								</div>

@@ -34,28 +34,62 @@ session_start();
 			
 			<div id="content" class="span10">
 			<!-- content starts -->
+
+			<h6>MY JOURNALS SUMMARY</h6>
 			<?php
 				if(isset($_SESSION['logged_in'])){
 				if($_SESSION['logged_in']!=null){
 					$user = $_SESSION['logged_in'];
+
 					echo '<div class="row-fluid sortable">';
-						echo '<div class="box span12">';
+						echo '<div class="box span10">';
 							echo '<div class="box-header well" data-original-title>';
-								echo '<h2><i class="icon-tasks"></i> Journal\'s Progress</h2>';
+								echo '<h2><i class="icon-tasks"></i> My Journals Status</h2>';
 							echo'</div>';
 							echo '<div class="box-content">';
 								include "database_connection.php";
+								$query_user = "select nama_lengkap from penulis where username='".$user."'";
+								$hasil = mysql_query($query_user,$db);
+								$row = mysql_fetch_array($hasil);
+
+								$query_jurnal = "select id from jurnal_terpublish where penulis='".$row['nama_lengkap']."'";
+								$hasil = mysql_query($query_jurnal,$db);
+								$n = mysql_num_rows($hasil);
+								echo '<p>Published: '.$n.' | ';
+
+								$query_jurnal = "select id from jurnal where diupload_oleh='$user' and status<>0";
+								$hasil = mysql_query($query_jurnal,$db);
+								$n = mysql_num_rows($hasil);
+								echo 'On going: '.$n.' | ';
+
+								$query_jurnal = "select id from jurnal where diupload_oleh='$user' and status=0";
+								$hasil = mysql_query($query_jurnal,$db);
+								$n = mysql_num_rows($hasil);
+								echo 'Rejected: '.$n.'</p>
+
+								<p> See all <a href="my_journals.php">here</a></p>';
+							echo '</div>
+						</div>
+					</div>';
+
+					echo '<div class="row-fluid sortable">';
+						echo '<div class="box span10">';
+							echo '<div class="box-header well" data-original-title>';
+								echo '<h2><i class="icon-tasks"></i> On-going Journals</h2>';
+							echo'</div>';
+							echo '<div class="box-content">';
 								$query_post = "select * from jurnal where diupload_oleh='$user' and status<>0";
 								$hasil = mysql_query($query_post,$db);
 								if(mysql_num_rows($hasil)==0) {
 									echo '<p>Tidak ada jurnal yang sedang diproses</p>';
 								} else {
+									echo '<ul>';
 									while($row = mysql_fetch_array($hasil)){
 										if($row['status']==1){
 											$pesan = 'Sudah sampai redaktur, belum diputuskan keberterimaannya';
 										}
 										else if($row['status']==2){
-											$pesan = 'Dinyatakan "diterima" oleh redaktur, belum di-review';
+											$pesan = 'Diterima oleh redaktur, belum di-review oleh reviewer';
 										}
 										else if($row['status']==3){
 											$id=$row['id'];
@@ -63,7 +97,7 @@ session_start();
 											$result = mysql_query($query_track,$db);
 											$baris = mysql_fetch_array($result);
 											$path = $baris['path_trackchanges'];
-											$pesan = 'Dinyatakan "diterima" oleh reviewer dengan syarat Anda harus me-revisi berdasarkan trackchanges di <a href="mitra-bestari/'.$path.'">sini</a>';
+											$pesan = 'Diterima oleh reviewer dengan syarat Anda harus melakukan revisi berdasarkan track-changes <a href="mitra-bestari/'.$path.'">di sini</a>. Upload revisi <a href="submit_form.php">ke sini</a>.';
 										}
 										else if($row['status']==4){
 											$id=$row['id'];
@@ -71,14 +105,15 @@ session_start();
 											$result = mysql_query($query_track,$db);
 											$baris = mysql_fetch_array($result);
 											$path = $baris['path_trackchanges'];
-											$pesan = 'Dinyatakan "diterima" oleh reviewer dan sedang di-edit. Lihat trackchanges di <a href="mitra-bestari/'.$path.'">sini</a>';
+											$pesan = 'Diterima oleh reviewer dan diteruskan ke editor. Lihat track-changes <a href="mitra-bestari/'.$path.'">di sini</a>';
 										}
-										echo '<h3>'.$row['judul'].'</h3><h5>'.$pesan.'<h5>
+										echo '<li><h2>'.$row['judul'].'</h2><p>'.$pesan.'</p>
 										<div class="progress progress-striped progress-success active">
 											<div class="bar" style="width: '.($row['status']*20).'%;">
 											</div>
-										</div>';
+										</div></li>';
 									}
+									echo '</ul>';
 								}
 							echo '</div>
 						</div>
@@ -86,14 +121,15 @@ session_start();
 				}
 				}
 			?>
-			
+			<hr>
+			<h6>NOTIFICATION</h6>
 			<?php 
 				include "database_connection.php";
 				$query_post = "select * from post where lokasi='announcements'";
 				$hasil = mysql_query($query_post,$db);
 				while($row = mysql_fetch_array($hasil)){
 					echo '<div class="row-fluid sortable">
-							<div class="box span6">
+							<div class="box span10">
 								<div class="box-header well" data-original-title>
 									<h2><i class="icon-bullhorn"></i> '.$row['judul'].'</h2>
 								</div>
