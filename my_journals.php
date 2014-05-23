@@ -54,14 +54,14 @@
 							$query_jurnal = "select * from jurnal_terpublish where penulis='".$row['nama_lengkap']."'";
 							$hasil = mysql_query($query_jurnal,$db);
 							if(mysql_num_rows($hasil)==0) {
-								echo '<p>Tidak ada jurnal yang sudah dipublikasikan</p>';
+								echo '<p>You do not have published journal</p>';
 							} else {
 								echo'<table class="table table-bordered table-striped table-condensed">
 									<thead>
 										<tr>
-									  		<th>Judul</th>
-									  		<th>Penulis</th>
-									  		<th>Kategori</th>
+									  		<th>Title</th>
+									  		<th>Authors</th>
+									  		<th>Category</th>
 								  		</tr>
 							  		</thead>   
 							  		<tbody>';
@@ -90,14 +90,14 @@
 							$query_jurnal = "select * from jurnal where diupload_oleh='$user' and status<>'0'";
 							$hasil = mysql_query($query_jurnal,$db);
 							if(mysql_num_rows($hasil)==0) {
-								echo '<p>Tidak ada jurnal yang sedang dalam pemrosesan</p>';
+								echo '<p>You do not have on-going journal</p>';
 							} else {
 								echo'<table class="table table-bordered table-striped table-condensed">
 									<thead>
 										<tr>
-									  		<th>Judul</th>
-									  		<th>Penulis</th>
-									  		<th>Kategori</th>
+									  		<th>Title</th>
+									  		<th>Authors</th>
+									  		<th>Category</th>
 											<th>Status</th>
 								  		</tr>
 							  		</thead>   
@@ -128,14 +128,14 @@
 							$query_jurnal = "select * from jurnal where diupload_oleh='$user' and status='0'";
 							$hasil = mysql_query($query_jurnal,$db);
 							if(mysql_num_rows($hasil)==0) {
-								echo '<p>Tidak ada jurnal yang ditolak</p>';
+								echo '<p>You do not have rejected journal</p>';
 							} else {
 								echo'<table class="table table-bordered table-striped table-condensed">
 									<thead>
 										<tr>
-									  		<th>Judul</th>
-									  		<th>Penulis</th>
-									  		<th>Kategori</th>
+									  		<th>Title</th>
+									  		<th>Authors</th>
+									  		<th>Category</th>
 								  		</tr>
 							  		</thead>   
 							  		<tbody>';
