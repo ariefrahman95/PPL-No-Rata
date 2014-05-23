@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.0.1
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 23, 2014 at 02:43 PM
--- Server version: 5.1.37
--- PHP Version: 5.3.0
+-- Generation Time: May 23, 2014 at 09:51 AM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -52,9 +53,7 @@ CREATE TABLE IF NOT EXISTS `jurnal` (
 INSERT INTO `jurnal` (`id`, `judul`, `penulis`, `status`, `kategori`, `path_download`, `path_preview`, `diupload_oleh`, `path_form_penilaian`, `tanggal_submit`, `tanggal_masuk_mibes`, `tanggal_diterima_mibes`, `tanggal_submit_revisi`, `tanggal_masuk_editor`, `abstrak`, `keywords`) VALUES
 (1, 'Perilaku Remaja dalam Menggunakan Media', 'Arief Rahman', 1, 'Sosio-komunikasi', 'files/DPPL e-Cow.pdf', 'img/preview/1.jpg', 'arief_rahman', '', NULL, '2014-05-21 11:01:54', '2014/05/21 11:05:45', NULL, NULL, '', ''),
 (2, 'Makna Ikon Naga, Elemen Utama Arsitektur Tradisional Tionghoa', 'Sugiri Kustedja', 3, 'Sosio-kapital', '', NULL, 'redirected', '', '2014-05-21 10:20:53', '2014-05-21 10:20:53', '2014/05/22 09:06:06', NULL, NULL, '', ''),
-(3, 'Orientasi Pengembangan Ilmu dalam Perspektif Islam', 'Furqon Syarief Hidayatulloh', 4, 'Sosio-religi', '', NULL, '', '', '0000-00-00 00:00:00', '2014-05-21 10:49:27', '2014-05-21 10:49:57', '2014-05-21 10:50:31', '2014-05-21 10:51:08', '', ''),
 (4, 'Incorporating And Converting Biogas Technology Into Household Space', 'Meredian Alam', 0, 'Sosio-dinamika', '', NULL, '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(20, 'Strength Journey', 'lolololol', 3, 'Bahasa dan teknologi', 'files/1- Pendahuluan if3240.pdf', NULL, 'destraaaa', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (21, 'New Journal', 'asdhaldak', 5, 'Bioetika', 'files/2-Data,Info&Knowledge.pdf', NULL, 'destraaaa', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (22, 'Test', 'Redirect Dust', 1, 'Penyakit dan masyarakat di Indonesia', 'files/Halaman Kosong.pdf', NULL, 'redirected', '', '2014-05-20 12:37:13', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Press enter here, it will grow automatically.', 'test');
 
@@ -72,22 +71,21 @@ CREATE TABLE IF NOT EXISTS `jurnal_terpublish` (
   `abstract` text NOT NULL,
   `kategori` varchar(255) NOT NULL,
   `path_download` varchar(255) NOT NULL,
-  `path_preview` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `jurnal_terpublish`
 --
 
-INSERT INTO `jurnal_terpublish` (`id`, `judul`, `penulis`, `tanggal_terbit`, `abstract`, `kategori`, `path_download`, `path_preview`) VALUES
-(1, 'Punden Berundak Gunung Padang "Refleksi Adaptasi Lingkungan dari Masyarakat Megalitik"', 'Lutfi Yondri', '2014-04-25', '', 'Kategori 1', 'files/1 Yondri.pdf', 'img\\preview\\".$id.".jpg'),
-(2, 'Analisis Sikap Multiatribut Fishbein Mengenai Atribut Obat Herbal Merek Tolak Angin Sido Muncul di Kota Bandung', 'Windriani Puspita, RahUtami Nugrahani', '2014-04-25', '', 'Kategori Kategori', 'files/2 Windriani.pdf', ''),
-(3, 'Partisipasi Masyarakat dan Nelayan dalam Mengurangi Pencemaran Air Laut di Kawasan Pantai Manado-Sulawesi Utara', 'Chairil Nur Siregar', '2014-04-25', '', '', 'files/3 Chairil.pdf', ''),
-(4, 'Hubungan Fakta Geopolitik dengan Perencanaan Bahasa', 'Yani Suryani', '2014-04-25', '', '', 'files/4 Yani.pdf', ''),
-(5, 'Memaknai Pesan Spiritual Ajaran Agama dalam Membangun Karakter Kasalehan Sosial', 'Yedi Yurwanto', '2014-04-25', '', '', 'files/5 Yedi.pdf', ''),
-(6, 'Fenomena Bahasa Baliho Sebagai Identitas Diri Tokoh Cerminan Karakter Budaya', 'Sulastri, Ronidin', '2014-04-25', '', '', 'files/6 Sulastri.pdf', ''),
-(7, 'Fleksibilitas Ruang Kelas sebagai Upaya Memenuhi Kebutuhan dalam Membangun Motivasi Anak TK', 'R. Rr. Hasri Sulistiyani, Ruly Darmawan, Lies Neni Budiarti', '2014-04-25', '', '', 'files/7 Hasri.pdf', '');
+INSERT INTO `jurnal_terpublish` (`id`, `judul`, `penulis`, `tanggal_terbit`, `abstract`, `kategori`, `path_download`) VALUES
+(1, 'Punden Berundak Gunung Padang "Refleksi Adaptasi Lingkungan dari Masyarakat Megalitik"', 'Lutfi Yondri', '2014-04-25', '', '', 'files/1 Yondri.pdf'),
+(2, 'Analisis Sikap Multiatribut Fishbein Mengenai Atribut Obat Herbal Merek Tolak Angin Sido Muncul di Kota Bandung', 'Windriani Puspita, RahUtami Nugrahani', '2014-04-25', '', '', 'files/2 Windriani.pdf'),
+(3, 'Partisipasi Masyarakat dan Nelayan dalam Mengurangi Pencemaran Air Laut di Kawasan Pantai Manado-Sulawesi Utara', 'Chairil Nur Siregar', '2014-04-25', '', '', 'files/3 Chairil.pdf'),
+(4, 'Hubungan Fakta Geopolitik dengan Perencanaan Bahasa', 'Yani Suryani', '2014-04-25', '', '', 'files/4 Yani.pdf'),
+(5, 'Memaknai Pesan Spiritual Ajaran Agama dalam Membangun Karakter Kasalehan Sosial', 'Yedi Yurwanto', '2014-04-25', '', '', 'files/5 Yedi.pdf'),
+(6, 'Fenomena Bahasa Baliho Sebagai Identitas Diri Tokoh Cerminan Karakter Budaya', 'Sulastri, Ronidin', '2014-04-25', '', '', 'files/6 Sulastri.pdf'),
+(7, 'Fleksibilitas Ruang Kelas sebagai Upaya Memenuhi Kebutuhan dalam Membangun Motivasi Anak TK', 'R. Rr. Hasri Sulistiyani, Ruly Darmawan, Lies Neni Budiarti', '2014-04-25', '', '', 'files/7 Hasri.pdf');
 
 -- --------------------------------------------------------
 
