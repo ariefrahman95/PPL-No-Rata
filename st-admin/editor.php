@@ -60,7 +60,7 @@
 								$count = mysql_num_rows($hasil);
 								$i=0;
 								while($row = mysql_fetch_array($hasil)){
-									echo'<a href="editor_form.php?id='.$row['id'].'" target="_blank">'.$row["judul"].'</a>';
+									echo'<a href="editor_form.php?id='.$row['id'].'" target="_blank">'.$row["judul"].'</a><br />';
 								}
 							?>
 						</div>
