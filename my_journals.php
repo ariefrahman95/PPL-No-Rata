@@ -108,6 +108,42 @@
 					</div>
 				</div><!--/span-->
 			</div><!--/row-->
+			<div class="row-fluid sortable">	
+				<div class="box span12">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-trash"></i> Journals Rejected</h2>
+					</div>
+					<div class="box-content">
+						<?php include "database_connection.php";
+							$query_jurnal = "select * from jurnal where status='0' and diupload_oleh='$myusername'";
+							$hasil = mysql_query($query_jurnal,$db);
+							if(mysql_num_rows($hasil)==0) {
+								echo '<p>Tidak ada jurnal yang ditolak</p>';
+							} else {
+								echo'<table class="table table-bordered table-striped table-condensed">
+									<thead>
+										<tr>
+									  		<th>Judul</th>
+									  		<th>Penulis</th>
+									  		<th>Kategori</th>                                          
+								  		</tr>
+							  		</thead>   
+							  		<tbody>';
+							  		while($row = mysql_fetch_array($hasil)){
+										echo '<tr>';
+										echo '<td><a href="../'.$row['path_download'].'" target="_blank">'.$row["judul"].'</a></td>';
+										echo '<td class="center">'.$row["penulis"].'</td>';
+										echo '<td class="center">'.$row["kategori"].'</td>';
+										echo '</tr>';
+									}
+									echo'</tbody>';
+						 		echo '</table>';
+							}
+						?>
+					</div>
+				</div><!--/span-->
+				 
+			</div><!--/row-->
     
 					<!-- content ends -->
 			</div><!--/#content.span10-->
